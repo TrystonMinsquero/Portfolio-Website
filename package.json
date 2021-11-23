@@ -1,0 +1,36 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "backend support for website",
+  "main": "app.js",
+  "dependencies": {
+    "bootstrap-icons": "^1.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrystonMinsquero/Portfolio-Website.git"
+  },
+  "keywords": [
+    "website",
+    "backend",
+    "frontend",
+    "portfolio"
+  ],
+  "author": {
+    "name": "Tryston Minsquero",
+    "email": "trystonminsquero@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrystonMinsquero/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/TrystonMinsquero/Portfolio-Website#readme"
+}
