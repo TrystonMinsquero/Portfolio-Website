@@ -4,8 +4,8 @@
   "description": "backend support for website",
   "main": "app.js",
   "dependencies": {
-    "bootstrap-icons": "^1.7.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node": "^17.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

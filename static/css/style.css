@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
 
 :root{
-    --primary: #233FA3;
-    --secondary: #F09F4A;
-    --secondary-dull: #A3682A;
-    --highlight: #F0E21A;
+    --primary: #26426B;
+    --secondary: #47556B;
+    --secondary-dull: #4271B8;
+    --highlight: #4271B8;
     --highlight-dull: #A39B1A;
 }
 
