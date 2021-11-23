@@ -87,8 +87,8 @@ img {
 }
 
 .home{
-    background: var(--secondary);
-
+    
+    background: linear-gradient(to left, var(--primary), var(--secondary)) no-repeat 0 0 / cover;
     align-items: stretch;
     align-content: center;
 }

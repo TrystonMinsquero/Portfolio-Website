@@ -1,6 +1,5 @@
 // imports - must use EcmaScript syntax
 const express = require('express');
-const { url } = require('inspector');
 const path = require('path')
 
 // initalize app
