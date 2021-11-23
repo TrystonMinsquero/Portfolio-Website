@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
+:root{
+    --primary: #233FA3;
+    --secondary: #F09F4A;
+    --secondary-dull: #A3682A;
+    --highlight: #F0E21A;
+    --highlight-dull: #A39B1A;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lora', serif;
+    color:black;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    background-color: var(--secondary);
+    font-weight: 300;
+    line-height: 1.2;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    padding: 0 0;
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+img {
+    width: 100%;
+}
+
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100%
+}
+
+.container{
+    overflow: auto;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: var(--primary);
+    color: white;
+    height: 30px;
+}
+
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar a{
+
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.roundedCircle{
+    border-radius: 50%;
+}
+.horizontal-list{
+    list-style-type: none;
+    
+}
+
+.horizontal-list li{
+    padding: 5px 5px;
+    
+}
+
+.home{
+    background: var(--secondary);
+
+    align-items: stretch;
+    align-content: center;
+}
+
+.home div{
+    width:50%;
+    padding: 20px 100px;
+    padding-bottom: 0;
+    background-color: var(--primary);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-content: center;
+    
+
+}
+
