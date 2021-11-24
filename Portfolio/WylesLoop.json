@@ -1,5 +1,5 @@
 {
-  "layout" : "game,
+  "layout" : "game",
   "title" : "Wyles Loop",
   "permalink" : "wyles-loop",
   "builds" : ["WebGL", "Windows"],
