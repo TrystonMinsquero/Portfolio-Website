@@ -1,0 +1,69 @@
+<script>
+    function switchVisible() {
+        games = document.getElementById('Games');
+        projects = document.getElementById('Projects');
+        main = document.getElementById('Main');
+
+        if(document.getElementById('game-btn').checked) {
+            games.style.display = 'block';
+            projects.style.display = 'none' 
+            main.replaceWith(games);
+        }
+        if(document.getElementById('project-btn').checked) {
+            projects.style.display = 'block'; 
+            games.style.display = 'none' 
+            main.replaceWith(projects);
+        }
+        // document.getElementById('Games').style.visibility = document.getElementById('game-btn').checked ? 'visible' : 'hidden';
+        // document.getElementById('Projects').style.visibility = document.getElementById('project-btn').checked ? 'visible' : 'hidden';
+    }
+   
+</script>
+<div class="container">
+
+    <h2 class="header">Portfolio</h2>
+    <form onchange="switchVisible()" class="flex home">
+          <input type="radio" id="game-btn" name="project_type" value="GAME" checked="checked">
+          <label for="game">Games</label><br>
+          <input type="radio" id="project-btn" name="project_type" value="PROJECT">
+          <label for="project-btn">Projects</label><br>
+    </form>
+
+    <div id='Main'>
+
+    </div>
+
+    <div id="Games">
+        <h3 class="flex home">Games</h3>
+        <section class="flex project-list">
+            <ul class="grid flex">
+                {{#each games}}
+                <li>
+                    <a href={{this.permalink}}>
+                        {{#if this.image}}
+                        <img src={{this.image}} alt={{this.title}} >
+                        {{else}}
+                        {{this.title}}
+                        {{/if}}
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+
+    <div id="Projects" style="display: none">
+        <h3 class="flex home">Projects</h3>
+        <section class="flex project-list">
+            <ul class="grid flex">
+                {{#each projects}}
+                <li>
+                    <a href={{this.permalink}}>
+                        <img src={{this.image}} alt={{this.title}} >
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+</div>

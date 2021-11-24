@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
+    "express-handlebars": "^6.0.1",
     "node": "^17.1.0"
   },
   "devDependencies": {

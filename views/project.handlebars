@@ -1,0 +1,70 @@
+
+<div class="container">
+    <h2 class="header">{{project.title}}</h2>
+    <section>
+        <ul class="list-vert flex">
+            {{#if project.team}}
+            <li>
+                <label>Team:</label>
+                <p>{{project.team}}</p>
+            </li>
+            {{/if}}
+            {{#if project.role}}
+            <li>
+                <label>Role:</label>
+                <p>{{project.role}}</p>
+            </li>
+            {{/if}}
+            {{#if project.summary}}
+            <li>
+                <label>Summary:</label>
+                <p>{{project.summary}}</p>
+            </li>
+            {{/if}}
+            {{#if project.contributed}}
+            <li>
+                <label>What I Contributed:</label>
+                <p>{{project.contributed}}</p>
+            </li>
+            {{/if}}
+            {{#if project.challenges}}
+            <li>
+                <label>Challenges I faced:</label>
+                <p>{{project.challenges}}</p>
+            </li>
+            {{/if}}
+            {{#if project.learned}}
+            <li>
+                <label>What I learned</label>
+                <p>{{project.learned}}</p>
+            </li>
+            {{/if}}
+        </ul>
+    </section>
+    <section>
+        <!--external icon links-->
+        <ul class="list flex">
+            {{#if project.itch}}
+            <li>
+                <a href={{project.itch}} target="_blank">
+                    <img width="32px" height="32px" src="/img/icons/itchio.png" alt="Itch.io" >
+                </a>
+            </li>
+            {{/if}}
+            {{#if project.github}}
+            <li>
+                <a href={{project.github}} target="_blank">
+                    <img width="32px" height="32px" src="/img/icons/github.png" alt="Github" >
+                </a>
+            </li>
+            {{/if}}
+            {{#if project.ludumDare}}
+            <li>
+                <a href={{project.ludumDare}} target="_blank">
+                    <img width="32px" height="32px" src="/img/icons/ludumDare.png" alt="LinkedIn" >
+                </a>
+            </li>  
+            {{/if}}       
+        </ul>
+    </section>
+</div>
