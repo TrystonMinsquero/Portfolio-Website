@@ -2,13 +2,19 @@
 <link rel="stylesheet" href="UnityTemplate/style.css">
 <script src="UnityTemplate/UnityProgress.js"></script>
 <script src="UnityBuilds/{{project.build}}/UnityLoader.js"></script>
+<!--for contactention-->
 <div id=buildPath>UnityBuilds/{{project.build}}/WebGL.json</div>
 <script>
+    //get and remove helper div
     const buildPath = document.getElementById('buildPath').textContent;
     document.getElementById('buildPath').remove()
-    var unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
-    console.log(buildPath);
+    function startGame() {
+        var unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
+        var webgl = document.getElementById('webgl');
+        document.getElementById('PlayButton').remove();
+    }
 </script>
+
 
 <div class="container">
     <h2 class="header">{{project.title}}</h2>
@@ -54,16 +60,19 @@
     </section>
 
     <!--Game-->
-    <section class="container">
+    {{#if project.build}}
+    <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
+    <section id="webgl" class="flex container">
         <div class="webgl-content">
             <div id="unityContainer" style="width: 960px; height: 600px"></div>
             <div class="footer">
-            <div class="webgl-logo"></div>
-            <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-            <div class="title">Ludum Dare 48</div>
+                <div class="webgl-logo"></div>
+                <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                <div class="title">{{project.title}}</div>
             </div>
         </div>
     </section>
+    {{/if}}
     
     <!--external icon links-->
     <section >

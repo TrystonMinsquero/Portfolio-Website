@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // access public files for CSS, JS, Favicons, and Images
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
+app.use('/UnityBuilds', express.static(path.join(__dirname, 'public/UnityBuilds')));
+app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTemplate')));
 
 app.use(express.urlencoded({ extended: false }));
 

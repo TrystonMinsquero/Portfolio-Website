@@ -2,6 +2,7 @@
   "layout" : "game",
   "title" : "Hole Flounder Copy",
   "permalink" : "hole-flounder-copy",
+  "build" : "HoleFlounder",
   "team" : "Tryston Minsquero, Michael Bettes, Jonica Brooks, Kameron Thrasher",
   "summary" : "A game for ludum dare 48 made in 72 hours.",
   "contributed" : "All programming and game design.",
