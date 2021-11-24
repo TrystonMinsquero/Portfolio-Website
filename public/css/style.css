@@ -81,6 +81,8 @@ img {
     display: flex;
     list-style-type: none;
     flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .list li{

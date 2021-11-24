@@ -19,24 +19,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
 
-hbs.helpers = {
-    hasWebGL : function (project) {
-        if(project)
-            return false;
-        if(project.builds.indexOf('WebGL') >= 0){
-            return true;
-        }else{
-            return false;
-        }
-    },
-    getWebGL(project) { 
-        if(project.builds.indexOf('WebGL'))
-            return "../Builds/" + project.title + "/WebGL";
-        return ;
-     },
-    bar : function () {return 'bar';}
-}
-//
 
 
 // console.log("Porfolio length: " + Portfolio.portfolio.length);
