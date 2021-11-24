@@ -2,7 +2,7 @@
   "layout" : "game",
   "title" : "Hole Flounder",
   "permalink" : "hole-flounder",
-  "build" : "HoleFlounder",
+  "builds" : ["WebGL", "Windows"],
   "team" : "Tryston Minsquero, Michael Bettes, Jonica Brooks, Kameron Thrasher",
   "role" : "Programmer & Game Design",
   "summary" : "A game for ludum dare 48 made in 72 hours.",

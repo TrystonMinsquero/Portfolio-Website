@@ -1,0 +1,53 @@
+<h2 class="header">Home</h2>
+        <section class="flex home">
+        
+        <!--Left side of Home-->
+        <div class="container">
+            <!--picture of me-->
+            <img class="roundedCircle" width="100px" src="/img/Me.png" alt="picture of me">
+            <!--external icon links-->
+            <ul class="list flex">
+                <li>
+                    <a href="https://www.linkedin.com/in/tryston-minsquero/" target="_blank">
+                        <img width="32px" height="32px" src="/img/icons/linkedin.svg" alt="LinkedIn" >
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/TrystonMinsquero" target="_blank">
+                        <img width="32px" height="32px" src="/img/icons/github.svg" alt="Github" >
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tryston.itch.io/" target="_blank">
+                        <img width="32px" height="32px" src="/img/icons/itch-io.svg" alt="Itch.io" >
+                    </a>
+                </li>         
+            </ul>
+        </div>
+        
+        <!--Right side of Home-->
+        <div class="container" id="About">
+            <h3 id="AboutHeader">About</h3>
+            <p id="AboutContent"> I'm currently a student studying Computer Science at UTD. I plan I graduating Fall of 2022 and I'm looking for internships for the summer. I have a passion for creating which you can see most of my projects from my Github (<a href="https://github.com/TrystonMinsquero">GitHub</a>), this ranges from automating tasks with web scraping in python to simulating different types of schedulers for operating systems in C++. I do have a focus on making games as that's been a lifelong dream, but I'm happy anywhere where I'm making an impact.</p>
+        </div>
+
+        </section>
+
+        <!--Recent Projects-->
+        <h3 class="flex home">Recent Projects</h3>
+        <section class="flex project-list">
+            <ul class="grid list flex">
+                {{#each recentProjects}}
+                <li>
+                    <a href={{this.permalink}}>
+                        {{#if this.image}}
+                        <img src={{this.image}} alt={{this.title}} >
+                        {{else}}
+                        {{this.title}}
+                        {{/if}}
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>

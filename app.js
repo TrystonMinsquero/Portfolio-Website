@@ -2,17 +2,41 @@
 const express = require('express');
 const path = require('path');
 const Portfolio = require('./portfolio');
-const { engine } = require('express-handlebars');
-const { Console } = require('console');
+const { create } = require('express-handlebars');
 
 // initalize app
 const app = express();
 const PORT = process.env.PORT || 5000;
+const hbs = create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        bar() { return foo; }
+    }
+});
 
 //express handlebars middleware
-app.engine('handlebars', engine());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
+
+hbs.helpers = {
+    hasWebGL : function (project) {
+        if(project)
+            return false;
+        if(project.builds.indexOf('WebGL') >= 0){
+            return true;
+        }else{
+            return false;
+        }
+    },
+    getWebGL(project) { 
+        if(project.builds.indexOf('WebGL'))
+            return "../Builds/" + project.title + "/WebGL";
+        return ;
+     },
+    bar : function () {return 'bar';}
+}
+//
 
 
 // console.log("Porfolio length: " + Portfolio.portfolio.length);
@@ -25,20 +49,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 // access public files for CSS, JS, Favicons, and Images
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
-app.use('/UnityBuilds', express.static(path.join(__dirname, 'public/UnityBuilds')));
+app.use('/Builds', express.static(path.join(__dirname, 'public/Builds')));
 app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTemplate')));
 
 app.use(express.urlencoded({ extended: false }));
 
 // routing
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home.html'));
+    res.render('home', {
+        recentProjects: [
+        Portfolio.portfolio[1],
+        Portfolio.portfolio[0],
+        Portfolio.portfolio[1],
+        ]
+    });
 });
 
 Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
         app.get("/" + element.permalink, (_, res) => res.render('project', {
-            project: element
+            project: element,
+            webGLPath: ((element.builds && element.builds.indexOf('WebGL') >= 0) ? "/Builds/" + element.title + "/WebGL/" : undefined),
+            windowsPath: (element.builds && element.builds.indexOf('Windows') >= 0) ? "/Builds/" + element.title + "/Windows/" : undefined,
         }));
     }
 });
