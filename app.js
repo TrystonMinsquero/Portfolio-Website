@@ -35,7 +35,9 @@ app.get('/', (req, res) => {
 
 Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
-        app.get("/" + element.permalink, (_, res) => res.render('project', {project : element}));
+        app.get("/" + element.permalink, (_, res) => res.render('project', {
+            project: element
+        }));
     }
 });
 
