@@ -1,0 +1,15 @@
+{
+  "layout" : "game",
+  "title" : "AstroloThree",
+  "permalink" : "astrolothree",
+  "builds" : ["WebGL"],
+  "team" : "Tryston Minsquero, Dylan Moss, Jonica Brooks, Silvano Gallegos",
+  "role" : "Programmer, Game Design, and Animations",
+  "summary" : "A game for SGDA spring game jam made in a week.",
+  "contributed" : "All character programming, highscores, and animations/glow.",
+  "challenges" : "Having the animations match with the attack range but also making the game fun, learning how to use the Unity 2d lights system and post processing like bloom on the main character, and getting the disc to feel good (using old physics C formulas from high-school).",
+  "learned" : "Learned how to use post processing, 2d lights, a better way to do animations, and how to work with a larger team effectively",
+  "image" : "/img/project_covers/Astrolothree.png",
+  "github" : "https://github.com/TrystonMinsquero/SDGA-Spring-Game-Jam-2021",
+  "itch" : "https://tryston.itch.io/astrolothree"
+}
