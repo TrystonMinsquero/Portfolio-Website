@@ -2,7 +2,7 @@
   "layout" : "game",
   "title" : "Wyles Loop",
   "permalink" : "wyles-loop",
-  "builds" : ["WebGL", "Windows"],
+  "builds" : ["EmbeddedWebGL", "Windows"],
   "team" : "Tryston Minsquero, Michael Bettes",
   "role" : "Gameplay Programmer, Game Designer, Artist",
   "summary" : "My first game using unity and first time ludum dare participant.",

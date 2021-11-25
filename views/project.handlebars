@@ -1,10 +1,10 @@
-{{#if webGLPath}}
+{{#if embeddedWebGLPath}}
 <link rel="shortcut icon" href="UnityTemplate/favicon.ico">
 <link rel="stylesheet" href="UnityTemplate/style.css">
 <script src="UnityTemplate/UnityProgress.js"></script>
-<script src="{{webGLPath}}UnityLoader.js"></script>
+<script src="{{embeddedWebGLPath}}UnityLoader.js"></script>
 <!--for contactention-->
-<div id=buildPath>{{webGLPath}}WebGL.json</div>
+<div id=buildPath>{{embeddedWebGLPath}}WebGL.json</div>
 <script>
     var unityInstance;
     var fullscreenBtn = document.getElementById("fullscreen");
@@ -64,7 +64,7 @@
     </section>
 
     <!--Game-->
-    {{#if webGLPath}}
+    {{#if embeddedWebGLPath}}
     <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
     <section id="webgl" class="flex container">
         <div class="webgl-content">

@@ -49,11 +49,19 @@ app.get('/', (req, res) => {
 
 Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
+        if(element.builds) console.log(`${element.title} has embeddedwebgl: ` + element.builds.includes('EmbeddedWebGL'));
         app.get("/" + element.permalink, (_, res) => res.render('project', {
             project: element,
-            hasDownloads: (element.builds && (element.builds.indexOf('WebGL') >= 0 && element.builds.length > 1) || element.builds.indexOf('WebGL') < 0),
-            webGLPath: ((element.builds && element.builds.indexOf('WebGL') >= 0) ? "/Builds/" + element.title + "/WebGL/" : undefined),
-            windowsPath: (element.builds && element.builds.indexOf('Windows') >= 0) ? "/Builds/" + element.title + "/Windows/" : undefined,
+            hasDownloads: 
+                (element.builds 
+                && 
+                (  (element.builds.includes('WebGL') && element.builds.includes('EmbeddedWebGL') && element.builds.length > 2) 
+                || (element.builds.includes('WebGL') && element.builds.length > 1)
+                || (element.builds.includes('EmbeddedWebGL') && element.builds.length > 1)
+                )),
+            embeddedWebGLPath: ((element.builds && element.builds.includes('EmbeddedWebGL')) ? "/Builds/" + element.title + "/EmbeddedWebGL/" : undefined),
+            webGLPath: ((element.builds && element.builds.includes('WebGL')) ? "/Builds/" + element.title + "/WebGL/" : undefined),
+            windowsPath: (element.builds && element.builds.includes('Windows')) ? "/Builds/" + element.title + "/Windows/" : undefined,
         }));
     }
 });
