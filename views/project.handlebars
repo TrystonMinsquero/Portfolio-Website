@@ -6,11 +6,13 @@
 <!--for contactention-->
 <div id=buildPath>{{webGLPath}}WebGL.json</div>
 <script>
+    var unityInstance;
+    var fullscreenBtn = document.getElementById("fullscreen");
     //get and remove helper div
     const buildPath = document.getElementById('buildPath').textContent;
     document.getElementById('buildPath').remove()
     function startGame() {
-        var unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
+        unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
         var webgl = document.getElementById('webgl');
         document.getElementById('PlayButton').remove()
     }
@@ -69,10 +71,25 @@
             <div id="unityContainer" style="width: 960px; height: 600px"></div>
             <div class="footer">
                 <div class="webgl-logo"></div>
-                <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                <div id="fullscreen" style="" class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
                 <div class="title">{{project.title}}</div>
             </div>
         </div>
+    </section>
+    {{/if}}
+    <!--Downloads-->
+    {{#if hasDownloads}}
+    <section class="container">
+        <h3 class="flex header">Downloads</h3>
+        <ul class="list flex">
+            {{#if windowsPath}}
+            <li>
+                <a href="{{windowsPath}}{{project.title}}.zip" download>
+                    <img width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
+                </a>
+            </li>
+            {{/if}}   
+        </ul>
     </section>
     {{/if}}
     

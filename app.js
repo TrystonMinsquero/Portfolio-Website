@@ -51,6 +51,7 @@ Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
         app.get("/" + element.permalink, (_, res) => res.render('project', {
             project: element,
+            hasDownloads: (element.builds && (element.builds.indexOf('WebGL') >= 0 && element.builds.length > 1) || element.builds.indexOf('WebGL') < 0),
             webGLPath: ((element.builds && element.builds.indexOf('WebGL') >= 0) ? "/Builds/" + element.title + "/WebGL/" : undefined),
             windowsPath: (element.builds && element.builds.indexOf('Windows') >= 0) ? "/Builds/" + element.title + "/Windows/" : undefined,
         }));
