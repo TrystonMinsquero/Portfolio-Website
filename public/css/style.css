@@ -54,6 +54,17 @@ img {
     transition: all 0.2s ease-in;
 }
 
+.desc {
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+}
+
+.shade:hover .desc {
+    visibility: visible;
+    opacity: 1;
+}
+
 .flex{
     display:flex;
     justify-content: center;

@@ -39,13 +39,16 @@
             <ul class="grid list flex">
                 {{#each recentProjects}}
                 <li>
-                    <a href={{this.permalink}}>
-                        {{#if this.image}}
-                        <img src={{this.image}} alt={{this.title}} >
-                        {{else}}
-                        {{this.title}}
-                        {{/if}}
-                    </a>
+                    <div class="shade">
+                        <p class="desc">{{this.title}}</p>
+                        <a href={{this.permalink}}>
+                            {{#if this.image}}
+                            <img src={{this.image}} alt={{this.title}} >
+                            {{else}}
+                            {{this.title}}
+                            {{/if}}
+                        </a>
+                    </div>
                 </li>
                 {{/each}}
             </ul>
