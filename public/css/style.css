@@ -45,7 +45,7 @@ a:hover {
     font-weight: bold;
 }
 
-a img:hover {
+a img.out:hover {
     filter: invert(1);
 }
 
