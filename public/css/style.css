@@ -6,22 +6,25 @@
     --secondary-dull: #4271B8;
     --highlight: #4271B8;
     --highlight-dull: #A39B1A;
+    --tone1: #43cea2;
+    --tone2: #06beb6;
+    --tone3: #185a9d;
 }
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     font-family: 'Lora', serif;
     color:black;
     line-height: 1.6;
 }
 
 h1, h2 {
-    background-color: var(--secondary);
+    background-color: transparent;
     font-weight: 300;
     line-height: 1.2;
     padding: 10px 0;
@@ -29,7 +32,7 @@ h1, h2 {
     justify-content: center;
 }
 
-h2{
+h2 {
     padding: 0 0;
     font-weight: 200;
 }
@@ -65,41 +68,60 @@ img {
     opacity: 1;
 }
 
-.flex{
+.flex {
     display:flex;
     justify-content: center;
     align-items: center;
     height:100%
 }
 
-.container{
+.container {
     overflow: auto;
     margin: 0 auto;
     justify-content: center;
 }
 
 .navbar{
-    background-color: var(--primary);
+    background: linear-gradient(to bottom right, #000428, #004e92) no-repeat 0 0 / cover;
     color: white;
     height: 50px;
+    width: 100%;
+    transition: all 0.2s ease-in;
 }
 
-.navbar a{
+.stick {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 
+.navbar a {
+    color: white;
     padding: 10px;
     margin: 0 5px;
 }
 
-.roundedCircle{
-    border-radius: 50%;
+.navbar li:hover {
+    background: linear-gradient(to left, #eb3349, #f45c43) no-repeat 0 0 / cover;
 }
 
-.list{
+.roundedCircle {
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+    width: 90%;
+    height: 100%;
+}
+
+.roundedCircle:hover {
+    transform: scale(0.95);
+}
+
+.list {
     display: flex;
     list-style-type: none;
 }
 
-.list-vert{
+.list-vert {
     display: flex;
     list-style-type: none;
     flex-flow: column;
@@ -107,25 +129,47 @@ img {
     justify-content: center;
 }
 
-.list li{
+.list li {
     padding: 5px 5px;
 }
 
-.home{
-    background: linear-gradient(to top, #43cea2, #185a9d) no-repeat 0 0 / cover;
+.home {
+    background: linear-gradient(to bottom right, var(--tone1), var(--tone2), var(--tone3)) no-repeat;
     align-items: stretch;
     align-content: center;
 }
 
-.home div{
+.home div {
     width:50%;
     padding: 20px 100px;
     padding-bottom: 0;
-    background: linear-gradient(#43cea2, #185a9d) no-repeat;
-    background-color: var(--primary);
+    background: transparent;
     display: flex;
     flex-flow: column;
     align-items: center;
     align-content: center;
 }
 
+
+.underline {
+    display: inline-block;
+    position: relative;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
