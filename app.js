@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const Portfolio = require('./portfolio');
 const { create } = require('express-handlebars');
+const { Interface } = require('readline');
 
 // initalize app
 const app = express();
@@ -37,13 +38,20 @@ app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTempl
 
 app.use(express.urlencoded({ extended: false }));
 
+var topThreeProjects = [];
+Portfolio.portfolio.forEach(element => {
+    if(element.title === "Hole Flounder" || element.title === "Wyles Loop" || element.title === "Astrolothree") {
+        topThreeProjects.push(element);
+    }
+});
+
 // routing
 app.get('/', (req, res) => {
     res.render('home', {
         recentProjects: [
-        Portfolio.portfolio[1],
-        Portfolio.portfolio[0],
-        Portfolio.portfolio[1],
+        topThreeProjects[0],
+        topThreeProjects[1],
+        topThreeProjects[2],
         ]
     });
 });
