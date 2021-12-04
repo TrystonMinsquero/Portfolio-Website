@@ -41,11 +41,13 @@ function getProject(projectFiles, projectPath) {
                 newProject.builds = {};
                 const buildsAvailable = fs.readdirSync(path.join(projectPath, file));
                 buildsAvailable.forEach(build => newProject.builds[build] = path.join(projectPath, file, build));
+                newProject.buildsPath = path.join(projectPath, file);
             break;
             case "img": 
                 newProject.images = {};
                 const imagesAvailable = fs.readdirSync(path.join(projectPath, file));
                 imagesAvailable.forEach(image => newProject.images[image] = path.join(projectPath, file, image));
+                newProject.imagesPath = path.join(projectPath, file);
             break;
         }
     })

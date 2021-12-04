@@ -2,15 +2,12 @@
 <link rel="shortcut icon" href="UnityTemplate/favicon.ico">
 <link rel="stylesheet" href="UnityTemplate/style.css">
 <script src="UnityTemplate/UnityProgress.js"></script>
-<script src="{{project.builds.[EmbeddedWebGL]}}UnityLoader.js"></script>
-<!--for contactention-->
-<div id=buildPath>{{project.builds.[EmbeddedWebGL]}}WebGL.json</div>
+<script src="/{{project.permalink}}/builds/EmbeddedWebGL/UnityLoader.js"></script>
 <script>
     var unityInstance;
     var fullscreenBtn = document.getElementById("fullscreen");
     //get and remove helper div
-    const buildPath = document.getElementById('buildPath').textContent;
-    document.getElementById('buildPath').remove()
+    const buildPath = "/{{project.permalink}}/builds/EmbeddedWebGL/WebGL.json";
     function startGame() {
         unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
         var webgl = document.getElementById('webgl');
@@ -86,7 +83,7 @@
         <ul class="list flex">
             {{#if project.builds.[Windows]}}
             <li>
-                <a href="{{project.builds.[Windows]}}{{project.title}}.zip" download>
+                <a href="/{{project.permalink}}/builds/Windows/{{project.title}}.zip" download>
                     <img width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
                 </a>
             </li>

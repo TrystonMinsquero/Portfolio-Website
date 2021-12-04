@@ -36,6 +36,7 @@ app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/Builds', express.static(path.join(__dirname, 'public/Builds')));
 app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTemplate')));
 
+
 app.use(express.urlencoded({ extended: false }));
 
 var topThreeProjects = [];
@@ -62,7 +63,20 @@ Portfolio.portfolio.forEach(element => {
         app.get("/" + element.permalink, (_, res) => res.render('project', {
             project: element
         }));
+        
+        if(element.builds){
+            app.use('/' + element.permalink + '/' + "builds", express.static(element.buildsPath));
+            if(element.builds['WebGL']){
+                // app.use('/TemplateData', express.static(path.join(element.builds['WebGL'], 'TemplateData')));
+                // app.use('/Build', express.static(path.join(element.builds['WebGL'], 'Build')));
+                app.get("/" + element.permalink + '/WebGL', (_, res) => res.sendFile(path.join(element.builds['WebGL'],'index.html')));
+            }
+        }
+        if(element.images)
+            app.use('/' + element.permalink + '/' + "img", express.static(element.imagesPath));
+        
     }
+    
 });
 
 app.get('/portfolio', (_, res) => 
