@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const Portfolio = require('./portfolio');
 const { create } = require('express-handlebars');
-const { Interface } = require('readline');
 
 // initalize app
 const app = express();
@@ -25,6 +24,7 @@ app.set("views", "./views");
 // console.log("Porfolio length: " + Portfolio.portfolio.length);
 // console.log("Games length: " + Portfolio.games.length);
 // console.log("Projects length: " + Portfolio.projects.length);
+
 
 // set public folder as static
 app.use(express.static(path.join(__dirname, 'public')));
@@ -58,19 +58,9 @@ app.get('/', (req, res) => {
 
 Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
-        if(element.builds) console.log(`${element.title} has embeddedwebgl: ` + element.builds.includes('EmbeddedWebGL'));
+        //if(element.builds) console.log(`${element.title} has embeddedwebgl: ` + element.builds.includes('EmbeddedWebGL'));
         app.get("/" + element.permalink, (_, res) => res.render('project', {
-            project: element,
-            hasDownloads: 
-                (element.builds 
-                && 
-                (  (element.builds.includes('WebGL') && element.builds.includes('EmbeddedWebGL') && element.builds.length > 2) 
-                || (element.builds.includes('WebGL') && element.builds.length > 1)
-                || (element.builds.includes('EmbeddedWebGL') && element.builds.length > 1)
-                )),
-            embeddedWebGLPath: ((element.builds && element.builds.includes('EmbeddedWebGL')) ? "/Builds/" + element.title + "/EmbeddedWebGL/" : undefined),
-            webGLPath: ((element.builds && element.builds.includes('WebGL')) ? "/Builds/" + element.title + "/WebGL/" : undefined),
-            windowsPath: (element.builds && element.builds.includes('Windows')) ? "/Builds/" + element.title + "/Windows/" : undefined,
+            project: element
         }));
     }
 });

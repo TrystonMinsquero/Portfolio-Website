@@ -1,10 +1,10 @@
-{{#if embeddedWebGLPath}}
+{{#if project.builds.[EmbeddedWebGL]}}
 <link rel="shortcut icon" href="UnityTemplate/favicon.ico">
 <link rel="stylesheet" href="UnityTemplate/style.css">
 <script src="UnityTemplate/UnityProgress.js"></script>
-<script src="{{embeddedWebGLPath}}UnityLoader.js"></script>
+<script src="{{project.builds.[EmbeddedWebGL]}}UnityLoader.js"></script>
 <!--for contactention-->
-<div id=buildPath>{{embeddedWebGLPath}}WebGL.json</div>
+<div id=buildPath>{{project.builds.[EmbeddedWebGL]}}WebGL.json</div>
 <script>
     var unityInstance;
     var fullscreenBtn = document.getElementById("fullscreen");
@@ -21,7 +21,7 @@
 
 
 <div class="container">
-    <h2 class="header">{{project.title}}</h2>
+    {{!-- <h2 class="header">{{project.title}}</h2>
     <section>
         <ul class="list-vert flex container">
             {{#if project.team}}
@@ -61,10 +61,12 @@
             </li>
             {{/if}}
         </ul>
-    </section>
+    </section> --}}
+
+    <div class="flex-vert">{{{project.body}}}</div>
 
     <!--Game-->
-    {{#if embeddedWebGLPath}}
+    {{#if project.builds.[EmbeddedWebGL]}}
     <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
     <section id="webgl" class="flex container">
         <div class="webgl-content">
@@ -78,13 +80,13 @@
     </section>
     {{/if}}
     <!--Downloads-->
-    {{#if hasDownloads}}
+    {{#if project.hasDownloads}}
     <section class="container">
         <h3 class="flex header">Downloads</h3>
         <ul class="list flex">
-            {{#if windowsPath}}
+            {{#if project.builds.[Windows]}}
             <li>
-                <a href="{{windowsPath}}{{project.title}}.zip" download>
+                <a href="{{project.builds.[Windows]}}{{project.title}}.zip" download>
                     <img width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
                 </a>
             </li>

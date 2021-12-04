@@ -75,6 +75,16 @@ img {
     height:100%
 }
 
+.flex-vert {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height:100%;
+}
+
+
+
 .container {
     overflow: auto;
     margin: 0 auto;

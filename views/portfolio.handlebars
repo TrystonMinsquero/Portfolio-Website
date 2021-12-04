@@ -40,8 +40,8 @@
                 {{#each games}}
                 <li>
                     <a href={{this.permalink}}>
-                        {{#if this.image}}
-                        <img src={{this.image}} alt={{this.title}} >
+                        {{#if this.images.[Cover.png]}}
+                        <img src={{this.images.[Cover.png]}} alt={{this.title}} >
                         {{else}}
                         {{this.title}}
                         {{/if}}
@@ -59,7 +59,11 @@
                 {{#each projects}}
                 <li>
                     <a href={{this.permalink}}>
-                        <img src={{this.image}} alt={{this.title}} >
+                        {{#if this.images.[Cover.png]}}
+                        <img src={{this.images.[Cover.png]}} alt={{this.title}} >
+                        {{else}}
+                        {{this.title}}
+                        {{/if}}
                     </a>
                 </li>
                 {{/each}}

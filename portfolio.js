@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+const showdown  = require('showdown')
+const converter = new showdown.Converter();
 
 //variables to use
 let portfolio = [];
@@ -8,16 +10,56 @@ let projects = [];
 
 const dirPath = path.join(__dirname, "Portfolio");
 
-var files = fs.readdirSync(dirPath)
+var projectTypeFolders = fs.readdirSync(dirPath);
 
-files.forEach(file => {
-    const newProject = JSON.parse(fs.readFileSync(path.join(dirPath, file)));
-    portfolio.push(newProject);
-    if(newProject.layout === 'game')
-        games.push(newProject);
-    else
-        projects.push(newProject);
+projectTypeFolders.forEach(projectTypeFolder => {
+    fs.readdirSync(path.join(dirPath, projectTypeFolder)).forEach(projectFolder => {
+        const projectFiles = fs.readdirSync(path.join(dirPath, projectTypeFolder, projectFolder))
+        const newProject = getProject(projectFiles, path.join(dirPath, projectTypeFolder, projectFolder));
+        portfolio.push(newProject);
+        switch(projectTypeFolder.toUpperCase()){
+            case "GAMES": games.push(newProject); break;
+            case "PROJECTS": projects.push(newProject); break;
+            default: console.log("projectTypeFolder Not Found"); break;
+        }
+    })
 });
+
+function getProject(projectFiles, projectPath) {
+    //Parse through each file in project folder
+    var newProject = {path: projectPath};
+    projectFiles.forEach(file => {
+        const extension = file.split(".").pop(); //if file is a directory, will be name of directory
+        switch(extension) {
+            case "json": 
+                data = JSON.parse(fs.readFileSync(path.join(projectPath, file)));
+                Object.keys(data).forEach(key => newProject[key] = data[key]);
+            break;
+            case "md": newProject.body = converter.makeHtml(fs.readFileSync(path.join(projectPath, file)).toString());
+            break;
+            case "builds": 
+                newProject.builds = {};
+                const buildsAvailable = fs.readdirSync(path.join(projectPath, file));
+                buildsAvailable.forEach(build => newProject.builds[build] = path.join(projectPath, file, build));
+            break;
+            case "img": 
+                newProject.images = {};
+                const imagesAvailable = fs.readdirSync(path.join(projectPath, file));
+                imagesAvailable.forEach(image => newProject.images[image] = path.join(projectPath, file, image));
+            break;
+        }
+    })
+    newProject.hasDownloads = false;
+    Object.keys(newProject.builds).forEach(build => {
+        if(build.toLocaleLowerCase() === "windows" || build.toLocaleLowerCase() === "mac" || build.toLocaleLowerCase() === "linux"){
+            newProject.hasDownloads = true;
+        }
+    });
+    
+    return newProject;
+}
+
+
 
 //Attempt to do asynch
 /*
