@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
 
-:root{
+:root {
     --primary: #26426B;
     --secondary: #47556B;
     --secondary-dull: #4271B8;
@@ -55,17 +55,25 @@ a img.out:hover {
 img {
     width: 100%;
     transition: all 0.2s ease-in;
+    filter: drop-shadow(0 0 0.75rem var(--tone1));
 }
 
 .desc {
     visibility: hidden;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
     opacity: 0;
 }
 
 .shade:hover .desc {
     visibility: visible;
     opacity: 1;
+    transform: translateY(175px);
+}
+
+.shade:hover img {
+    opacity: 0.3;
 }
 
 .flex {
@@ -82,8 +90,6 @@ img {
     flex-flow: column;
     height:100%;
 }
-
-
 
 .container {
     overflow: auto;
@@ -159,7 +165,6 @@ img {
     align-items: center;
     align-content: center;
 }
-
 
 .underline {
     display: inline-block;
