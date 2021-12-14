@@ -1,7 +1,10 @@
 {
   "title" : "Wyles Loop",
   "permalink" : "wyles-loop",
-  "github" : "https://github.com/TrystonMinsquero/Wyles-Loop",
-  "itch" : "https://tryston.itch.io/wyles-loop-dev",
-  "ludumDare" : "https://ldjam.com/events/ludum-dare/47/wyles-loop"
+  "links" : {
+    "github" : "https://github.com/TrystonMinsquero/Wyles-Loop",
+    "itch" : "https://tryston.itch.io/wyles-loop-dev",
+    "ludumDare" : "https://ldjam.com/events/ludum-dare/47/wyles-loop"
+  }
+  
 }
