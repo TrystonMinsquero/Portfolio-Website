@@ -52,11 +52,13 @@ function getProject(projectFiles, projectPath) {
         }
     })
     newProject.hasDownloads = false;
-    Object.keys(newProject.builds).forEach(build => {
-        if(build.toLocaleLowerCase() === "windows" || build.toLocaleLowerCase() === "mac" || build.toLocaleLowerCase() === "linux"){
-            newProject.hasDownloads = true;
-        }
-    });
+    if(newProject.builds) {
+        Object.keys(newProject.builds).forEach(build => {
+            if(build.toLocaleLowerCase() === "windows" || build.toLocaleLowerCase() === "mac" || build.toLocaleLowerCase() === "linux"){
+                newProject.hasDownloads = true;
+            }
+        });
+    }
     
     return newProject;
 }
