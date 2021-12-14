@@ -30,24 +30,26 @@
     </div>
 </section>
         
-        <!--Recent Projects-->
-        <h3 class="flex">Recent Projects</h3>
-        <section class="flex project-list">
-            <ul class="grid list flex">
-                {{#each recentProjects}}
+<div class="projects container">
+    <!--Recent Projects-->
+    <h3>Recent Projects</h3>
+    <section class="flex project-list">
+        <ul class="grid list flex">
+            {{#each recentProjects}}
                 <li>
-                    <div class="shade">
-                        <p class="desc">{{this.title}}</p>
-                        <a href={{this.permalink}}>
-                            {{#if this.images.[Cover.png]}}
+                    <figure class="hover blue">
+                        {{#if this.images.[Cover.png]}}
                             <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
-                            {{else}}
-                            {{this.title}}
-                            {{/if}}
-                        </a>
-                    </div>
+                        {{else}}
+                            <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
+                        {{/if}}
+                        <figcaption>
+                            <h2>{{this.title}}</h2>
+                        </figcaption>
+                        <a href="/{{this.permalink}}"></a>
+                    </figure>
                 </li>
-                {{/each}}
-            </ul>
-</section>
+            {{/each}}
+        </ul>
+    </section>
 </div>

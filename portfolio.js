@@ -32,7 +32,7 @@ function getProject(projectFiles, projectPath) {
         const extension = file.split(".").pop(); //if file is a directory, will be name of directory
         switch(extension) {
             case "json": 
-                data = JSON.parse(fs.readFileSync(path.join(projectPath, file)));
+                let data = JSON.parse(fs.readFileSync(path.join(projectPath, file)));
                 Object.keys(data).forEach(key => newProject[key] = data[key]);
             break;
             case "md": newProject.body = converter.makeHtml(fs.readFileSync(path.join(projectPath, file)).toString());

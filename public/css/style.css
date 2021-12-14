@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
 
 :root {
     --primary: #26426B;
@@ -55,7 +56,6 @@ a img.out:hover {
 img {
     width: 100%;
     transition: all 0.2s ease-in;
-    filter: drop-shadow(0 0 0.75rem var(--tone1));
 }
 
 .desc {
@@ -187,4 +187,150 @@ img {
 .underline:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+/* Hover Effects */
+figure.hover {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 35px;
+    min-width: 220px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+figure.hover * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;                         /* Needed for backwards compatibility */ 
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;               /* Needed for backwards compatibility */ 
+}
+
+figure.hover img {
+    max-width: 100%;
+    position: relative;
+    opacity: 0.4;
+}
+
+figure.hover figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+figure.hover h2 {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    display: inline-block;
+    background: black;
+    -webkit-transform: skew(-10deg) rotate(-20deg) translate(0, -50%);
+    transform: skew(-10deg) rotate(-20deg) translate(0, -50%);      /* Needed for backwards compatibility */ 
+    padding: 12px 5px;
+    margin: 0;
+    top: 50%;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+figure.hover::before {
+    height: 100%;
+    width: 120%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: white;
+    transform: translateX(-7.5%);
+    position: absolute;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;               /* Needed for backwards compatibility */
+    -webkit-transform: rotate(105deg) translateY(-40%);
+    transform: rotate(105deg) translateY(-40%);     /* Needed for backwards compatibility */
+}
+
+figure.hover a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.hover.blue {
+    background: #123851;
+}
+
+figure.hover.blue h2 {
+    background: #0a212f;
+}
+
+figure.hover.blue::before {
+    background: #1a83da;
+}
+
+figure.hover.red {
+    background: #581a14;
+}
+
+figure.hover.red h2 {
+    background: #36100c;
+}
+
+figure.hover.red::before {
+    background: #530404;
+}
+
+figure.hover.yellow {
+    background: #7f5006;
+}
+
+figure.hover.yellow h2{
+    background: #583804;
+}
+
+figure.hover.yellow::before {
+    background: #d4dd50;
+}
+
+figure.hover:hover img {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);              /* Needed for backwards compatibility */
+}
+
+figure.hover:hover h2 {
+    -webkit-transform: skew(-10deg) rotate(-20deg) translate(-150%, -50%);
+    transform: skew(-10deg) rotate(-20deg) translate(-150%, -50%);  /* Needed for backwards compatibility */
+}
+
+figure.hover:hover::before {
+    -webkit-transform: rotate(105deg) translateY(-140%);
+    transform: rotate(105deg) translateY(-140%);    /* Needed for backwards compatibility */
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, #212121, #414141) no-repeat;
+}
+
+.projects h3 {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--tone1);
+    margin-top: 5px;
+    text-shadow: 0 0 5px var(--tone3);
 }
