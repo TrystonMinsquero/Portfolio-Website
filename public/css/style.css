@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
 
 :root {
     --primary: #26426B;
@@ -187,4 +188,26 @@ img {
 .underline:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+figure.hover {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 310px;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.hover * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;                         /* Needed for backwards compatibility */ 
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;               /* Needed for backwards compatibility */ 
 }
