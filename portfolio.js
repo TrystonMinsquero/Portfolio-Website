@@ -25,6 +25,11 @@ projectTypeFolders.forEach(projectTypeFolder => {
     })
 });
 
+//doubles project list
+portfolio.forEach(project => portfolio.push(project));
+games.forEach(project => games.push(project));
+projects.forEach(project => projects.push(project));
+
 function getProject(projectFiles, projectPath) {
     //Parse through each file in project folder
     var newProject = {path: projectPath};
