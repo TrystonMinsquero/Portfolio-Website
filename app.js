@@ -4,6 +4,8 @@ const path = require('path');
 const Portfolio = require('./portfolio');
 const { create } = require('express-handlebars');
 
+
+
 // initalize app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,12 +21,9 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
 
-
-
 // console.log("Porfolio length: " + Portfolio.portfolio.length);
 // console.log("Games length: " + Portfolio.games.length);
 // console.log("Projects length: " + Portfolio.projects.length);
-
 
 // set public folder as static
 app.use(express.static(path.join(__dirname, 'public')));
@@ -87,6 +86,7 @@ app.get('/portfolio', (_, res) =>
     }
     ));
 app.get('/resume', (_, res) => res.sendFile(path.join(__dirname, 'resume.html')));
+app.get('/contact', (_, res) => res.sendFile(path.join(__dirname, 'contact.html')));
 
 
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
