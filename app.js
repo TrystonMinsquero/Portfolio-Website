@@ -86,6 +86,9 @@ app.get('/portfolio', (_, res) =>
         projects: Portfolio.projects
     }
     ));
+app.get('/resume', (_, res) => res.sendFile(path.join(__dirname, 'resume.html')));
+
+
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
 app.get('/home', (_, res) => res.redirect('/'));
 
