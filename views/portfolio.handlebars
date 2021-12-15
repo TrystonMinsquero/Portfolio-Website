@@ -39,13 +39,17 @@
             <ul class="grid list flex">
                 {{#each games}}
                 <li>
-                    <a href={{this.permalink}}>
+                    <figure class="hover">
                         {{#if this.images.[Cover.png]}}
-                        <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" >
+                            <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
                         {{else}}
-                        {{this.title}}
+                            <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
                         {{/if}}
-                    </a>
+                        <figcaption>
+                            <h2>{{this.title}}</h2>
+                        </figcaption>
+                        <a href="/{{this.permalink}}"></a>
+                    </figure>
                 </li>
                 {{/each}}
             </ul>
@@ -58,13 +62,17 @@
             <ul class="grid list flex">
                 {{#each projects}}
                 <li>
-                    <a href={{this.permalink}}>
+                    <figure class="hover">
                         {{#if this.images.[Cover.png]}}
-                        <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" >
+                            <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
                         {{else}}
-                        {{this.title}}
+                            <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
                         {{/if}}
-                    </a>
+                        <figcaption>
+                            <h2>{{this.title}}</h2>
+                        </figcaption>
+                        <a href="/{{this.permalink}}"></a>
+                    </figure>
                 </li>
                 {{/each}}
             </ul>

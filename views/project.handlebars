@@ -62,10 +62,11 @@
 
     <div class="flex-vert">{{{project.body}}}</div>
 
-    <!--Try It Out-->
+    <!--Usable Content-->
 
-    <!--Display EmbeddedWebGL (if it has one)-->
-    {{#if project.builds.[EmbeddedWebGL]}}
+    <!--Display EmbeddedWebGL (currently disabled)-->
+    <div class="flex container">
+    {{#if implementLater}} <!--replace with project.builds.[EmbeddedWebGL] to enable-->
     <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
     <section id="webgl" class="flex container">
         <div class="webgl-content">
@@ -80,10 +81,14 @@
     {{else}}
     <!--Try it Out-->
         {{#if project.builds.[WebGL]}}
-            <a class="flex" href="/{{project.permalink}}/builds/WebGL/index.html" target="_blank">Try It Out!</a>
+            <p><a class="underline" href="/{{project.permalink}}/builds/WebGL" target="_blank">Try It Out!</a></p>
+        {{else}}
+            {{#if project.links.[build]}}
+                <p><a class="underline" href={{project.links.[build]}} target="_blank">Try It Out!</a></p>
+            {{/if}}
         {{/if}}
     {{/if}}
-
+    </div>
 
     <!--Downloads-->
     {{#if project.hasDownloads}}
@@ -127,9 +132,9 @@
                 </a>
             </li>  
             {{/if}}
-            {{#if project.links.[devPost]}}
+            {{#if project.links.[devpost]}}
             <li>
-                <a href={{project.links.[devPost]}} target="_blank">
+                <a href={{project.links.[devpost]}} target="_blank">
                     <img width="32px" height="32px" src="/img/icons/devpost.png" alt="Devpost" >
                 </a>
             </li>  

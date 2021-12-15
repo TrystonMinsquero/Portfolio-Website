@@ -4,6 +4,7 @@
     "links" : {
       "github" : "https://github.com/TrystonMinsquero/",
       "itch" : "https://tryston.itch.io/",
-      "ludumDare" : "https://ldjam.com/events/ludum-dare/tryston"
+      "ludumDare" : "https://ldjam.com/events/ludum-dare/tryston",
+      "build" : "link to site if no download builds"
     }
   }
