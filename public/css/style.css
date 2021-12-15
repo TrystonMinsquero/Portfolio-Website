@@ -334,3 +334,11 @@ figure.hover:hover::before {
     margin-top: 5px;
     text-shadow: 0 0 5px var(--tone3);
 }
+
+.active {
+    background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
+}
+
+.active a {
+    font-weight: bold;
+}
