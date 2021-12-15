@@ -1,40 +1,7 @@
  <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
     </script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init("user_EmFO3M1Ku7DNPpEATz0kU");
-    })();
-    </script>
-    <script type="text/javascript">
-        console.log("running...");
-        emailjs.init("user_EmFO3M1Ku7DNPpEATz0kU");
-        document.querySelector()
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
-        console.log(nameInput);
-        console.log(emailInput);
-        console.log(messageInput);
-
-        function sendMail() {
-            console.log("something")
-            console.log("Sending")
-            const params = {
-                name: nameInput.textContent,
-                email: emailInput.textContent,
-                message: messageInput.textContent
-            }
-            console.log(params.name);
-
-            // emailjs.send('portfolio-website', 'portfolio-website', params)
-            // .then(function(response) {
-            // console.log('SUCCESS!', response.status, response.text);
-            // }, function(error) {
-            // console.log('FAILED...', error);
-            // });
-        }
-    </script>
+<script type="text/javascript" src="js/mail.js"></script>
  
  <!-- Contact Section -->
   <section>
@@ -46,29 +13,30 @@
       <div>
         <div>
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" onsubmit="return false" id="contactForm" novalidate="novalidate">
-            <div >
+          <form class="flex-vert container" name="sentMessage" onsubmit="return false" id="contactForm" novalidate="novalidate">
+            <div class="flex-vert container">
                 <label>Name</label>
                 <input id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
             </div>
-            <div class="control-group">
+            <div class="flex-vert container">
                 <label>Email Address</label>
                 <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
             </div>
-            <!-- <div class="control-group">
+            <!-- <div class="flex-vert container">
               <div class="">
                 <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
             </div> -->
-            <div class="control-group">
+            <div class="flex-vert container">
                 <label>Message</label>
                 <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
             </div>
             <br>
-            <div id="success"></div>
+            <div class="flex-vert container" id="success"></div>
             <div class="form-group">
-              <button type="submit" value="submit" onclick="sendMail()">Submit</button>
+              <button id="submit" type="submit" value="submit" onclick="sendMail()">Submit</button>
             </div>
           </form>
+          
         </div>
       </div>
 

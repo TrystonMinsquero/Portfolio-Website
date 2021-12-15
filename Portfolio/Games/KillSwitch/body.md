@@ -4,7 +4,7 @@
 Myself, others.
 
 ### Role
-Programmer & Game Designer
+Programmer, Game Designer, and Project Manager
 
 ## Summary
 summary
