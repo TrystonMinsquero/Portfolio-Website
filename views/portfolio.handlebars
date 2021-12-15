@@ -21,7 +21,6 @@
 </script>
 <div class="container">
 
-    <h2 class="header">Portfolio</h2>
     <form onchange="switchVisible()" class="flex home">
           <input type="radio" id="game-btn" name="project_type" value="GAME" checked="checked">
           <label for="game">Games</label><br>
@@ -34,7 +33,7 @@
     </div>
 
     <div id="Games">
-        <h3 class="flex home">Games</h3>
+        <h3 class="flex">Games</h3>
         <section class="flex project-list">
             <ul class="grid list flex">
                 {{#each games}}
@@ -57,7 +56,7 @@
     </div>
 
     <div id="Projects" style="display: none">
-        <h3 class="flex home">Projects</h3>
+        <h3 class="flex">Projects</h3>
         <section class="flex project-list">
             <ul class="grid list flex">
                 {{#each projects}}
