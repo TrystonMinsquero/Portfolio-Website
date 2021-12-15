@@ -15,35 +15,32 @@
     })();
     </script>
     <script type="text/javascript">
+        console.log("running...");
         emailjs.init("user_EmFO3M1Ku7DNPpEATz0kU");
+        document.querySelector()
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+        console.log(nameInput);
+        console.log(emailInput);
+        console.log(messageInput);
 
-        const nameInput = document.querySelector("#name");
-        const emailInput = document.querySelector("#email");
-        const messageInput = document.querySelector("#message");
-
-        function sendMail(form) {
+        function sendMail() {
             console.log("something")
-            console.log(form)
             console.log("Sending")
-            // const params = {
-            //     'name': nameInput.textContent,
-            //     'email': emailInput.textContent,
-            //     'message': messageInput.textContent
-            // }
             const params = {
-                'name': "John Doe",
-                'email': "Test@gmail.com",
-                'message': "This is a test"
+                name: nameInput.textContent,
+                email: emailInput.textContent,
+                message: messageInput.textContent
             }
-
             console.log(params.name);
 
-            emailjs.send('portfolio-website', 'portfolio-website', templateParams)
-            .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-            console.log('FAILED...', error);
-            });
+            // emailjs.send('portfolio-website', 'portfolio-website', params)
+            // .then(function(response) {
+            // console.log('SUCCESS!', response.status, response.text);
+            // }, function(error) {
+            // console.log('FAILED...', error);
+            // });
         }
     </script>
 </head>
@@ -68,13 +65,13 @@
     <div class="container">
 
       <!-- Contact Section Heading -->
-      <h2 class="">Contact Me</h2>
+      <h2>Contact Me</h2>
       <!-- Contact Section Form -->
-      <div class="">
-        <div class="">
+      <div>
+        <div>
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" onsubmit="sendMail(this)" id="contactForm" novalidate="novalidate">
-            <div class="control-group">
+          <form name="sentMessage" onsubmit="return false" id="contactForm" novalidate="novalidate">
+            <div >
                 <label>Name</label>
                 <input id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
             </div>
@@ -82,10 +79,10 @@
                 <label>Email Address</label>
                 <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
             </div>
-            <div class="control-group">
+            <!-- <div class="control-group">
               <div class="">
                 <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
-            </div>
+            </div> -->
             <div class="control-group">
                 <label>Message</label>
                 <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
@@ -93,7 +90,7 @@
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" value="submit">Submit</button>
+              <button type="submit" value="submit" onclick="sendMail()">Submit</button>
             </div>
           </form>
         </div>
