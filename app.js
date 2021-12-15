@@ -85,8 +85,8 @@ app.get('/portfolio', (_, res) =>
         projects: Portfolio.projects
     }
     ));
-app.get('/resume', (_, res) => res.sendFile(path.join(__dirname, 'resume.html')));
-app.get('/contact', (_, res) => res.sendFile(path.join(__dirname, 'contact.html')));
+app.get('/resume', (_, res) => res.render('resume'));
+app.get('/contact', (_, res) => res.render('contact'));
 
 
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
@@ -95,7 +95,7 @@ app.get('/home', (_, res) => res.redirect('/'));
 
 //404 middleware
 app.use(function (req, res, next) {
-    res.status(404).sendFile(path.join(__dirname, '404.html'));
+    res.status(404).render('404');
   })
 
 app.listen(PORT, () => {
