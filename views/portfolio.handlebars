@@ -1,5 +1,4 @@
 <script>
-
     function switchVisible() {
         games = document.getElementById('Games');
         projects = document.getElementById('Projects');
@@ -18,11 +17,11 @@
         // document.getElementById('Games').style.visibility = document.getElementById('game-btn').checked ? 'visible' : 'hidden';
         // document.getElementById('Projects').style.visibility = document.getElementById('project-btn').checked ? 'visible' : 'hidden';
     }
-   
+    
 </script>
 <div class="container">
 
-    <form onchange="switchVisible()" class="flex home">
+    <form onchange="switchVisible()" class="flex">
           <input type="radio" id="game-btn" name="project_type" value="GAME" checked="checked">
           <label for="game">Games</label><br>
           <input type="radio" id="project-btn" name="project_type" value="PROJECT">
@@ -33,7 +32,7 @@
 
     </div>
 
-    <div id="Games">
+    <div id="Games" style="display: none">
         <h3 class="flex">Games</h3>
         <section class="flex project-list">
             <ul class="grid list flex">
@@ -79,3 +78,4 @@
         </section>
     </div>
 </div>
+<script>switchVisible()</script>
