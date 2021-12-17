@@ -150,7 +150,10 @@ img {
 }
 
 .home {
-    background: linear-gradient(to bottom right, var(--tone1), var(--tone2), var(--tone3)) no-repeat;
+    /* background: linear-gradient(to bottom right, var(--tone1), var(--tone2), var(--tone3)) no-repeat; */
+    /* background: linear-gradient(to bottom, #ff512f, #f09819) no-repeat 0 0 / cover; */
+    /* background: linear-gradient(to bottom, #2c3e50, #4ca1af) no-repeat 0 0 / cover; */
+    background: linear-gradient(to top right, #eba74e, #684103) no-repeat 0 0 / cover;
     align-items: stretch;
     align-content: center;
 }
@@ -425,8 +428,9 @@ ul.grid {
 }
 
 .edge {
-    height: 5px;
-    box-shadow: 0 0 20px black;
+    height: 7px;
+    background:  linear-gradient(to bottom, #000428, #004e92) no-repeat 0 0 / cover;
+    box-shadow: 0 0 200px black;
 }
 
 .gap {
