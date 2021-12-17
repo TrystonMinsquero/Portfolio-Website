@@ -389,3 +389,46 @@ h1.cursor::after {
         opacity: 0;
     }
 }
+
+/* Footer Settings */
+footer {
+    background: linear-gradient(to top, #414141, #787878) no-repeat 0 0 / cover;
+    color: black;
+}
+
+.grid {
+    display: grid;
+}
+
+footer.grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.footer_child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.reset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.edge {
+    height: 5px;
+    box-shadow: 0 0 20px black;
+}
+
+.gap {
+    padding: 0 5px;
+}
