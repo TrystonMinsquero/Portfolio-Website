@@ -51,7 +51,7 @@ const typeWriter = (id, arr) => {
 			isBackspacing = false;
 			i = 0;
 			a = (a + 1) % arr.length;
-			setTimeout(() => typeWriter(id, arr), 100);
+			setTimeout(() => typeWriter(id, arr), 1000);
 		}
 	}
 }
