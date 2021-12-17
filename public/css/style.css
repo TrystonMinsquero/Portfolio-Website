@@ -342,3 +342,50 @@ figure.hover:hover::before {
 .active a {
     font-weight: bold;
 }
+
+/* Header Settings */
+header {
+    background: linear-gradient(to left bottom, #313131, #555555) no-repeat 0 0 / cover;
+    font-family: Courier, monospace;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 15px white;
+    height: 60px;
+}
+
+.output {
+    text-align: center;
+}
+
+.output > h1 {
+    font-size: 40px;
+}
+
+/* Cursor Settings */
+h1.cursor::after {
+    content: '';
+    display: inline-block;
+    margin-left: 3px;
+    background-color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    height: 40px;
+    width: 11px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
