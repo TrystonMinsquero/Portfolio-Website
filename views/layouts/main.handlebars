@@ -10,76 +10,81 @@
 </head>
 <body>
     <!--Navbar-->
-    <div class="container">
-            
-        <header class="header output" id="output">
-            <h1 class="cursor"></h1>
-        </header>
-        <nav class="navbar">
-            <ul class="flex list">
-                <li><a class="underline" href="/">HOME</a></li>
-                <li><a class="underline" href="/portfolio">PORTFOLIO</a></li>
-                <li><a class="underline" href="/resume">CV</a></li>
-                <li><a class="underline" href="/contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!--Content-->
-    {{{body}}}
-
-    <!--Footer-->
-    <div class="edge"></div>
-    <footer class="grid">
-        <!--Phone number-->
-        <div class="footer_child">
-            <h4>Phone number</h3>
-            <div class="reset">
-                <em class="fas fa-phone gap"></em>
-                <p>+1 (832)-547-4966</p>
-            </div>
+    <div class="page-container">
+        <div class="container">
+            <header class="header output" id="output">
+                <h1 class="cursor"></h1>
+            </header>
+            <nav class="navbar">
+                <ul class="flex list">
+                    <li><a class="underline" href="/">HOME</a></li>
+                    <li><a class="underline" href="/portfolio">PORTFOLIO</a></li>
+                    <li><a class="underline" href="/resume">CV</a></li>
+                    <li><a class="underline" href="/contact">CONTACT</a></li>
+                </ul>
+            </nav>
         </div>
+
+        <!--Content-->
+        <div class="content-wrap">
+            {{{body}}}
+        </div>
+
+        <!--Footer-->
+        <div class="footer">
+            <div class="edge"></div>
+            <footer class="grid">
+                <!--Phone number-->
+                <div class="footer_child">
+                    <h4>Phone number</h3>
+                    <div class="reset">
+                        <em class="fas fa-phone gap"></em>
+                        <p>+1 (832)-547-4966</p>
+                    </div>
+                </div>
         
-        <!--Links to other sites-->
-        <div class="footer_child">
-            <ul class="list">
-                <li>
-                    <a href="https://discord.com/channels/@me/689884262471958529" target="_blank">
-                        <img class="out" width="32px" height="32px" src="/img/icons/discord.svg" alt="Discord">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/tryston-minsquero/" target="_blank">
-                        <img class="out" width="32px" height="32px" src="/img/icons/linkedin.svg" alt="LinkedIn">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/TrystonMinsquero" target="_blank">
-                        <img class="out" width="32px" height="32px" src="/img/icons/github.svg" alt="Github">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://tryston.itch.io/" target="_blank">
-                        <img class="out" width="32px" height="32px" src="/img/icons/itch-io.svg" alt="Itch.io">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://devpost.com/TrystonMinsquero" target="_blank">
-                        <img class="out" width="32px" height="32px" src="/img/icons/devpost.svg" alt="Devpost">
-                    </a>
-                </li>           
-            </ul>
-        </div>
+                <!--Links to other sites-->
+                <div class="footer_child">
+                    <ul class="list">
+                        <li>
+                            <a href="https://discord.com/channels/@me/689884262471958529" target="_blank">
+                                <img class="out" width="32px" height="32px" src="/img/icons/discord.svg" alt="Discord">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/tryston-minsquero/" target="_blank">
+                                <img class="out" width="32px" height="32px" src="/img/icons/linkedin.svg" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/TrystonMinsquero" target="_blank">
+                                <img class="out" width="32px" height="32px" src="/img/icons/github.svg" alt="Github">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tryston.itch.io/" target="_blank">
+                                <img class="out" width="32px" height="32px" src="/img/icons/itch-io.svg" alt="Itch.io">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://devpost.com/TrystonMinsquero" target="_blank">
+                                <img class="out" width="32px" height="32px" src="/img/icons/devpost.svg" alt="Devpost">
+                            </a>
+                        </li>           
+                    </ul>
+                </div>
 
-        <!--Contact email-->
-        <div class="footer_child">
-            <h3>Email</h3>
-            <div class="reset">
-                <em class="fas fa-envelope" style="padding: 0 10px;"></em>
-                <p>trystonminsquero@gmail.com</p>
-            </div>
+                <!--Contact email-->
+                <div class="footer_child">
+                    <h3>Email</h3>
+                    <div class="reset">
+                        <em class="fas fa-envelope" style="padding: 0 10px;"></em>
+                        <p>trystonminsquero@gmail.com</p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 </body>
 
 <script src="/js/stickyNav.js"></script>
