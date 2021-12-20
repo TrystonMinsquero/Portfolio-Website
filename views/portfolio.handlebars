@@ -1,39 +1,15 @@
-<script>
-    function switchVisible() {
-        games = document.getElementById('Games');
-        projects = document.getElementById('Projects');
-        main = document.getElementById('Main');
-
-        if(document.getElementById('game-btn').checked) {
-            games.style.display = 'block';
-            projects.style.display = 'none' 
-            main.replaceWith(games);
-        }
-        if(document.getElementById('project-btn').checked) {
-            projects.style.display = 'block'; 
-            games.style.display = 'none' 
-            main.replaceWith(projects);
-        }
-        // document.getElementById('Games').style.visibility = document.getElementById('game-btn').checked ? 'visible' : 'hidden';
-        // document.getElementById('Projects').style.visibility = document.getElementById('project-btn').checked ? 'visible' : 'hidden';
-    }
-    
-</script>
 <div class="container">
 
-    <form onchange="switchVisible()" class="flex">
-          <input type="radio" id="game-btn" name="project_type" value="GAME" checked="checked">
-          <label for="game">Games</label><br>
-          <input type="radio" id="project-btn" name="project_type" value="PROJECT">
-          <label for="project-btn">Projects</label><br>
-    </form>
-
-    <div id='Main'>
-
+    {{!-- Buttons for Switching Displays --}}
+    <div class="flex">
+        <div class="buttons">
+            <button class="current">Games</button>
+            <button>Projects</button>
+        </div>
     </div>
 
-    <div id="Games" style="display: none">
-        <h3 class="flex">Games</h3>
+    {{!-- Display to change --}}
+    <div class="content">
         <section class="flex project-list">
             <ul class="grid list flex">
                 {{#each games}}
@@ -53,11 +29,8 @@
                 {{/each}}
             </ul>
         </section>
-    </div>
 
-    <div id="Projects" style="display: none">
-        <h3 class="flex">Projects</h3>
-        <section class="flex project-list">
+        <section class="flex project-list hide">
             <ul class="grid list flex">
                 {{#each projects}}
                 <li>
@@ -78,4 +51,3 @@
         </section>
     </div>
 </div>
-<script>switchVisible()</script>
