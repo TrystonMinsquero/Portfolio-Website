@@ -494,3 +494,7 @@ ul.grid {
     transform: translateX(100vw);
     transition: all 0.5s ease-in;
 }
+
+.bkgrd-img {
+    background: url('../img/games-background.webp') repeat;
+}
