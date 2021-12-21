@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tryston's Website</title>
     <script src="https://kit.fontawesome.com/3e7b4fdb0f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <!--styles-->
+    {{#if styles}}
+        {{#each styles}}
+        <link rel="stylesheet" href="/css/{{this}}">
+        {{/each}}
+    {{/if}}
 </head>
 <body>
     <!--Navbar-->
@@ -86,9 +91,15 @@
         </div>
     </div>
 </body>
+<!--scripts-->
 
-<script src="/js/stickyNav.js"></script>
 <script src="/js/activePage.js"></script>
+<script src="/js/stickyNav.js"></script>
 <script src="/js/typing.js"></script>
-<script src="/js/portfolioDisplay.js"></script>
+{{#if scripts}}
+    {{#each scripts}}
+    <script src="/js/{{this}}"></script>
+    {{/each}}
+{{/if}}
+
 </html>

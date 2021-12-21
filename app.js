@@ -47,6 +47,8 @@ Portfolio.portfolio.forEach(element => {
 // routing
 app.get('/', (req, res) => {
     res.render('home', {
+        styles: ["style.css"],
+        scripts: [],
         recentProjects: [
         topThreeProjects[0],
         topThreeProjects[1],
@@ -59,7 +61,9 @@ Portfolio.portfolio.forEach(element => {
     if(element.permalink) {
         //if(element.builds) console.log(`${element.title} has embeddedwebgl: ` + element.builds.includes('EmbeddedWebGL'));
         app.get("/" + element.permalink, (_, res) => res.render('project', {
-            project: element
+            project: element,
+            styles: ["style.css"],
+            scripts: []
         }));
         
         if(element.builds){
@@ -81,11 +85,21 @@ app.get('/portfolio', (_, res) =>
     res.render('portfolio', {
         portfolio: Portfolio.portfolio,
         games: Portfolio.games,
-        projects: Portfolio.projects
+        projects: Portfolio.projects,
+        styles: ["style.css"],
+        scripts: ["portfolioDisplay.js"]
     }
     ));
-app.get('/resume', (_, res) => res.render('resume'));
-app.get('/contact', (_, res) => res.render('contact'));
+app.get('/resume', (_, res) => 
+    res.render('resume', {
+        styles: ["style.css"],
+        scripts: []
+    }));
+app.get('/contact', (_, res) => 
+    res.render('contact', {
+        styles: ["style.css"],
+        scripts: ["mail.js"]
+    }));
 
 
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
@@ -94,7 +108,10 @@ app.get('/home', (_, res) => res.redirect('/'));
 
 //404 middleware
 app.use(function (req, res, next) {
-    res.status(404).render('404');
+    res.status(404).render('404', {
+        styles: ["style.css"],
+        scripts: []
+    });
   })
 
 app.listen(PORT, () => {
