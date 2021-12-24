@@ -1,53 +1,50 @@
-<div class="container">
-
-    {{!-- Buttons for Switching Displays --}}
-    <div class="flex">
-        <div class="buttons">
-            <button class="current">Games</button>
-            <button>Projects</button>
-        </div>
+{{!-- Buttons for Switching Displays --}}
+<div class="flex">
+    <div class="buttons">
+        <button class="current">Games</button>
+        <button>Projects</button>
     </div>
+</div>
 
-    {{!-- Display to change --}}
-    <div class="content">
-        <section class="flex project-list">
-            <ul class="grid list flex">
-                {{#each games}}
-                <li>
-                    <figure class="hover blue">
-                        {{#if this.images.[Cover.png]}}
-                            <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
-                        {{else}}
-                            <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
-                        {{/if}}
-                        <figcaption>
-                            <h2>{{this.title}}</h2>
-                        </figcaption>
-                        <a href="/{{this.permalink}}"></a>
-                    </figure>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+{{!-- Display to change --}}
+<div class="content">
+    <section class="flex project-list">
+        <ul class="grid list flex">
+            {{#each games}}
+            <li>
+                <figure class="hover blue">
+                    {{#if this.images.[Cover.png]}}
+                        <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
+                    {{else}}
+                        <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
+                    {{/if}}
+                    <figcaption>
+                        <h2>{{this.title}}</h2>
+                    </figcaption>
+                    <a href="/{{this.permalink}}"></a>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
 
-        <section class="flex project-list hide">
-            <ul class="grid list flex">
-                {{#each projects}}
-                <li>
-                    <figure class="hover blue">
-                        {{#if this.images.[Cover.png]}}
-                            <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
-                        {{else}}
-                            <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
-                        {{/if}}
-                        <figcaption>
-                            <h2>{{this.title}}</h2>
-                        </figcaption>
-                        <a href="/{{this.permalink}}"></a>
-                    </figure>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-    </div>
+    <section class="flex project-list hide">
+        <ul class="grid list flex">
+            {{#each projects}}
+            <li>
+                <figure class="hover blue">
+                    {{#if this.images.[Cover.png]}}
+                        <img src="/{{this.permalink}}/img/Cover.png" alt="{{this.title}}" width="300" height="300">
+                    {{else}}
+                        <img src="/img/placeholder.png" alt="placeholder" width="300" height="300">
+                    {{/if}}
+                    <figcaption>
+                        <h2>{{this.title}}</h2>
+                    </figcaption>
+                    <a href="/{{this.permalink}}"></a>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
 </div>
