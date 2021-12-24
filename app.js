@@ -104,12 +104,12 @@ app.get('/home', (_, res) => res.redirect('/'));
 
 
 // 404 middleware
-app.use(function (req, res, next) {
+app.use((_, res) => {
     res.status(404).render('404', {
-        styles: ["style.css"],
-        scripts: []
+        styles: ['style.css', '404.css'],
+        scripts: ['error404Handler.js']
     });
-  })
+});
 
 // activate on PORT
 app.listen(PORT, () => {

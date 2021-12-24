@@ -4,65 +4,21 @@
 <script src="UnityTemplate/UnityProgress.js"></script>
 <script src="/{{project.permalink}}/builds/EmbeddedWebGL/UnityLoader.js"></script>
 <script>
-    var unityInstance;
-    var fullscreenBtn = document.getElementById("fullscreen");
+    let unityInstance;
+    const fullscreenBtn = document.getElementById("fullscreen");
     //get and remove helper div
-    const buildPath = "/{{project.permalink}}/builds/EmbeddedWebGL/WebGL.json";
-    function startGame() {
-        unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
-        var webgl = document.getElementById('webgl');
+    const buildPath = '/{{project.permalink}}/builds/EmbeddedWebGL/WebGL.json';
+    const startGame = () => {
+        unityInstance = UnityLoader.instantiate('unityContainer', buildPath, {onProgress: UnityProgress});
+        const webgl = document.getElementById('webgl');
         document.getElementById('PlayButton').remove()
-    }
+    };
 </script>
 {{/if}}
 
 
 <div class="container">
-    {{!-- <h2 class="header">{{project.title}}</h2>
-    <section>
-        <ul class="list-vert flex container">
-            {{#if project.team}}
-            <li>
-                <label>Team:</label>
-                <p>{{project.team}}</p>
-            </li>
-            {{/if}}
-            {{#if project.role}}
-            <li>
-                <label>Role:</label>
-                <p>{{project.role}}</p>
-            </li>
-            {{/if}}
-            {{#if project.summary}}
-            <li>
-                <label>Summary:</label>
-                <p>{{project.summary}}</p>
-            </li>
-            {{/if}}
-            {{#if project.contributed}}
-            <li>
-                <label>What I Contributed:</label>
-                <p>{{project.contributed}}</p>
-            </li>
-            {{/if}}
-            {{#if project.challenges}}
-            <li>
-                <label>Challenges I faced:</label>
-                <p>{{project.challenges}}</p>
-            </li>
-            {{/if}}
-            {{#if project.learned}}
-            <li>
-                <label>What I learned</label>
-                <p>{{project.learned}}</p>
-            </li>
-            {{/if}}
-        </ul>
-    </section> --}}
-
     <div class="flex-vert">{{{project.body}}}</div>
-
-    <!--Usable Content-->
 
     <!--Display EmbeddedWebGL (currently disabled)-->
     <div class="flex container">

@@ -1,0 +1,40 @@
+/* Assuming this CSS file will be used in conjunction with style.css */
+
+.caps {
+    text-transform: uppercase;
+}
+
+.bkgrd-img {
+    background: url('../img/404.png') no-repeat top center / cover;
+}
+
+.housing {
+    display: flex;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    padding: 15px 70px;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.housing h3 {
+    font-weight: 600;
+    max-width: 300px;
+    color: black;
+    text-shadow: 0 0 2px white;
+    transition: all 0.7s ease-in;
+}
+
+.housing h2 {
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px black;
+    transition: all 0.6s ease-in;
+}
+
+.housing h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px white;
+    transition: all 0.5s ease-in;
+}
