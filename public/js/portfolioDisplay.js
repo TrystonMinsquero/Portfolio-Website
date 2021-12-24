@@ -2,6 +2,10 @@
 const buttons = document.querySelector('.buttons');
 const buttonList = buttons.children;
 const inContent = document.querySelector('.content').children;
+const pageContainer = document.querySelector('.page-container');
+
+// add image to page conatiner
+pageContainer.classList.add('bkgrd-img');
 
 // compute grid columns dynamically
 buttons.style.gridTemplateColumns = `repeat(${buttonList.length}, 1fr)`;
