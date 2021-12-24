@@ -40,6 +40,8 @@ Portfolio.portfolio.forEach(elem => {
 });
 
 // routing
+
+// home page routing
 app.get('/', (_, res) => {
     res.render('home', {
         styles: ["style.css"],
@@ -52,14 +54,17 @@ app.get('/', (_, res) => {
     });
 });
 
+// project routing
 Portfolio.portfolio.forEach(elem => {
     if(elem.permalink) {
+        // project page routing
         app.get('/' + elem.permalink, (_, res) => res.render('project', {
             project: elem,
             styles: ['style.css'],
             scripts: []
         }));
         
+        // add webGL routing (if it exists)
         if(elem.builds){
             app.use('/' + elem.permalink + '/' + 'builds', express.static(elem.buildsPath));
             if(elem.builds['WebGL']) {
@@ -67,6 +72,7 @@ Portfolio.portfolio.forEach(elem => {
             }
         }
 
+        // make all images static
         if(elem.images)
             app.use('/' + elem.permalink + '/' + 'img', express.static(elem.imagesPath));
     }
