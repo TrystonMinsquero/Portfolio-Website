@@ -19,11 +19,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set("views", "./views");
 
-// console.log("Porfolio length: " + Portfolio.portfolio.length);
-// console.log("Games length: " + Portfolio.games.length);
-// console.log("Projects length: " + Portfolio.projects.length);
-
-
 // set public folder as static
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -34,18 +29,18 @@ app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/Builds', express.static(path.join(__dirname, 'public/Builds')));
 app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTemplate')));
 
-
+// enable routing
 app.use(express.urlencoded({ extended: false }));
 
 var topThreeProjects = [];
-Portfolio.portfolio.forEach(element => {
-    if(element.title === "Hole Flounder" || element.title === "Wyles Loop" || element.title === "Astrolothree") {
-        topThreeProjects.push(element);
+Portfolio.portfolio.forEach(elem => {
+    if(elem.title === 'Hole Flounder' || elem.title === 'Wyles Loop' || elem.title === 'Astrolothree') {
+        topThreeProjects.push(elem);
     }
 });
 
 // routing
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
     res.render('home', {
         styles: ["style.css"],
         scripts: [],
@@ -57,30 +52,27 @@ app.get('/', (req, res) => {
     });
 });
 
-Portfolio.portfolio.forEach(element => {
-    if(element.permalink) {
-        //if(element.builds) console.log(`${element.title} has embeddedwebgl: ` + element.builds.includes('EmbeddedWebGL'));
-        app.get("/" + element.permalink, (_, res) => res.render('project', {
-            project: element,
-            styles: ["style.css"],
+Portfolio.portfolio.forEach(elem => {
+    if(elem.permalink) {
+        app.get('/' + elem.permalink, (_, res) => res.render('project', {
+            project: elem,
+            styles: ['style.css'],
             scripts: []
         }));
         
-        if(element.builds){
-            app.use('/' + element.permalink + '/' + "builds", express.static(element.buildsPath));
-            if(element.builds['WebGL']){
-                // app.use('/TemplateData', express.static(path.join(element.builds['WebGL'], 'TemplateData')));
-                // app.use('/Build', express.static(path.join(element.builds['WebGL'], 'Build')));
-                app.get("/" + element.permalink + '/WebGL', (_, res) => res.sendFile(path.join(element.builds['WebGL'],'index.html')));
+        if(elem.builds){
+            app.use('/' + elem.permalink + '/' + 'builds', express.static(elem.buildsPath));
+            if(elem.builds['WebGL']) {
+                app.get('/' + elem.permalink + '/WebGL', (_, res) => res.sendFile(path.join(elem.builds['WebGL'], 'index.html')));
             }
         }
-        if(element.images)
-            app.use('/' + element.permalink + '/' + "img", express.static(element.imagesPath));
-        
+
+        if(elem.images)
+            app.use('/' + elem.permalink + '/' + 'img', express.static(elem.imagesPath));
     }
-    
 });
 
+// GET request for portfolio
 app.get('/portfolio', (_, res) => 
     res.render('portfolio', {
         portfolio: Portfolio.portfolio,
@@ -90,11 +82,15 @@ app.get('/portfolio', (_, res) =>
         scripts: ["portfolioDisplay.js"]
     }
     ));
+
+// GET request for resume
 app.get('/resume', (_, res) => 
     res.render('resume', {
         styles: ["style.css"],
         scripts: []
     }));
+
+// GET request for contact
 app.get('/contact', (_, res) => 
     res.render('contact', {
         styles: ["style.css"],
@@ -102,11 +98,12 @@ app.get('/contact', (_, res) =>
     }));
 
 
+// redirection adjustment handlers
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
 app.get('/home', (_, res) => res.redirect('/'));
 
 
-//404 middleware
+// 404 middleware
 app.use(function (req, res, next) {
     res.status(404).render('404', {
         styles: ["style.css"],
@@ -114,6 +111,7 @@ app.use(function (req, res, next) {
     });
   })
 
+// activate on PORT
 app.listen(PORT, () => {
     return console.log(`Server started on PORT ${PORT}`);
 });
