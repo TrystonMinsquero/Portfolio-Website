@@ -3,14 +3,14 @@ const fs = require('fs');
 const showdown  = require('showdown')
 const converter = new showdown.Converter();
 
-//variables to use
-let portfolio = [];
-let games = [];
-let projects = [];
+// variables to use
+const portfolio = [];
+const games = [];
+const projects = [];
 
 const dirPath = path.join(__dirname, 'Portfolio');
 
-var projectTypeFolders = fs.readdirSync(dirPath);
+const projectTypeFolders = fs.readdirSync(dirPath);
 
 projectTypeFolders.forEach(projectTypeFolder => {
     fs.readdirSync(path.join(dirPath, projectTypeFolder)).forEach(projectFolder => {
