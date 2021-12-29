@@ -17,7 +17,7 @@ const hbs = create({
 //express handlebars middleware
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set("views", "./views");
+app.set('views', './views');
 
 // set public folder as static
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,7 +44,7 @@ Portfolio.portfolio.forEach(elem => {
 // home page routing
 app.get('/', (_, res) => {
     res.render('home', {
-        styles: ["style.css"],
+        styles: ['style.css'],
         scripts: [],
         recentProjects: [
         topThreeProjects[0],
@@ -60,13 +60,13 @@ Portfolio.portfolio.forEach(elem => {
         // project page routing
         app.get('/' + elem.permalink, (_, res) => res.render('project', {
             project: elem,
-            styles: ['style.css'],
+            styles: ['style.css', 'proj.css'],
             scripts: []
         }));
         
         // add webGL routing (if it exists)
         if(elem.builds){
-            app.use('/' + elem.permalink + '/' + 'builds', express.static(elem.buildsPath));
+            app.use('/' + elem.permalink + '/builds', express.static(elem.buildsPath));
             if(elem.builds['WebGL']) {
                 app.get('/' + elem.permalink + '/WebGL', (_, res) => res.sendFile(path.join(elem.builds['WebGL'], 'index.html')));
             }
@@ -74,7 +74,7 @@ Portfolio.portfolio.forEach(elem => {
 
         // make all images static
         if(elem.images)
-            app.use('/' + elem.permalink + '/' + 'img', express.static(elem.imagesPath));
+            app.use('/' + elem.permalink + '/img', express.static(elem.imagesPath));
     }
 });
 
@@ -84,24 +84,26 @@ app.get('/portfolio', (_, res) =>
         portfolio: Portfolio.portfolio,
         games: Portfolio.games,
         projects: Portfolio.projects,
-        styles: ["style.css"],
-        scripts: ["portfolioDisplay.js"]
-    }
-    ));
+        styles: ['style.css'],
+        scripts: ['portfolioDisplay.js']
+    })
+);
 
 // GET request for resume
 app.get('/resume', (_, res) => 
     res.render('resume', {
         styles: ["style.css"],
         scripts: []
-    }));
+    })
+);
 
 // GET request for contact
 app.get('/contact', (_, res) => 
     res.render('contact', {
         styles: ["style.css"],
         scripts: ["mail.js"]
-    }));
+    })
+);
 
 
 // redirection adjustment handlers

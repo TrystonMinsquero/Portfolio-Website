@@ -1,0 +1,55 @@
+/* Assuming this CSS file will be used in conjunction with style.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.content-wrap .container {
+    margin: auto;
+    width: 75%;
+    padding: 25px;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top right, #4f4f4f, #2f2f2f) no-repeat 0 0 / cover;
+}
+
+.content-wrap h1, .content-wrap h2, .content-wrap h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    text-shadow: 0 3px black;
+}
+
+.content-wrap h1 {
+    font-weight: bold;
+    text-shadow: 0 5px black;
+    text-transform: uppercase;
+}
+
+.content-wrap p {
+    padding: 10px 50px;
+    text-align: justify;
+    width: 100%;
+    font-size: large;
+    background-color: #8f8f8f;
+    box-shadow: 2px -2px 3px black inset;
+    text-shadow: 1px 1.5px black;
+    color: white;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+
+/* Special Cases */
+#team, #role {
+    text-align: justify;
+    width: 90%;
+}
+
+.content-wrap .flex p {
+    background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
+    border: 3px solid white;
+    box-shadow: none;
+    width: auto;
+    text-shadow: none;
+    text-align: center;
+}
+
+.content-wrap .flex p a {
+    color: white;
+}
