@@ -21,7 +21,7 @@
     <div class="flex-vert">{{{project.body}}}</div>
 
     <!--Display EmbeddedWebGL (currently disabled)-->
-    <div class="flex container">
+    <div class="flex">
     {{#if implementLater}} <!--replace with project.builds.[EmbeddedWebGL] to enable-->
     <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
     <section id="webgl" class="flex container">
@@ -48,7 +48,7 @@
 
     <!--Downloads-->
     {{#if project.hasDownloads}}
-    <section class="container">
+    <section>
         <h3 class="flex header">Downloads</h3>
         <ul class="list flex">
             {{#if project.builds.[Windows]}}
