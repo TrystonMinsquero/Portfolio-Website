@@ -1,6 +1,6 @@
 emailjs.init("user_EmFO3M1Ku7DNPpEATz0kU");
 
-function sendMail() {
+const sendMail = () => {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const messageInput = document.getElementById("message");
@@ -13,19 +13,16 @@ function sendMail() {
     }
 
     emailjs.send('portfolio-website', 'portfolio-website', params)
-    .then(function(response) {
+    .then(response => {
     console.log('SUCCESS!', response.status, response.text);
-    successOutput.appendChild(document.createElement("p").appendChild(document.createTextNode("Your message was sent!")));
-    successOutput.appendChild(document.createElement("br"));
-    successOutput.appendChild(document.createElement("p").appendChild(document.createTextNode("Thank you for reaching out, I will respond as soon as I can.")));
+    successOutput.appendChild(document.createElement('p')).innerHTML = 'Your message was sent!';
+    successOutput.appendChild(document.createElement('p')).innerHTML = 'Thank you for reaching out, I will respond as soon as I can.';
 
-    }, function(error) {
+    }, error => {
     console.log('FAILED...', error);
-    successOutput.appendChild(document.createElement("p").appendChild(document.createTextNode("Sorry there was a issue sending your message.")));
-    successOutput.appendChild(document.createElement("br"));
-    successOutput.appendChild(document.createElement("p").appendChild(document.createTextNode("Please directly contact me at trystonminsquero@gmail.com,")));
-    successOutput.appendChild(document.createElement("br"));
-    successOutput.appendChild(document.createElement("p").appendChild(document.createTextNode("thank you for your patience.")));
+    successOutput.appendChild(document.createElement('p')).innerHTML = 'Sorry there was a issue sending your message.';
+    successOutput.appendChild(document.createElement('p')).innerHTML = 'Please directly contact me at trystonminsquero@gmail.com';
+    successOutput.appendChild(document.createElement('p')).innerHTML = 'Thank you for your patience.';
     });
 
     document.getElementById("submit").remove();
