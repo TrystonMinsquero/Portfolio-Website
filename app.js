@@ -92,7 +92,7 @@ app.get('/portfolio', (_, res) =>
 // GET request for resume
 app.get('/resume', (_, res) => 
     res.render('resume', {
-        styles: ["style.css"],
+        styles: ['style.css'],
         scripts: []
     })
 );
@@ -100,8 +100,8 @@ app.get('/resume', (_, res) =>
 // GET request for contact
 app.get('/contact', (_, res) => 
     res.render('contact', {
-        styles: ["style.css"],
-        scripts: ["mail.js"]
+        styles: ['style.css', 'form.css'],
+        scripts: ['mail.js']
     })
 );
 

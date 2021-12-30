@@ -1,6 +1,10 @@
 /* Assuming this CSS file will be used in conjunction with style.css */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+.content-wrap {
+    background: url('../img/games-background.webp') 0 0 / cover;
+}
+
 .content-wrap .container {
     margin: auto;
     width: 75%;
