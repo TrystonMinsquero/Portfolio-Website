@@ -24,18 +24,33 @@ const swap = index => {
     clearTimeout(timeout);
     if(index < currentIndex) {                  // shifting left
         inContent[currentIndex].classList.add('swipe-left');
+        inContent[index].classList.add('swipe-right');
         timeout = setTimeout(() => {
             inContent[index].classList.remove('hide');
-            inContent[currentIndex].classList.remove('swipe-left');
-            inContent[currentIndex].classList.add('hide');
-            currentIndex = index;
+            setTimeout(() => {
+                inContent[index].classList.add('reset-swipe');
+                inContent[index].classList.remove('swipe-right');
+                console.log('index:', index, 'currentIndex:', currentIndex);
+                inContent[currentIndex].classList.remove('swipe-left');
+                inContent[currentIndex].classList.add('hide');
+                setTimeout(() => {
+                    inContent[index].classList.remove('reset-swipe');
+                    currentIndex = index;
+                }, swapCallbackTime);
+            }, swapCallbackTime);
         }, swapCallbackTime);
     } else {                                    // shifting right
         inContent[currentIndex].classList.add('swipe-right');
+        inContent[index].classList.add('swipe-left');
+        inContent[index].classList.remove('hide');
         timeout = setTimeout(() => {
-            inContent[index].classList.remove('hide');
+            inContent[index].classList.add('reset-swipe');
+            inContent[index].classList.remove('swipe-left');
             inContent[currentIndex].classList.remove('swipe-right');
             inContent[currentIndex].classList.add('hide');
+            setTimeout(() => {
+                inContent[index].classList.remove('reset-swipe');
+            }, swapCallbackTime);
             currentIndex = index;
         }, swapCallbackTime);
     }

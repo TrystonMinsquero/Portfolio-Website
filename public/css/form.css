@@ -1,0 +1,73 @@
+/* Assuming this CSS file will be used in conjunction with style.css */
+.page-container {
+    background: linear-gradient(to top right, #e6dede, #a8c9dd) no-repeat 0 0 / cover;
+    margin-top: 0;
+}
+
+.content-wrap .container {
+    width: 75%;
+    margin: 25px auto;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    position: relative;
+    color: white;
+}
+
+.content-wrap section {
+    background: linear-gradient(to top, #000428, #004e92) no-repeat 0 0 / cover;
+    border: 5px solid white;
+    width: 45%;
+    margin: auto;
+    padding: 80px 10px 50px 10px;
+    border-radius: 25px;
+}
+
+.content-wrap section h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px 5px;
+}
+
+.content-wrap section i {
+    font-size: 1.25rem;
+    text-shadow: 0 0 5px black;
+    padding: 10px 5px;
+}
+
+.content-wrap section label {
+    text-shadow: 0 0 5px black;
+    font-size: 1.25rem;
+}
+
+.content-wrap section input, .content-wrap section textarea {
+    width: 300px;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0 0 2px white;
+}
+
+.content-wrap section textarea {
+    max-width: 300px;
+}
+
+.content-wrap section input {
+    height: 30px;
+}
+
+.content-wrap section button {
+    width: 100px;
+    height: 30px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.content-wrap section button:hover {
+    text-shadow: 0 0 2px gray;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#success {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
