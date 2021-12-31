@@ -479,6 +479,7 @@ ul.grid {
 .current {
     background-color: #007aff;
     color: white;
+    transition: all 0.5s ease-in-out;
 }
 
 .hide {
@@ -492,6 +493,11 @@ ul.grid {
 
 .swipe-right {
     transform: translateX(100vw);
+    transition: all 0.5s ease-in;
+}
+
+.reset-swipe {
+    transform: translateX(0);
     transition: all 0.5s ease-in;
 }
 
