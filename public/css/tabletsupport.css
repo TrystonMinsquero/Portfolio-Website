@@ -1,0 +1,36 @@
+/* Adds support for Smaller Devices */
+
+@media (max-width: 768px) {
+    /* Changing Grid Shape */
+    footer.grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 5px;
+        font-size: smaller;
+    }
+
+    /* Fixing Grid Location for Links */
+    footer.grid div:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1/3;
+    }
+
+    /* Left Aligned Divs */
+    footer.grid div:first-child, footer.grid div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    /* Adjusting for Footer Height */
+    .content-wrap {
+        padding-bottom: 7rem;
+    }
+    
+    /* Adjusting for Footer Height */
+    .footer {
+        min-height: 7rem;
+    }
+}
