@@ -70,6 +70,19 @@
         padding: 10px 25px;
         text-align: center;
     }
+
+/* ============ 404 Settings ============ */
+    .housing {
+        padding: 2px 15px;
+    }
+
+    .housing h3 {
+        font-size: medium;
+    }
+
+    .housing h2 {
+        display: none;
+    }
 }
 
 /* Special Adjustment for Grid */
