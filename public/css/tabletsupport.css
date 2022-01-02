@@ -1,6 +1,7 @@
 /* Adds support for Smaller Devices */
 
 @media (max-width: 768px) {
+/* ============ Footer Settings ============ */
     /* Changing Grid Shape */
     footer.grid {
         grid-template-columns: repeat(2, 1fr);
@@ -32,5 +33,28 @@
     /* Adjusting for Footer Height */
     .footer {
         min-height: 7rem;
+    }
+
+/* ============ Home Settings ============ */
+    /* Changing Flex Direction */
+    section.flex {
+        flex-direction: column;
+    }
+
+    /* Adjusting Width */
+    section.home div {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Making Image smaller */
+    .rounded-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Making Header larger */
+    #about-header {
+        font-size: xx-large;
     }
 }
