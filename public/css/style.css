@@ -2,14 +2,26 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
 
 :root {
-    --primary: #26426B;
-    --secondary: #47556B;
-    --secondary-dull: #4271B8;
-    --highlight: #4271B8;
-    --highlight-dull: #A39B1A;
-    --tone1: #43cea2;
-    --tone2: #06beb6;
-    --tone3: #185a9d;
+    --navbar-dark:  #000428;
+    --navbar-light: #004e92;
+
+    --navbar-hover-dark:  #eb3349;
+    --navbar-hover-light: #f45c43;
+    
+    --home-light: #4ca1af;
+    
+    --cover-dark:  #0a212f;
+    --cover-light: #1a83da;
+    --cover-base:  #123851;
+    
+    --current-dark:  #b06ab3;
+    --current-light: #4568dc;
+
+    --gray-dark:  #212121;
+    --gray-light: #414141;
+    --gray-text:  #aaaaaa;
+
+    --apple-blue: #007aff;
 }
 
 * {
@@ -98,7 +110,7 @@ img {
 }
 
 .navbar{
-    background: linear-gradient(to bottom right, #000428, #004e92) no-repeat 0 0 / cover;
+    background: linear-gradient(to bottom right, var(--navbar-dark), var(--navbar-light)) no-repeat 0 0 / cover;
     color: white;
     height: 50px;
     width: 100%;
@@ -118,18 +130,16 @@ img {
 }
 
 .navbar li:hover {
-    background: linear-gradient(to left, #eb3349, #f45c43) no-repeat 0 0 / cover;
+    background: linear-gradient(to left, var(--navbar-hover-dark), var(--navbar-hover-light)) no-repeat 0 0;
 }
 
 .roundedCircle {
     border-radius: 50%;
+    border: 5px solid black;
+    box-shadow: 0 0 15px white;
     transition: all 0.2s ease-in;
-    width: 90%;
-    height: 100%;
-}
-
-.roundedCircle:hover {
-    transform: scale(0.95);
+    width: 400px;
+    height: 400px;
 }
 
 .list {
@@ -150,10 +160,7 @@ img {
 }
 
 .home {
-    /* background: linear-gradient(to bottom right, var(--tone1), var(--tone2), var(--tone3)) no-repeat; */
-    /* background: linear-gradient(to bottom, #ff512f, #f09819) no-repeat 0 0 / cover; */
-    /* background: linear-gradient(to bottom, #2c3e50, #4ca1af) no-repeat 0 0 / cover; */
-    background: linear-gradient(to top right, #eba74e, #684103) no-repeat 0 0 / cover;
+    background: linear-gradient(to top, var(--home-light), var(--home-light), var(--cover-light)) no-repeat 0 0;
     align-items: stretch;
     align-content: center;
 }
@@ -182,7 +189,7 @@ img {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: var(--cover-light);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -269,17 +276,18 @@ figure.hover a {
 }
 
 figure.hover.blue {
-    background: #123851;
+    background: var(--cover-base);
 }
 
 figure.hover.blue h2 {
-    background: #0a212f;
+    background: var(--cover-dark);
 }
 
 figure.hover.blue::before {
-    background: #1a83da;
+    background: var(--cover-light);
 }
 
+/* Red Figures */
 figure.hover.red {
     background: #581a14;
 }
@@ -292,6 +300,7 @@ figure.hover.red::before {
     background: #530404;
 }
 
+/* Yellow Figures */
 figure.hover.yellow {
     background: #7f5006;
 }
@@ -325,7 +334,7 @@ figure.hover:hover::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top right, #212121, #414141) no-repeat;
+    background: linear-gradient(to top right, var(--gray-dark), var(--gray-light)) no-repeat 0 0 / cover;
 }
 
 .projects h3 {
@@ -333,13 +342,13 @@ figure.hover:hover::before {
     font-size: xx-large;
     font-weight: bolder;
     text-transform: uppercase;
-    color: var(--tone1);
+    color: white;
     margin-top: 5px;
-    text-shadow: 0 0 5px var(--tone3);
+    text-shadow: 0 0 3px wheat;
 }
 
 .active {
-    background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
+    background: linear-gradient(to top, var(--current-light), var(--current-dark)) no-repeat 0 0;
 }
 
 .active a {
@@ -348,7 +357,7 @@ figure.hover:hover::before {
 
 /* Header Settings */
 header {
-    background: linear-gradient(to left bottom, #313131, #555555) no-repeat 0 0 / cover;
+    background: linear-gradient(to bottom, var(--gray-dark), var(--gray-light)) no-repeat 0 0 / cover;
     font-family: Courier, monospace;
     font-size: large;
     font-weight: bold;
@@ -395,8 +404,17 @@ h1.cursor::after {
 
 /* Footer Settings */
 footer {
-    background: linear-gradient(to top, #414141, #787878) no-repeat 0 0 / cover;
-    color: black;
+    background: linear-gradient(to bottom, var(--gray-light), var(--gray-light)) no-repeat 0 0 / cover;
+    color: var(--gray-text);
+}
+
+footer h3 {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+
+footer img {
+    filter: invert(.7);
 }
 
 .grid {
@@ -429,7 +447,7 @@ ul.grid {
 
 .edge {
     height: 7px;
-    background:  linear-gradient(to bottom, #000428, #004e92) no-repeat 0 0 / cover;
+    background:  linear-gradient(to bottom, var(--navbar-dark), var(--navbar-light)) no-repeat 0 0 / cover;
     box-shadow: 0 0 200px black;
 }
 
@@ -457,8 +475,8 @@ ul.grid {
 /* Portfolio Displays */
 .buttons {
     border-radius: 10px;
-    border: 4px solid #007aff;
-    background-color: #007aff;
+    border: 4px solid var(--apple-blue);
+    background-color: var(--apple-blue);
     width: 50%;
     margin: 1em;
     display: grid;
@@ -477,7 +495,7 @@ ul.grid {
 }
 
 .current {
-    background-color: #007aff;
+    background-color: var(--apple-blue);
     color: white;
     transition: all 0.5s ease-in-out;
 }

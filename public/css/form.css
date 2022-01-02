@@ -16,6 +16,7 @@
     background: linear-gradient(to top, #000428, #004e92) no-repeat 0 0 / cover;
     border: 5px solid white;
     width: 45%;
+    min-width: 350px;
     margin: auto;
     padding: 80px 10px 50px 10px;
     border-radius: 25px;
