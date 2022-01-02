@@ -57,4 +57,25 @@
     #about-header {
         font-size: xx-large;
     }
+
+/* ============ Projects Settings ============ */
+    /* Rearranging Grid to fit Projects */
+    section ul.grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 20px;
+    }
+
+/* ============ Navbar Settings ============ */
+    /* Adjusting z-index for navbar */
+    .navbar a {
+        z-index: 3;
+    }
+}
+
+/* Special Adjustment for Grid */
+@media (max-width: 650px) {
+    section ul.grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+    }
 }
