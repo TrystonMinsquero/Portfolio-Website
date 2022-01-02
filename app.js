@@ -44,7 +44,7 @@ Portfolio.portfolio.forEach(elem => {
 // home page routing
 app.get('/', (_, res) => {
     res.render('home', {
-        styles: ['style.css'],
+        styles: ['style.css', 'tabletsupport.css'],
         scripts: [],
         recentProjects: [
         topThreeProjects[0],
@@ -60,7 +60,7 @@ Portfolio.portfolio.forEach(elem => {
         // project page routing
         app.get('/' + elem.permalink, (_, res) => res.render('project', {
             project: elem,
-            styles: ['style.css', 'proj.css'],
+            styles: ['style.css', 'proj.css', 'tabletsupport.css'],
             scripts: []
         }));
         
@@ -84,7 +84,7 @@ app.get('/portfolio', (_, res) =>
         portfolio: Portfolio.portfolio,
         games: Portfolio.games,
         projects: Portfolio.projects,
-        styles: ['style.css'],
+        styles: ['style.css', 'tabletsupport.css'],
         scripts: ['portfolioDisplay.js']
     })
 );
@@ -92,7 +92,7 @@ app.get('/portfolio', (_, res) =>
 // GET request for resume
 app.get('/resume', (_, res) => 
     res.render('resume', {
-        styles: ['style.css'],
+        styles: ['style.css', 'tabletsupport.css'],
         scripts: []
     })
 );
@@ -100,7 +100,7 @@ app.get('/resume', (_, res) =>
 // GET request for contact
 app.get('/contact', (_, res) => 
     res.render('contact', {
-        styles: ['style.css', 'form.css'],
+        styles: ['style.css', 'form.css', 'tabletsupport.css'],
         scripts: ['mail.js']
     })
 );
@@ -114,7 +114,7 @@ app.get('/home', (_, res) => res.redirect('/'));
 // 404 middleware
 app.use((_, res) => {
     res.status(404).render('404', {
-        styles: ['style.css', '404.css'],
+        styles: ['style.css', '404.css', 'tabletsupport.css'],
         scripts: ['error404Handler.js']
     });
 });
