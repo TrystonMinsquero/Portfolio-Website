@@ -22,5 +22,18 @@
     {
         "title" : "devpost",
         "redirect" : "https://devpost.com/TrystonMinsquero"
+    },
+    {
+        "title" : "roll",
+        "redirect" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "title" : "rik",
+        "redirect" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "title" : "destiny",
+        "redirect" : "https://raid.report/pc/4611686018515553920"
     }
+
 ]    
