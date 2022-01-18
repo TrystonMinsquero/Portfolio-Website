@@ -1,0 +1,26 @@
+[
+    {
+        "title" : "linkedin",
+        "redirect" : "https://www.linkedin.com/in/tryston-minsquero/"
+    },
+    {
+        "title" : "discord",
+        "redirect" : "https://discord.com/channels/@me/689884262471958529"
+    },
+    {
+        "title" : "github",
+        "redirect" : "https://github.com/TrystonMinsquero"
+    },
+    {
+        "title" : "itch",
+        "redirect" : "https://tryston.itch.io/"
+    },
+    {
+        "title" : "itchio",
+        "redirect" : "https://tryston.itch.io/"
+    },
+    {
+        "title" : "devpost",
+        "redirect" : "https://devpost.com/TrystonMinsquero"
+    }
+]    

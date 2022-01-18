@@ -2,7 +2,9 @@
 const express = require('express');
 const path = require('path');
 const Portfolio = require('./portfolio');
+const links = require('./redirect-links.json');
 const { create } = require('express-handlebars');
+const { rmSync } = require('fs');
 
 // initalize app
 const app = express();
@@ -104,6 +106,11 @@ app.get('/contact', (_, res) =>
         scripts: ['mail.js']
     })
 );
+
+// get request redirect for other sites
+links.forEach(link => {
+    app.get('/' + link.title, (_, res) => res.redirect(link.redirect))
+});
 
 
 // redirection adjustment handlers
