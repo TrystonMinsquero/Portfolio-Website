@@ -454,6 +454,10 @@ ul.grid {
 }
 
 /* Portfolio Displays */
+.content {
+    overflow: hidden
+}
+
 .buttons {
     border-radius: 10px;
     border: 4px solid var(--apple-blue);
