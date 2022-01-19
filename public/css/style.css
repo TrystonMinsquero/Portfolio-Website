@@ -156,11 +156,11 @@ img {
     color: white;
 }
 
-#about-header {
+.about-header {
     font-weight: bolder;
 }
 
-#about-content {
+.about-content {
     text-align: justify;
     font-size: large;
 }
