@@ -8,6 +8,8 @@ const portfolio = [];
 const games = [];
 const projects = [];
 
+// get all of Portfolio data
+
 const dirPath = path.join(__dirname, 'Portfolio');
 
 const projectTypeFolders = fs.readdirSync(dirPath);
@@ -71,6 +73,9 @@ function getProject(projectFiles, projectPath) {
     
     return newProject;
 }
+
+// get about-content data
+module.exports.homeAboutContent = converter.makeHtml(fs.readFileSync(path.join(__dirname, 'about-content.md')).toString());
 
 module.exports.portfolio = portfolio;
 module.exports.games = games;

@@ -52,7 +52,8 @@ app.get('/', (_, res) => {
         topThreeProjects[0],
         topThreeProjects[1],
         topThreeProjects[2],
-        ]
+        ],
+        aboutContent : Portfolio.homeAboutContent
     });
 });
 

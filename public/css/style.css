@@ -146,21 +146,27 @@ img {
     background: transparent;
 }
 
-#about {
+/* home about content */
+
+#about-content {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: 0 0 5px black;
 }
 
-#about a {
+#about-content a {
     color: white;
 }
 
-.about-header {
+#about-content h2{
     font-weight: bolder;
 }
 
-.about-content {
+#about-content h3{
+    font-weight: bolder;
+}
+
+#about-content p{
     text-align: justify;
     font-size: large;
 }
