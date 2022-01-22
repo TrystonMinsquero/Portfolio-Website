@@ -40,7 +40,7 @@
 
 
 /* Special Cases */
-#team, #role {
+#showdown-content h3 {
     text-align: justify;
     width: 90%;
 }
