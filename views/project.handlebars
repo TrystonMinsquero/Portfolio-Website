@@ -20,48 +20,50 @@
 <div class="container">
     <div class="flex-vert" id="showdown-content">{{{project.body}}}</div>
 
-    <!--Display EmbeddedWebGL (currently disabled)-->
-    <div class="flex">
-    {{#if implementLater}} <!--replace with project.builds.[EmbeddedWebGL] to enable-->
-    <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
-    <section id="webgl" class="flex container">
-        <div class="webgl-content">
-            <div id="unityContainer" style="width: 960px; height: 600px"></div>
-            <div class="footer">
-                <div class="webgl-logo"></div>
-                <div id="fullscreen" style="" class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-                <div class="title">{{project.title}}</div>
-            </div>
-        </div>
-    </section>
-    {{else}}
-    <!--Try it Out-->
-        {{#if project.builds.[WebGL]}}
-            <p><a class="underline" href="/{{project.permalink}}/builds/WebGL" target="_blank">Try It Out!</a></p>
-        {{else}}
-            {{#if project.links.[build]}}
-                <p><a class="underline" href={{project.links.[build]}} target="_blank">Try It Out!</a></p>
+    <div class="pc-only">
+        <!--Display EmbeddedWebGL (currently disabled)-->
+        <div class="flex">
+            {{#if implementLater}} <!--replace with project.builds.[EmbeddedWebGL] to enable-->
+            <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
+            <section id="webgl" class="flex container">
+                <div class="webgl-content">
+                    <div id="unityContainer" style="width: 960px; height: 600px"></div>
+                    <div class="footer">
+                        <div class="webgl-logo"></div>
+                        <div id="fullscreen" style="" class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                        <div class="title">{{project.title}}</div>
+                    </div>
+                </div>
+            </section>
+            {{else}}
+            <!--Try it Out-->
+                {{#if project.builds.[WebGL]}}
+                    <p><a class="underline" href="/{{project.permalink}}/builds/WebGL" target="_blank">Try It Out!</a></p>
+                {{else}}
+                    {{#if project.links.[build]}}
+                        <p><a class="underline" href={{project.links.[build]}} target="_blank">Try It Out!</a></p>
+                    {{/if}}
+                {{/if}}
             {{/if}}
+        </div>
+
+        <!--Downloads-->
+        {{#if project.hasDownloads}}
+        <section>
+            <h3 class="flex header">Downloads</h3>
+            <ul class="list flex">
+                {{#if project.builds.[Windows]}}
+                <li>
+                    <a href="/{{project.permalink}}/builds/Windows/{{project.title}}.zip" download>
+                        <img class="out" width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
+                    </a>
+                </li>
+                {{/if}}   
+            </ul>
+        </section>
         {{/if}}
-    {{/if}}
     </div>
 
-    <!--Downloads-->
-    {{#if project.hasDownloads}}
-    <section>
-        <h3 class="flex header">Downloads</h3>
-        <ul class="list flex">
-            {{#if project.builds.[Windows]}}
-            <li>
-                <a href="/{{project.permalink}}/builds/Windows/{{project.title}}.zip" download>
-                    <img class="out" width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
-                </a>
-            </li>
-            {{/if}}   
-        </ul>
-    </section>
-    {{/if}}
-    
     <!--external icon links-->
     {{#if project.links}}
     <section >

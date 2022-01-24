@@ -54,12 +54,15 @@
     background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
     border: 3px solid white;
     box-shadow: none;
-    width: auto;
+    width: 175px;
+    padding: 8px 0;
     text-shadow: none;
     text-align: center;
+    flex-direction: column;
     border-radius: 25px;
 }
 
 .content-wrap .flex p a {
     color: white;
+    font-size: larger;
 }

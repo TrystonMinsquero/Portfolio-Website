@@ -65,6 +65,10 @@
         padding-bottom: 20px;
     }
 
+    .pc-only {
+        display: none;
+    }
+
 /* ============ Individual Project Settings ============ */
     .content-wrap p {
         padding: 10px 25px;
