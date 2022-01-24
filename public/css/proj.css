@@ -45,6 +45,11 @@
     width: 90%;
 }
 
+#showdown-content a {
+    color: white;
+}
+
+
 .content-wrap .flex p {
     background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
     border: 3px solid white;
