@@ -1,6 +1,7 @@
 /* Assuming this CSS file will be used in conjunction with style.css */
 .page-container {
-    background: linear-gradient(to top right, #e6dede, #a8c9dd) no-repeat 0 0 / cover;
+    background: linear-gradient(to top right, #e6dede, #a8c9dd) no-repeat 0 0 /
+        cover;
     margin-top: 0;
 }
 
@@ -39,7 +40,8 @@
     font-size: 1.25rem;
 }
 
-.content-wrap section input, .content-wrap section textarea {
+.content-wrap section input,
+.content-wrap section textarea {
     width: 300px;
     border-radius: 5px;
     border: 5px solid white;

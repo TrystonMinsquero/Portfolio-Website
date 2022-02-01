@@ -12,8 +12,10 @@ const PORT = process.env.PORT || 5000;
 const hbs = create({
     // Specify helpers which are only registered on this instance.
     helpers: {
-        bar() { return foo; }
-    }
+        bar() {
+            return foo;
+        },
+    },
 });
 
 //express handlebars middleware
@@ -29,14 +31,21 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/Builds', express.static(path.join(__dirname, 'public/Builds')));
-app.use('/UnityTemplate', express.static(path.join(__dirname, 'public/UnityTemplate')));
+app.use(
+    '/UnityTemplate',
+    express.static(path.join(__dirname, 'public/UnityTemplate'))
+);
 
 // enable routing
 app.use(express.urlencoded({ extended: false }));
 
 var topThreeProjects = [];
-Portfolio.portfolio.forEach(elem => {
-    if(elem.title === 'Hole Flounder' || elem.title === 'Wyles Loop' || elem.title === 'Astrolothree') {
+Portfolio.portfolio.forEach((elem) => {
+    if (
+        elem.title === 'Hole Flounder' ||
+        elem.title === 'Wyles Loop' ||
+        elem.title === 'Astrolothree'
+    ) {
         topThreeProjects.push(elem);
     }
 });
@@ -49,81 +58,89 @@ app.get('/', (_, res) => {
         styles: ['style.css', 'tabletsupport.css'],
         scripts: [],
         recentProjects: [
-        topThreeProjects[0],
-        topThreeProjects[1],
-        topThreeProjects[2],
+            topThreeProjects[0],
+            topThreeProjects[1],
+            topThreeProjects[2],
         ],
-        aboutContent : Portfolio.homeAboutContent
+        aboutContent: Portfolio.homeAboutContent,
     });
 });
 
 // project routing
-Portfolio.portfolio.forEach(elem => {
-    if(elem.permalink) {
+Portfolio.portfolio.forEach((elem) => {
+    if (elem.permalink) {
         // project page routing
-        app.get('/' + elem.permalink, (_, res) => res.render('project', {
-            project: elem,
-            styles: ['style.css', 'proj.css', 'tabletsupport.css'],
-            scripts: []
-        }));
-        
+        app.get('/' + elem.permalink, (_, res) =>
+            res.render('project', {
+                project: elem,
+                styles: ['style.css', 'proj.css', 'tabletsupport.css'],
+                scripts: [],
+            })
+        );
+
         // add webGL routing (if it exists)
-        if(elem.builds){
-            app.use('/' + elem.permalink + '/builds', express.static(elem.buildsPath));
-            if(elem.builds['WebGL']) {
-                app.get('/' + elem.permalink + '/WebGL', (_, res) => res.sendFile(path.join(elem.builds['WebGL'], 'index.html')));
+        if (elem.builds) {
+            app.use(
+                '/' + elem.permalink + '/builds',
+                express.static(elem.buildsPath)
+            );
+            if (elem.builds['WebGL']) {
+                app.get('/' + elem.permalink + '/WebGL', (_, res) =>
+                    res.sendFile(path.join(elem.builds['WebGL'], 'index.html'))
+                );
             }
         }
 
         // make all images static
-        if(elem.images)
-            app.use('/' + elem.permalink + '/img', express.static(elem.imagesPath));
+        if (elem.images)
+            app.use(
+                '/' + elem.permalink + '/img',
+                express.static(elem.imagesPath)
+            );
     }
 });
 
 // GET request for portfolio
-app.get('/portfolio', (_, res) => 
+app.get('/portfolio', (_, res) =>
     res.render('portfolio', {
         portfolio: Portfolio.portfolio,
         games: Portfolio.games,
         projects: Portfolio.projects,
         styles: ['style.css', 'tabletsupport.css'],
-        scripts: ['portfolioDisplay.js']
+        scripts: ['portfolioDisplay.js'],
     })
 );
 
 // GET request for resume
-app.get('/resume', (_, res) => 
+app.get('/resume', (_, res) =>
     res.render('resume', {
         styles: ['style.css', 'tabletsupport.css'],
-        scripts: []
+        scripts: [],
     })
 );
 
 // GET request for contact
-app.get('/contact', (_, res) => 
+app.get('/contact', (_, res) =>
     res.render('contact', {
         styles: ['style.css', 'form.css', 'tabletsupport.css'],
-        scripts: ['mail.js']
+        scripts: ['mail.js'],
     })
 );
 
 // get request redirect for other sites
-links.forEach(link => {
-    app.get('/' + link.title, (_, res) => res.redirect(link.redirect))
+links.forEach((link) => {
+    app.get('/' + link.title, (_, res) => res.redirect(link.redirect));
 });
-
 
 // redirection adjustment handlers
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
 app.get('/home', (_, res) => res.redirect('/'));
 
-
 // 404 middleware
 app.use((_, res) => {
     res.status(404).render('404', {
         styles: ['style.css', '404.css', 'tabletsupport.css'],
-        scripts: ['error404Handler.js']
+        scripts: ['error404Handler.js'],
     });
 });
 

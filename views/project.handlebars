@@ -1,47 +1,68 @@
-{{#if project.builds.[EmbeddedWebGL]}}
-<link rel="shortcut icon" href="UnityTemplate/favicon.ico">
-<link rel="stylesheet" href="UnityTemplate/style.css">
-<script src="UnityTemplate/UnityProgress.js"></script>
-<script src="/{{project.permalink}}/builds/EmbeddedWebGL/UnityLoader.js"></script>
-<script>
-    let unityInstance;
-    const fullscreenBtn = document.getElementById("fullscreen");
-    //get and remove helper div
-    const buildPath = '/{{project.permalink}}/builds/EmbeddedWebGL/WebGL.json';
-    const startGame = () => {
-        unityInstance = UnityLoader.instantiate('unityContainer', buildPath, {onProgress: UnityProgress});
-        const webgl = document.getElementById('webgl');
-        document.getElementById('PlayButton').remove()
-    };
-</script>
+{{#if project.builds.EmbeddedWebGL}}
+    <link rel='shortcut icon' href='UnityTemplate/favicon.ico' />
+    <link rel='stylesheet' href='UnityTemplate/style.css' />
+    <script src='UnityTemplate/UnityProgress.js'></script>
+    <script
+        src='/{{project.permalink}}/builds/EmbeddedWebGL/UnityLoader.js'
+    ></script>
+    <script>
+        let unityInstance; const fullscreenBtn =
+        document.getElementById("fullscreen"); //get and remove helper div const
+        buildPath = '/{{project.permalink}}/builds/EmbeddedWebGL/WebGL.json';
+        const startGame = () => { unityInstance =
+        UnityLoader.instantiate('unityContainer', buildPath, {onProgress:
+        UnityProgress}); const webgl = document.getElementById('webgl');
+        document.getElementById('PlayButton').remove() };
+    </script>
 {{/if}}
 
+<div class='container'>
+    <div class='flex-vert' id='showdown-content'>{{{project.body}}}</div>
 
-<div class="container">
-    <div class="flex-vert" id="showdown-content">{{{project.body}}}</div>
-
-    <div class="pc-only">
+    <div class='pc-only'>
         <!--Display EmbeddedWebGL (currently disabled)-->
-        <div class="flex">
-            {{#if implementLater}} <!--replace with project.builds.[EmbeddedWebGL] to enable-->
-            <button class="flex container" type="button" id="PlayButton" onclick="startGame()">Play!</button>
-            <section id="webgl" class="flex container">
-                <div class="webgl-content">
-                    <div id="unityContainer" style="width: 960px; height: 600px"></div>
-                    <div class="footer">
-                        <div class="webgl-logo"></div>
-                        <div id="fullscreen" style="" class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-                        <div class="title">{{project.title}}</div>
+        <div class='flex'>
+            {{#if implementLater}}
+                <!--replace with project.builds.[EmbeddedWebGL] to enable-->
+                <button
+                    class='flex container'
+                    type='button'
+                    id='PlayButton'
+                    onclick='startGame()'
+                >Play!</button>
+                <section id='webgl' class='flex container'>
+                    <div class='webgl-content'>
+                        <div
+                            id='unityContainer'
+                            style='width: 960px; height: 600px'
+                        ></div>
+                        <div class='footer'>
+                            <div class='webgl-logo'></div>
+                            <div
+                                id='fullscreen'
+                                style=''
+                                class='fullscreen'
+                                onclick='unityInstance.SetFullscreen(1)'
+                            ></div>
+                            <div class='title'>{{project.title}}</div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
             {{else}}
-            <!--Try it Out-->
-                {{#if project.builds.[WebGL]}}
-                    <p><a class="underline" href="/{{project.permalink}}/builds/WebGL" target="_blank">Try It Out!</a></p>
+                <!--Try it Out-->
+                {{#if project.builds.WebGL}}
+                    <p><a
+                            class='underline'
+                            href='/{{project.permalink}}/builds/WebGL'
+                            target='_blank'
+                        >Try It Out!</a></p>
                 {{else}}
-                    {{#if project.links.[build]}}
-                        <p><a class="underline" href={{project.links.[build]}} target="_blank">Try It Out!</a></p>
+                    {{#if project.links.build}}
+                        <p><a
+                                class='underline'
+                                href={{project.links.build}}
+                                target='_blank'
+                            >Try It Out!</a></p>
                     {{/if}}
                 {{/if}}
             {{/if}}
@@ -49,57 +70,90 @@
 
         <!--Downloads-->
         {{#if project.hasDownloads}}
-        <section>
-            <h3 class="flex header">Downloads</h3>
-            <ul class="list flex">
-                {{#if project.builds.[Windows]}}
-                <li>
-                    <a href="/{{project.permalink}}/builds/Windows/{{project.title}}.zip" download>
-                        <img class="out" width="32px" height="32px" src="/img/icons/windows.svg" alt="Windows" >
-                    </a>
-                </li>
-                {{/if}}   
-            </ul>
-        </section>
+            <section>
+                <h3 class='flex header'>Downloads</h3>
+                <ul class='list flex'>
+                    {{#if project.builds.Windows}}
+                        <li>
+                            <a
+                                href='/{{project.permalink}}/builds/Windows/{{project.title}}.zip'
+                                download
+                            >
+                                <img
+                                    class='out'
+                                    width='32px'
+                                    height='32px'
+                                    src='/img/icons/windows.svg'
+                                    alt='Windows'
+                                />
+                            </a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </section>
         {{/if}}
     </div>
 
     <!--external icon links-->
     {{#if project.links}}
-    <section >
-        <h3 class="flex header">Links</h3>
-        <ul class="list flex">
-            {{#if project.links.[itch]}}
-            <li>
-                <a href={{project.links.[itch]}} target="_blank">
-                    <img class="out" width="32px" height="32px" src="/img/icons/itchio.png" alt="Itch.io" >
-                </a>
-            </li>
-            {{/if}}
-            {{#if project.links.[github]}}
-            <li>
-                <a href={{project.links.[github]}} target="_blank">
-                    <img class="out" width="32px" height="32px" src="/img/icons/github.png" alt="Github" >
-                </a>
-            </li>
-            {{/if}}
-            {{#if project.links.[ludumDare]}}
-            <li>
-                <a href={{project.links.[ludumDare]}} target="_blank">
-                    <img class="out" width="32px" height="32px" src="/img/icons/ludumDare.png" alt="LinkedIn" >
-                </a>
-            </li>  
-            {{/if}}
-            {{#if project.links.[devpost]}}
-            <li>
-                <a href={{project.links.[devpost]}} target="_blank">
-                    <img class="out" width="32px" height="32px" src="/img/icons/devpost.png" alt="Devpost" >
-                </a>
-            </li>  
-            {{/if}}           
-        </ul>
-    </section>
+        <section>
+            <h3 class='flex header'>Links</h3>
+            <ul class='list flex'>
+                {{#if project.links.itch}}
+                    <li>
+                        <a href={{project.links.itch}} target='_blank'>
+                            <img
+                                class='out'
+                                width='32px'
+                                height='32px'
+                                src='/img/icons/itchio.png'
+                                alt='Itch.io'
+                            />
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if project.links.github}}
+                    <li>
+                        <a href={{project.links.github}} target='_blank'>
+                            <img
+                                class='out'
+                                width='32px'
+                                height='32px'
+                                src='/img/icons/github.png'
+                                alt='Github'
+                            />
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if project.links.ludumDare}}
+                    <li>
+                        <a href={{project.links.ludumDare}} target='_blank'>
+                            <img
+                                class='out'
+                                width='32px'
+                                height='32px'
+                                src='/img/icons/ludumDare.png'
+                                alt='LinkedIn'
+                            />
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if project.links.devpost}}
+                    <li>
+                        <a href={{project.links.devpost}} target='_blank'>
+                            <img
+                                class='out'
+                                width='32px'
+                                height='32px'
+                                src='/img/icons/devpost.png'
+                                alt='Devpost'
+                            />
+                        </a>
+                    </li>
+                {{/if}}
+            </ul>
+        </section>
     {{/if}}
 </div>
 
-<script src="js/project.js"></script>
+<script src='js/project.js'></script>

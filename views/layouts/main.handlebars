@@ -1,102 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tryston's Website</title>
-    <script src="https://kit.fontawesome.com/3e7b4fdb0f.js" crossorigin="anonymous"></script>
-    <!--styles-->
-    {{#if styles}}
-        {{#each styles}}
-        <link rel="stylesheet" href="/css/{{this}}">
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+        <title>Tryston's Website</title>
+        <script
+            src='https://kit.fontawesome.com/3e7b4fdb0f.js'
+            crossorigin='anonymous'
+        ></script>
+        <!--styles-->
+        {{#if styles}}
+            {{#each styles}}
+                <link rel='stylesheet' href='/css/{{this}}' />
+            {{/each}}
+        {{/if}}
+
+        <link rel='icon' href='/Hole Flounder/img/favicon.ico' />
+
+    </head>
+    <body>
+        <!--Navbar-->
+        <div class='page-container'>
+            <div class='container'>
+                <header class='header output' id='output'>
+                    <h1 class='cursor'></h1>
+                </header>
+                <nav class='navbar'>
+                    <ul class='flex list'>
+                        <li><a class='underline' href='/'>HOME</a></li>
+                        <li><a
+                                class='underline'
+                                href='/portfolio'
+                            >PORTFOLIO</a></li>
+                        <li><a class='underline' href='/resume'>CV</a></li>
+                        <li><a
+                                class='underline'
+                                href='/contact'
+                            >CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!--Content-->
+            <div class='content-wrap'>
+                {{{body}}}
+            </div>
+
+            <!--Footer-->
+            <div class='footer'>
+                <div class='edge'></div>
+                <footer class='grid'>
+                    <!--Phone number-->
+                    <div class='footer_child'>
+                        <h3>Phone number</h3>
+                        <p><em class='fas fa-phone gap'></em>+1 (832)-547-4966</p>
+                    </div>
+
+                    <!--Links to other sites-->
+                    <div class='footer_child'>
+                        <ul class='list'>
+                            <li>
+                                <a href='/discord' target='_blank'>
+                                    <img
+                                        class='out'
+                                        width='32px'
+                                        height='32px'
+                                        src='/img/icons/discord.svg'
+                                        alt='Discord'
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/linkedin' target='_blank'>
+                                    <img
+                                        class='out'
+                                        width='32px'
+                                        height='32px'
+                                        src='/img/icons/linkedin.svg'
+                                        alt='LinkedIn'
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/github' target='_blank'>
+                                    <img
+                                        class='out'
+                                        width='32px'
+                                        height='32px'
+                                        src='/img/icons/github.svg'
+                                        alt='Github'
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/itch-io' target='_blank'>
+                                    <img
+                                        class='out'
+                                        width='32px'
+                                        height='32px'
+                                        src='/img/icons/itch-io.svg'
+                                        alt='Itch.io'
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/devpost' target='_blank'>
+                                    <img
+                                        class='out'
+                                        width='32px'
+                                        height='32px'
+                                        src='/img/icons/devpost.svg'
+                                        alt='Devpost'
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Contact email-->
+                    <div class='footer_child'>
+                        <h3>Email</h3>
+                        <p><em
+                                class='fas fa-envelope'
+                                style='padding: 0 10px;'
+                            ></em>trystonminsquero@gmail.com</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+    <!--scripts-->
+
+    <script src='/js/activePage.js'></script>
+    <script src='/js/stickyNav.js'></script>
+    <script src='/js/typing.js'></script>
+    {{#if scripts}}
+        {{#each scripts}}
+            <script src='/js/{{this}}'></script>
         {{/each}}
     {{/if}}
-    
-    <link rel="icon" href="/Hole Flounder/img/favicon.ico">
-
-</head>
-<body>
-    <!--Navbar-->
-    <div class="page-container">
-        <div class="container">
-            <header class="header output" id="output">
-                <h1 class="cursor"></h1>
-            </header>
-            <nav class="navbar">
-                <ul class="flex list">
-                    <li><a class="underline" href="/">HOME</a></li>
-                    <li><a class="underline" href="/portfolio">PORTFOLIO</a></li>
-                    <li><a class="underline" href="/resume">CV</a></li>
-                    <li><a class="underline" href="/contact">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!--Content-->
-        <div class="content-wrap">
-            {{{body}}}
-        </div>
-
-        <!--Footer-->
-        <div class="footer">
-            <div class="edge"></div>
-            <footer class="grid">
-                <!--Phone number-->
-                <div class="footer_child">
-                    <h3>Phone number</h3>
-                    <p><em class="fas fa-phone gap"></em>+1 (832)-547-4966</p>
-                </div>
-        
-                <!--Links to other sites-->
-                <div class="footer_child">
-                    <ul class="list">
-                        <li>
-                            <a href="/discord" target="_blank">
-                                <img class="out" width="32px" height="32px" src="/img/icons/discord.svg" alt="Discord">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/linkedin" target="_blank">
-                                <img class="out" width="32px" height="32px" src="/img/icons/linkedin.svg" alt="LinkedIn">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/github" target="_blank">
-                                <img class="out" width="32px" height="32px" src="/img/icons/github.svg" alt="Github">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/itch-io" target="_blank">
-                                <img class="out" width="32px" height="32px" src="/img/icons/itch-io.svg" alt="Itch.io">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devpost" target="_blank">
-                                <img class="out" width="32px" height="32px" src="/img/icons/devpost.svg" alt="Devpost">
-                            </a>
-                        </li>           
-                    </ul>
-                </div>
-
-                <!--Contact email-->
-                <div class="footer_child">
-                    <h3>Email</h3>
-                    <p><em class="fas fa-envelope" style="padding: 0 10px;"></em>trystonminsquero@gmail.com</p>
-                </div>
-            </footer>
-        </div>
-    </div>
-</body>
-<!--scripts-->
-
-<script src="/js/activePage.js"></script>
-<script src="/js/stickyNav.js"></script>
-<script src="/js/typing.js"></script>
-{{#if scripts}}
-    {{#each scripts}}
-<script src="/js/{{this}}"></script>
-    {{/each}}
-{{/if}}
 
 </html>

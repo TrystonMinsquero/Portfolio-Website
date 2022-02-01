@@ -1,20 +1,20 @@
-<link rel="shortcut icon" href="UnityTemplate/favicon.ico">
-<link rel="stylesheet" href="UnityTemplate/style.css">
-<script src="UnityTemplate/UnityProgress.js"></script>
-<script src="UnityBuilds/{{project.build}}/UnityLoader.js"></script>
-<div id=buildPath>UnityBuilds/{{project.build}}/WebGL.json</div>
+<link rel='shortcut icon' href='UnityTemplate/favicon.ico' />
+<link rel='stylesheet' href='UnityTemplate/style.css' />
+<script src='UnityTemplate/UnityProgress.js'></script>
+<script src='UnityBuilds/{{project.build}}/UnityLoader.js'></script>
+<div id='buildPath'>UnityBuilds/{{project.build}}/WebGL.json</div>
 <script>
     const buildPath = document.getElementById('buildPath').textContent;
-    document.getElementById('buildPath').remove()
-    var unityInstance = UnityLoader.instantiate("unityContainer", buildPath, {onProgress: UnityProgress});
-    console.log(buildPath);
+    document.getElementById('buildPath').remove() var unityInstance =
+    UnityLoader.instantiate("unityContainer", buildPath, {onProgress:
+    UnityProgress}); console.log(buildPath);
 </script>
 
-<div class="webgl-content">
-    <div id="unityContainer" style="width: 960px; height: 600px"></div>
-    <div class="footer">
-    <div class="webgl-logo"></div>
-    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-    <div class="title">Ludum Dare 48</div>
+<div class='webgl-content'>
+    <div id='unityContainer' style='width: 960px; height: 600px'></div>
+    <div class='footer'>
+        <div class='webgl-logo'></div>
+        <div class='fullscreen' onclick='unityInstance.SetFullscreen(1)'></div>
+        <div class='title'>Ludum Dare 48</div>
     </div>
 </div>

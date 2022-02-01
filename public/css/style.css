@@ -2,24 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
 
 :root {
-    --navbar-dark:  #000428;
+    --navbar-dark: #000428;
     --navbar-light: #004e92;
 
-    --navbar-hover-dark:  #eb3349;
+    --navbar-hover-dark: #eb3349;
     --navbar-hover-light: #f45c43;
-    
+
     --home-light: #4ca1af;
-    
-    --cover-dark:  #0a212f;
+
+    --cover-dark: #0a212f;
     --cover-light: #1a83da;
-    --cover-base:  #123851;
-    
-    --current-dark:  #b06ab3;
+    --cover-base: #123851;
+
+    --current-dark: #b06ab3;
     --current-light: #4568dc;
 
-    --gray-dark:  #212121;
+    --gray-dark: #212121;
     --gray-light: #414141;
-    --gray-text:  #aaaaaa;
+    --gray-text: #aaaaaa;
 
     --apple-blue: #007aff;
 }
@@ -32,11 +32,12 @@
 
 body {
     font-family: 'Lora', serif;
-    color:black;
+    color: black;
     line-height: 1.6;
 }
 
-h1, h2 {
+h1,
+h2 {
     background-color: transparent;
     font-weight: 300;
     line-height: 1.2;
@@ -52,7 +53,7 @@ h2 {
 
 a {
     text-decoration: none;
-    color:black;
+    color: black;
     transition: all 0.1s ease-in;
 }
 
@@ -69,7 +70,8 @@ img {
     transition: all 0.2s ease-in;
 }
 
-.flex, .flex-vert {
+.flex,
+.flex-vert {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,8 +87,13 @@ img {
     justify-content: center;
 }
 
-.navbar{
-    background: linear-gradient(to bottom right, var(--navbar-dark), var(--navbar-light)) no-repeat 0 0 / cover;
+.navbar {
+    background: linear-gradient(
+            to bottom right,
+            var(--navbar-dark),
+            var(--navbar-light)
+        )
+        no-repeat 0 0 / cover;
     color: white;
     height: 50px;
     width: 100%;
@@ -106,7 +113,12 @@ img {
 }
 
 .navbar li:hover {
-    background: linear-gradient(to left, var(--navbar-hover-dark), var(--navbar-hover-light)) no-repeat 0 0;
+    background: linear-gradient(
+            to left,
+            var(--navbar-hover-dark),
+            var(--navbar-hover-light)
+        )
+        no-repeat 0 0;
 }
 
 .rounded-circle {
@@ -118,7 +130,8 @@ img {
     height: 400px;
 }
 
-.list, .list-vert {
+.list,
+.list-vert {
     display: flex;
     list-style-type: none;
 }
@@ -134,13 +147,19 @@ img {
 }
 
 .home {
-    background: linear-gradient(to top, var(--home-light), var(--home-light), var(--cover-light)) no-repeat 0 0;
+    background: linear-gradient(
+            to top,
+            var(--home-light),
+            var(--home-light),
+            var(--cover-light)
+        )
+        no-repeat 0 0;
     align-items: stretch;
     align-content: center;
 }
 
 .home div {
-    width:50%;
+    width: 50%;
     padding: 20px 100px;
     padding-bottom: 0;
     background: transparent;
@@ -158,15 +177,15 @@ img {
     color: white;
 }
 
-#about-content h2{
+#about-content h2 {
     font-weight: bolder;
 }
 
-#about-content h3{
+#about-content h3 {
     font-weight: bolder;
 }
 
-#about-content p{
+#about-content p {
     text-align: center;
     font-size: large;
 }
@@ -212,9 +231,9 @@ figure.hover {
 
 figure.hover * {
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;                         /* Needed for backwards compatibility */ 
+    box-sizing: border-box; /* Needed for backwards compatibility */
     -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;               /* Needed for backwards compatibility */ 
+    transition: all 0.4s ease-in-out; /* Needed for backwards compatibility */
 }
 
 figure.hover img {
@@ -238,7 +257,7 @@ figure.hover h2 {
     display: inline-block;
     background: black;
     -webkit-transform: skew(-10deg) rotate(-20deg) translate(0, -50%);
-    transform: skew(-10deg) rotate(-20deg) translate(0, -50%);      /* Needed for backwards compatibility */ 
+    transform: skew(-10deg) rotate(-20deg) translate(0, -50%); /* Needed for backwards compatibility */
     padding: 12px 5px;
     margin: 0;
     top: 50%;
@@ -256,9 +275,9 @@ figure.hover::before {
     transform: translateX(-7.5%);
     position: absolute;
     -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;               /* Needed for backwards compatibility */
+    transition: all 0.3s ease-in-out; /* Needed for backwards compatibility */
     -webkit-transform: rotate(105deg) translateY(-40%);
-    transform: rotate(105deg) translateY(-40%);     /* Needed for backwards compatibility */
+    transform: rotate(105deg) translateY(-40%); /* Needed for backwards compatibility */
 }
 
 figure.hover a {
@@ -300,7 +319,7 @@ figure.hover.yellow {
     background: #7f5006;
 }
 
-figure.hover.yellow h2{
+figure.hover.yellow h2 {
     background: #583804;
 }
 
@@ -311,17 +330,17 @@ figure.hover.yellow::before {
 figure.hover:hover img {
     opacity: 1;
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);              /* Needed for backwards compatibility */
+    transform: scale(1.1); /* Needed for backwards compatibility */
 }
 
 figure.hover:hover h2 {
     -webkit-transform: skew(-10deg) rotate(-20deg) translate(-150%, -50%);
-    transform: skew(-10deg) rotate(-20deg) translate(-150%, -50%);  /* Needed for backwards compatibility */
+    transform: skew(-10deg) rotate(-20deg) translate(-150%, -50%); /* Needed for backwards compatibility */
 }
 
 figure.hover:hover::before {
     -webkit-transform: rotate(105deg) translateY(-140%);
-    transform: rotate(105deg) translateY(-140%);    /* Needed for backwards compatibility */
+    transform: rotate(105deg) translateY(-140%); /* Needed for backwards compatibility */
 }
 
 .projects {
@@ -329,7 +348,12 @@ figure.hover:hover::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top right, var(--gray-dark), var(--gray-light)) no-repeat 0 0 / cover;
+    background: linear-gradient(
+            to top right,
+            var(--gray-dark),
+            var(--gray-light)
+        )
+        no-repeat 0 0 / cover;
 }
 
 .projects h3 {
@@ -343,7 +367,12 @@ figure.hover:hover::before {
 }
 
 .active {
-    background: linear-gradient(to top, var(--current-light), var(--current-dark)) no-repeat 0 0;
+    background: linear-gradient(
+            to top,
+            var(--current-light),
+            var(--current-dark)
+        )
+        no-repeat 0 0;
 }
 
 .active a {
@@ -352,7 +381,8 @@ figure.hover:hover::before {
 
 /* Header Settings */
 header {
-    background: linear-gradient(to bottom, var(--gray-dark), var(--gray-light)) no-repeat 0 0 / cover;
+    background: linear-gradient(to bottom, var(--gray-dark), var(--gray-light))
+        no-repeat 0 0 / cover;
     font-family: Courier, monospace;
     font-size: large;
     font-weight: bold;
@@ -399,7 +429,8 @@ h1.cursor::after {
 
 /* Footer Settings */
 footer {
-    background: linear-gradient(to bottom, var(--gray-light), var(--gray-light)) no-repeat 0 0 / cover;
+    background: linear-gradient(to bottom, var(--gray-light), var(--gray-light))
+        no-repeat 0 0 / cover;
     color: var(--gray-text);
 }
 
@@ -409,7 +440,7 @@ footer h3 {
 }
 
 footer img {
-    filter: invert(.7);
+    filter: invert(0.7);
 }
 
 .grid {
@@ -434,7 +465,12 @@ ul.grid {
 
 .edge {
     height: 7px;
-    background:  linear-gradient(to bottom, var(--navbar-dark), var(--navbar-light)) no-repeat 0 0 / cover;
+    background: linear-gradient(
+            to bottom,
+            var(--navbar-dark),
+            var(--navbar-light)
+        )
+        no-repeat 0 0 / cover;
     box-shadow: 0 0 200px black;
 }
 
@@ -461,7 +497,7 @@ ul.grid {
 
 /* Portfolio Displays */
 .content {
-    overflow: hidden
+    overflow: hidden;
 }
 
 .buttons {

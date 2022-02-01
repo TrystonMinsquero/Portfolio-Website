@@ -8,7 +8,7 @@ const delay = 150;
 pageContainer.classList.add('bkgrd-img');
 
 // unhide all hidden objects
-for(const item of hidden) {
+for (const item of hidden) {
     item.classList.remove('hide');
     item.classList.add('swipe-left');
     setTimeout(() => {

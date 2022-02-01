@@ -1,7 +1,7 @@
 /* Adds support for Smaller Devices */
 
 @media (max-width: 768px) {
-/* ============ Footer Settings ============ */
+    /* ============ Footer Settings ============ */
     /* Changing Grid Shape */
     footer.grid {
         grid-template-columns: repeat(2, 1fr);
@@ -17,7 +17,8 @@
     }
 
     /* Left Aligned Divs */
-    footer.grid div:first-child, footer.grid div:nth-child(3) {
+    footer.grid div:first-child,
+    footer.grid div:nth-child(3) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,13 +30,13 @@
     .content-wrap {
         padding-bottom: 7rem;
     }
-    
+
     /* Adjusting for Footer Height */
     .footer {
         min-height: 7rem;
     }
 
-/* ============ Home Settings ============ */
+    /* ============ Home Settings ============ */
     /* Changing Flex Direction */
     section.flex {
         flex-direction: column;
@@ -58,7 +59,7 @@
         font-size: xx-large;
     }
 
-/* ============ Projects Settings ============ */
+    /* ============ Projects Settings ============ */
     /* Rearranging Grid to fit Projects */
     section ul.grid {
         grid-template-columns: repeat(2, 1fr);
@@ -69,13 +70,13 @@
         display: none;
     }
 
-/* ============ Individual Project Settings ============ */
+    /* ============ Individual Project Settings ============ */
     .content-wrap p {
         padding: 10px 25px;
         text-align: center;
     }
 
-/* ============ 404 Settings ============ */
+    /* ============ 404 Settings ============ */
     .housing {
         padding: 2px 15px;
     }

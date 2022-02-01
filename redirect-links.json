@@ -1,39 +1,38 @@
 [
     {
-        "title" : "linkedin",
-        "redirect" : "https://www.linkedin.com/in/tryston-minsquero/"
+        "title": "linkedin",
+        "redirect": "https://www.linkedin.com/in/tryston-minsquero/"
     },
     {
-        "title" : "discord",
-        "redirect" : "https://discordapp.com/users/447240167775010818/"
+        "title": "discord",
+        "redirect": "https://discordapp.com/users/447240167775010818/"
     },
     {
-        "title" : "github",
-        "redirect" : "https://github.com/TrystonMinsquero"
+        "title": "github",
+        "redirect": "https://github.com/TrystonMinsquero"
     },
     {
-        "title" : "itch",
-        "redirect" : "https://tryston.itch.io/"
+        "title": "itch",
+        "redirect": "https://tryston.itch.io/"
     },
     {
-        "title" : "itch-io",
-        "redirect" : "https://tryston.itch.io/"
+        "title": "itch-io",
+        "redirect": "https://tryston.itch.io/"
     },
     {
-        "title" : "devpost",
-        "redirect" : "https://devpost.com/TrystonMinsquero"
+        "title": "devpost",
+        "redirect": "https://devpost.com/TrystonMinsquero"
     },
     {
-        "title" : "roll",
-        "redirect" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "title": "roll",
+        "redirect": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
-        "title" : "rik",
-        "redirect" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "title": "rik",
+        "redirect": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
-        "title" : "destiny",
-        "redirect" : "https://raid.report/pc/4611686018515553920"
+        "title": "destiny",
+        "redirect": "https://raid.report/pc/4611686018515553920"
     }
-
-]    
+]

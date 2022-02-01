@@ -10,10 +10,13 @@
     width: 75%;
     padding: 25px;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    background: linear-gradient(to top right, #4f4f4f, #2f2f2f) no-repeat 0 0 / cover;
+    background: linear-gradient(to top right, #4f4f4f, #2f2f2f) no-repeat 0 0 /
+        cover;
 }
 
-.content-wrap h1, .content-wrap h2, .content-wrap h3 {
+.content-wrap h1,
+.content-wrap h2,
+.content-wrap h3 {
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
     text-shadow: 0 3px black;
@@ -38,22 +41,20 @@
     margin: 10px 0;
 }
 
-
 /* Special Cases */
 #showdown-content h3 {
     text-align: justify;
     width: 90%;
 }
 
-
 #showdown-content a {
     color: white;
     text-decoration: underline;
-    
 }
 
 .content-wrap .flex p {
-    background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 / cover;
+    background: linear-gradient(to right, #4568dc, #b06ab3) no-repeat 0 0 /
+        cover;
     border: 3px solid white;
     box-shadow: none;
     width: 175px;
