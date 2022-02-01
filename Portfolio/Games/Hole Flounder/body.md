@@ -1,13 +1,13 @@
 # Hole Flounder
 
 ### Team
-Myself, Michael Bettes, Jonica Brooks, Kameron Thrasher.
+Michael Bettes, Jonica Brooks, Kameron Thrasher.
 
 ### Role
-Programmer & Game Designer
+Programmer, Game Designer, & Project Manager
 
 ## Summary
-My 3rd game jam and 2nd entry for ludum dare. My goal this time was to make as much of a polished game in 72 hours, as the rest of my game jams never seemed quite finished. This allowed me to focus on the more detailed side of game development/programming. I also wanted to see what I could accomplish with a small team that I have worked with previously.
+My 3rd game jam and 2nd entry for Ludum dare. My goal this time was to make as much of a polished game in 72 hours, as the rest of my game jams never seemed quite finished. This allowed me to focus on the more detailed side of game development/programming. I also wanted to see what I could accomplish with a small team that I have worked with previously.
 
 ## What I contributed
 I had done all the programming besides simple UI scripts. Most of this was the player controls, animations, level programming, procedural generation, abilities, sound transitions, and more. I was also managing what everyone else was getting done so we could finish the game on time and helping my team as needed.
