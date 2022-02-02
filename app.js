@@ -30,23 +30,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
-app.use('/Builds', express.static(path.join(__dirname, 'public/Builds')));
-app.use(
-    '/UnityTemplate',
-    express.static(path.join(__dirname, 'public/UnityTemplate'))
-);
 
 // enable routing
 app.use(express.urlencoded({ extended: false }));
 
-var topThreeProjects = [];
+var topThreeProjects = new Array(3);
 Portfolio.portfolio.forEach((elem) => {
-    if (
-        elem.title === 'Hole Flounder' ||
-        elem.title === 'Wyles Loop' ||
-        elem.title === 'Astrolothree'
-    ) {
-        topThreeProjects.push(elem);
+    switch (elem.title) {
+        case 'Comet Circle':
+            topThreeProjects[0] = elem;
+            break;
+        case 'Hole Flounder':
+            topThreeProjects[1] = elem;
+            break;
+        case 'Astrolothree':
+            topThreeProjects[2] = elem;
+            break;
     }
 });
 
