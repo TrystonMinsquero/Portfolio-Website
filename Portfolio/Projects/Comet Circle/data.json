@@ -1,9 +1,9 @@
 {
-    "title" : "Comet Circle",
-    "permalink" : "comet-circle",
-    "links" : {
-      "build" : "https://share.streamlit.io/trystonminsquero/hackutd-2021f/main/main.py",
-      "github" : "https://github.com/TrystonMinsquero/HackUTD-2021F",
-      "devpost" : "https://devpost.com/software/comet-clique"
+    "title": "Comet Circle",
+    "permalink": "comet-circle",
+    "links": {
+        "build": "http://heatmap.utdnebula.com",
+        "github": "https://github.com/TrystonMinsquero/HackUTD-2021F",
+        "devpost": "https://devpost.com/software/comet-clique"
     }
-  }
+}

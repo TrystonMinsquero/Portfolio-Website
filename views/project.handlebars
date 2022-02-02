@@ -99,19 +99,6 @@
         <section>
             <h3 class='flex header'>Links</h3>
             <ul class='list flex'>
-                {{#if project.links.itch}}
-                    <li>
-                        <a href={{project.links.itch}} target='_blank'>
-                            <img
-                                class='out'
-                                width='32px'
-                                height='32px'
-                                src='/img/icons/itchio.png'
-                                alt='Itch.io'
-                            />
-                        </a>
-                    </li>
-                {{/if}}
                 {{#if project.links.github}}
                     <li>
                         <a href={{project.links.github}} target='_blank'>
@@ -119,21 +106,21 @@
                                 class='out'
                                 width='32px'
                                 height='32px'
-                                src='/img/icons/github.png'
+                                src='/img/icons/github.svg'
                                 alt='Github'
                             />
                         </a>
                     </li>
                 {{/if}}
-                {{#if project.links.ludumDare}}
+                {{#if project.links.itch}}
                     <li>
-                        <a href={{project.links.ludumDare}} target='_blank'>
+                        <a href={{project.links.itch}} target='_blank'>
                             <img
                                 class='out'
                                 width='32px'
                                 height='32px'
-                                src='/img/icons/ludumDare.png'
-                                alt='LinkedIn'
+                                src='/img/icons/itch-io.svg'
+                                alt='Itch.io'
                             />
                         </a>
                     </li>
@@ -145,7 +132,7 @@
                                 class='out'
                                 width='32px'
                                 height='32px'
-                                src='/img/icons/devpost.png'
+                                src='/img/icons/devpost.svg'
                                 alt='Devpost'
                             />
                         </a>
