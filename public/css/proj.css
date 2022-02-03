@@ -50,6 +50,22 @@
 #showdown-content a {
     color: white;
     text-decoration: underline;
+    text-underline-offset: 0.1em;
+}
+
+#showdown-content a:hover {
+    font-weight: normal;
+    color: #4568dc;
+}
+
+/* This does not work, want to change the hover color if it is visited */
+#showdown-content a:link.a:hover {
+    font-weight: normal;
+    color: #b06ab3;
+}
+
+#showdown-content ul ul {
+    padding-left: 1em;
 }
 
 .content-wrap .flex p {
