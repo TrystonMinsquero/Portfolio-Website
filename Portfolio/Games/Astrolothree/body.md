@@ -10,7 +10,7 @@ Programmer, Game Designer, and Project Lead
 
 ## Background
 
-This was for a week long [game jam hosted by SGDA](https://itch.io/jam/sgda-spring-jam) during the spring semester of 2021 and the theme for the jam was "Rule of Three". The team consisted of my roommate and two people that I had never met, and it was all done virtual. I was the only one with prior game development experience I ended up leading the team. Additionally, this was the first time I had an artist on the team and another programmer.
+I made Astrothree for a week long [game jam hosted by SGDA](https://itch.io/jam/sgda-spring-jam) during the spring semester of 2021 with the theme: "Rule of Three". The team consisted of my roommate and two people that I had never met, and it was all done virtually. I was the only one with prior game development experience and ended up leading the team. Additionally, this was my first time working with an artist and another programmer.
 
 ## Summary
 
@@ -19,7 +19,7 @@ We ended up making a top down wave based survival-arcade game, where the player 
 ## What I Contributed
 
 -   Came up with the original idea for the game
--   all of the player controls
+-   Created player input controls
 -   The high-score system implementation and scene
 -   Implement unity's 2D light renderer and post processing (especially seen with bloom)
 -   Created an emission map for the character sprite-sheet
