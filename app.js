@@ -145,5 +145,7 @@ app.use((_, res) => {
 
 // activate on PORT
 app.listen(PORT, () => {
-    return console.log(`Server started on PORT ${PORT}`);
+    return console.log(
+        `Server started on PORT ${PORT} \nAccess on http://localhost:${PORT}`
+    );
 });
