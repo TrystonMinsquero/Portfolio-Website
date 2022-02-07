@@ -6,7 +6,7 @@ Rik Ghosh
 
 ## Summary
 
-This is my personal website I made for showing my games and projects, in addition to learning the basics of full-stack web development. The goal was to make a website where I can easily add and edit projects within this GitHub repository to update my website. You can read more about how I made it in the [Github Readme](https://github.com/TrystonMinsquero/Portfolio-Website/blob/main/README.md).
+This is my personal website I made for showing my games and projects, in addition to learning the basics of full-stack web development. The goal was to make a website where I can easily add and edit projects within this GitHub repository to update my website. You can read more about how I made it in the [Github Readme](https://github.com/TrystonMinsquero/Portfolio-Website#ReadMe).
 
 ## What I learned
 
