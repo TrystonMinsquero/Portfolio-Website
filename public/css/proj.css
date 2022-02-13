@@ -38,7 +38,7 @@
     text-shadow: 1px 1.5px black;
     color: white;
     border-radius: 25px;
-    margin: 10px 0;
+    margin: 10px 0 30px 0;
 }
 
 /* Special Cases */
@@ -84,4 +84,8 @@
 .content-wrap .flex p a {
     color: white;
     font-size: larger;
+}
+
+#TryItOut {
+    margin-bottom: 20px;
 }

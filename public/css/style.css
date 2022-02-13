@@ -128,7 +128,7 @@ img {
     transition: all 0.2s ease-in;
     width: 400px;
     height: 400px;
-    margin: 15px;
+    margin: 50px;
 }
 
 .list,
@@ -374,6 +374,10 @@ figure.hover:hover::before {
     text-shadow: 0 0 3px wheat;
 }
 
+.project-list {
+    padding-bottom: 35px;
+}
+
 .active {
     background: linear-gradient(
             to top,
@@ -458,6 +462,7 @@ footer img {
 footer.grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    padding: 10px 0 10px 0;
 }
 
 .footer_child {

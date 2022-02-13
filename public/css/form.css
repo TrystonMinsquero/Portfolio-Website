@@ -1,8 +1,6 @@
 /* Assuming this CSS file will be used in conjunction with style.css */
 .page-container {
-    background: linear-gradient(to top right, #e6dede, #a8c9dd) no-repeat 0 0 /
-        cover;
-    margin-top: 0;
+    background: url('../img/games-background.webp') 0 0 / cover;
 }
 
 .content-wrap .container {
@@ -18,8 +16,8 @@
     border: 5px solid white;
     width: 45%;
     min-width: 350px;
-    margin: auto;
-    padding: 80px 10px 50px 10px;
+    margin: 15px auto 30px auto;
+    padding: 20px 10px 20px 10px;
     border-radius: 25px;
 }
 
@@ -50,6 +48,8 @@
 
 .content-wrap section textarea {
     max-width: 300px;
+    min-width: 300px;
+    margin-bottom: 10px;
 }
 
 .content-wrap section input {
