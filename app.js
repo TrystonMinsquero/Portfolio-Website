@@ -4,7 +4,6 @@ const path = require('path');
 const Portfolio = require('./portfolio');
 const links = require('./redirect-links.json');
 const { create } = require('express-handlebars');
-const { rmSync } = require('fs');
 
 // initalize app
 const app = express();
@@ -65,39 +64,13 @@ app.get('/', (_, res) => {
     });
 });
 
-// project routing
-Portfolio.portfolio.forEach((elem) => {
-    if (elem.permalink) {
-        // project page routing
-        app.get('/' + elem.permalink, (_, res) =>
-            res.render('project', {
-                project: elem,
-                styles: ['style.css', 'proj.css', 'tabletsupport.css'],
-                scripts: [],
-            })
-        );
-
-        // add webGL routing (if it exists)
-        if (elem.builds) {
-            app.use(
-                '/' + elem.permalink + '/builds',
-                express.static(elem.buildsPath)
-            );
-            if (elem.builds['WebGL']) {
-                app.get('/' + elem.permalink + '/WebGL', (_, res) =>
-                    res.sendFile(path.join(elem.builds['WebGL'], 'index.html'))
-                );
-            }
-        }
-
-        // make all images static
-        if (elem.images)
-            app.use(
-                '/' + elem.permalink + '/img',
-                express.static(elem.imagesPath)
-            );
-    }
-});
+app.get('/about', (_, res) =>
+    res.render('about', {
+        aboutContent: Portfolio.homeAboutContent,
+        styles: ['style.css', 'proj.css', 'tabletsupport.css'],
+        scripts: ['project.js'],
+    })
+);
 
 // GET request for portfolio
 app.get('/portfolio', (_, res) =>
@@ -125,6 +98,40 @@ app.get('/contact', (_, res) =>
         scripts: ['mail.js'],
     })
 );
+
+// project routing
+Portfolio.portfolio.forEach((elem) => {
+    if (elem.permalink) {
+        // project page routing
+        app.get('/' + elem.permalink, (_, res) =>
+            res.render('project', {
+                project: elem,
+                styles: ['style.css', 'proj.css', 'tabletsupport.css'],
+                scripts: ['project.js'],
+            })
+        );
+
+        // add webGL routing (if it exists)
+        if (elem.builds) {
+            app.use(
+                '/' + elem.permalink + '/builds',
+                express.static(elem.buildsPath)
+            );
+            if (elem.builds['WebGL']) {
+                app.get('/' + elem.permalink + '/WebGL', (_, res) =>
+                    res.sendFile(path.join(elem.builds['WebGL'], 'index.html'))
+                );
+            }
+        }
+
+        // make all images static
+        if (elem.images)
+            app.use(
+                '/' + elem.permalink + '/img',
+                express.static(elem.imagesPath)
+            );
+    }
+});
 
 // get request redirect for other sites
 links.forEach((link) => {
