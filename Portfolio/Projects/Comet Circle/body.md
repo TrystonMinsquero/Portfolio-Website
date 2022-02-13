@@ -1,12 +1,12 @@
 # Comet Circle
 
-### Team
-
-Lucas Jagg, Allison Chiang, and Stephanie Li.
-
 ### Role
 
 Lead Backend Programmer
+
+### Team
+
+Lucas Jagg, Allison Chiang, and Stephanie Li.
 
 ## Summary
 

@@ -1,12 +1,12 @@
 # KillSwitch
 
-### Team
-
-Joni Brooks, Eric Bau, Angel Regalado, Linus Fackler, Cade Miller.
-
 ### Role
 
 Programmer, Game Designer, and Project Manager
+
+### Team
+
+Joni Brooks, Eric Bau, Angel Regalado, Linus Fackler, Cade Miller.
 
 ## Summary
 
@@ -30,7 +30,7 @@ The jam went well, but I felt like the game had a lot of potential that was not 
 
 -   During the jam I was in the process of moving into my apartment.
 -   Many members had school or work and could not contribute as much as they would have liked too.
-    -  This led to having scope creep on myself as I thought I would be working with more people
+    -   This led to having scope creep on myself as I thought I would be working with more people
 -   Having a solid local multiplayer system with a lobby
 -   Creating a system to take over other players and NPCs, changing sprites and weapons during runtime and making fluid movement
 

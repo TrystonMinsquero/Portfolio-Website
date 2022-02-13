@@ -1,16 +1,16 @@
 # Astrolothree
 
-### Team
-
-Dylan T Moss, Jonica Brooks, Silvano Gallegos
-
 ### Role
 
 Programmer, Game Designer, and Project Lead
 
+### Team
+
+Dylan T Moss, Jonica Brooks, Silvano Gallegos
+
 ## Background
 
-I made Astrothree for a week long [game jam hosted by SGDA](https://itch.io/jam/sgda-spring-jam) during the spring semester of 2021 with the theme: "Rule of Three". The team consisted of my roommate and two people that I had never met, and it was all done virtually. I was the only one with prior game development experience and ended up leading the team. Additionally, this was my first time working with an artist and another programmer.
+We made Astrothree for a week long [game jam hosted by SGDA](https://itch.io/jam/sgda-spring-jam) during the spring semester of 2021 with the theme: "Rule of Three". The team consisted of my roommate and two people that I had never met, and it was all done virtually. I was the only one with prior game development experience and ended up leading the team. Additionally, this was my first time working with an artist and another programmer.
 
 ## Summary
 
@@ -33,8 +33,8 @@ As stated before, I was the only who had previous experience, so delegating task
 
 ## What I Learned
 
-I learned how nice it was to have a competent team who's skills are diverse and how important it is to communicate with them to have a good product. I also learned a lot about unity, from 2D lights and graphics to how _not_ to organize code in a unity project. ALthough we got it to work, going to look back at the code does not seem like a good time. In addition I learned more about Coroutines and many other aspects about C# in Unity.
+I learned how nice it was to have a competent team who's skills are diverse and how important it is to communicate with them to have a good product. I also learned a lot about unity, from 2D lights and graphics to how _not_ to organize code in a unity project. Although we got it to work, going to look back at the code does not seem like a good time. In addition I learned more about Coroutines and many other aspects about C# in Unity.
 
 ## What I'm Most Proud of
 
-Getting the bloom to work and also the online high-score system to work I think really impressed the judges to where we won a prize for "Best Technical". Additionally I think this is one of the best looking games I've made yet, which I usually struggle to do.
+Getting the bloom to work and also the online high-score system to work I think really impressed the judges to where we won a prize for "Best Technical". Additionally I think this is one of the best looking games in terms of graphics I have made.
