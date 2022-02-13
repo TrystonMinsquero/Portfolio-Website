@@ -60,13 +60,13 @@ app.get('/', (_, res) => {
             topThreeProjects[1],
             topThreeProjects[2],
         ],
-        aboutContent: Portfolio.homeAboutContent,
+        aboutContent: Portfolio.quickAbout,
     });
 });
 
 app.get('/about', (_, res) =>
     res.render('about', {
-        aboutContent: Portfolio.homeAboutContent,
+        aboutContent: Portfolio.aboutContent,
         styles: ['style.css', 'proj.css', 'tabletsupport.css'],
         scripts: ['project.js'],
     })

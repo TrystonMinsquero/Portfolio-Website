@@ -110,8 +110,13 @@ function getProject(projectFiles, projectPath) {
 }
 
 // get about-content data
-module.exports.homeAboutContent = converter.makeHtml(
+module.exports.aboutContent = converter.makeHtml(
     fs.readFileSync(path.join(__dirname, 'about-content.md')).toString()
+);
+
+// get quick-about data
+module.exports.quickAbout = converter.makeHtml(
+    fs.readFileSync(path.join(__dirname, 'quick-about.md')).toString()
 );
 
 module.exports.portfolio = portfolio;
