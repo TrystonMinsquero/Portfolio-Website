@@ -10,7 +10,16 @@ pageContainer.classList.add('bkgrd-img');
 // compute grid columns dynamically
 buttons.style.gridTemplateColumns = `repeat(${buttonList.length}, 1fr)`;
 
-let currentIndex;
+// get index cookie
+
+let currentIndex = parseInt(getCookie('index'));
+if (isNaN(currentIndex)) {
+    currentIndex = 0;
+    document.cookie = 'index=0';
+}
+inContent[currentIndex].classList.remove('hide');
+buttonList[currentIndex].classList.add('current');
+
 let timeout;
 const swapCallbackTime = 500;
 
@@ -20,6 +29,8 @@ const swap = (index) => {
     // update button colors
     buttonList[currentIndex].classList.remove('current');
     buttonList[index].classList.add('current');
+
+    document.cookie = 'index=' + index;
 
     clearTimeout(timeout);
     if (index < currentIndex) {
@@ -67,6 +78,7 @@ const swap = (index) => {
             }, swapCallbackTime);
         }, swapCallbackTime);
     }
+
     // old right shift
 
     //     console.log("Begin right shift")
@@ -93,4 +105,22 @@ for (let i = 0; i < buttonList.length; i++) {
         e.preventDefault();
         swap(i);
     });
+}
+
+// From w3 Schools
+
+function getCookie(cname) {
+    let name = cname + '=';
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
 }
