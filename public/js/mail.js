@@ -1,5 +1,7 @@
 emailjs.init('user_EmFO3M1Ku7DNPpEATz0kU');
 
+document.getElementById('Contact-Me').remove();
+
 const sendMail = () => {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
