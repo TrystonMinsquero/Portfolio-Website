@@ -4,6 +4,7 @@ const path = require('path');
 const Portfolio = require('./portfolio');
 const links = require('./redirect-links.json');
 const { create } = require('express-handlebars');
+const { redirect } = require('express/lib/response');
 
 // initalize app
 const app = express();
@@ -141,6 +142,14 @@ links.forEach((link) => {
 // redirection adjustment handlers
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
 app.get('/home', (_, res) => res.redirect('/'));
+app.get('/games', (_, res) => {
+    res.cookie('index', '0');
+    res.redirect('/portfolio');
+});
+app.get('/projects', (_, res) => {
+    res.cookie('index', '1');
+    res.redirect('/portfolio');
+});
 
 // 404 middleware
 app.use((_, res) => {
