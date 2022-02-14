@@ -12,6 +12,7 @@
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     background: linear-gradient(to top right, #4f4f4f, #2f2f2f) no-repeat 0 0 /
         cover;
+    min-height: 83vh;
 }
 
 .content-wrap h1,
