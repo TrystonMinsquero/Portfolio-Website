@@ -14,7 +14,7 @@
 .content-wrap section {
     background: linear-gradient(to top, #000428, #004e92) no-repeat 0 0 / cover;
     border: 5px solid white;
-    width: 45%;
+    width: 400px;
     min-width: 350px;
     margin: 15px auto 30px auto;
     padding: 20px 10px 20px 10px;
