@@ -142,6 +142,8 @@ links.forEach((link) => {
 // redirection adjustment handlers
 app.get('/portfolio/', (_, res) => res.redirect('/portfolio'));
 app.get('/home', (_, res) => res.redirect('/'));
+
+// redirect games and projects with proper index
 app.get('/games', (_, res) => {
     res.cookie('index', '0');
     res.redirect('/portfolio');
