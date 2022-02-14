@@ -61,6 +61,7 @@ app.get('/', (_, res) => {
             topThreeProjects[2],
         ],
         aboutContent: Portfolio.quickAbout,
+        home: true
     });
 });
 

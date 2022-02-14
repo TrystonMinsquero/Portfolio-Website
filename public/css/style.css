@@ -562,3 +562,21 @@ ul.grid {
 .bkgrd-img {
     background: url('../img/games-background.webp') repeat;
 }
+
+/* Hotlinks for Home Only */
+.hotlinks {
+    background: linear-gradient(
+            to top,
+            var(--cover-light),
+            var(--apple-blue)
+        )
+        no-repeat 0 0 / cover;
+    color: white;
+    height: 50px;
+    width: 100%;
+    transition: all 0.2s ease-in;
+}
+
+.hotlinks li {
+    padding: 15px;
+}

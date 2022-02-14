@@ -24,15 +24,88 @@
                 <header class='header output' id='output'>
                     <h1 class='cursor'></h1>
                 </header>
-                <nav class='navbar'>
-                    <ul class='flex list'>
-                        <li><a class='underline' href='/'>HOME</a></li>
-                        <li><a class='underline' href='/about'>ABOUT</a></li>
-                        <li><a class='underline' href='/portfolio'>PORTFOLIO</a></li>
-                        <li><a class='underline' href='/resume'>CV</a></li>
-                        <li><a class='underline' href='/contact'>CONTACT</a></li>
-                    </ul>
-                </nav>
+                {{#if home}}
+                    <div class="flex_vert">
+                        <nav class='navbar'>
+                            <ul class='flex list'>
+                                <li><a class='underline' href='/'>HOME</a></li>
+                                <li><a class='underline' href='/about'>ABOUT</a></li>
+                                <li><a class='underline' href='/portfolio'>PORTFOLIO</a></li>
+                                <li><a class='underline' href='/resume'>CV</a></li>
+                                <li><a class='underline' href='/contact'>CONTACT</a></li>
+                            </ul>
+                        </nav>
+                        <nav class="hotlinks flex">
+                            <ul class='list'>
+                                <li>
+                                    <a href='/discord' target='_blank'>
+                                        <img
+                                            class='out'
+                                            width='32px'
+                                            height='32px'
+                                            src='/img/icons/discord.svg'
+                                            alt='Discord'
+                                        />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/linkedin' target='_blank'>
+                                        <img
+                                            class='out'
+                                            width='32px'
+                                            height='32px'
+                                            src='/img/icons/linkedin.svg'
+                                            alt='LinkedIn'
+                                        />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/github' target='_blank'>
+                                        <img
+                                            class='out'
+                                            width='32px'
+                                            height='32px'
+                                            src='/img/icons/github.svg'
+                                            alt='Github'
+                                        />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/itch-io' target='_blank'>
+                                        <img
+                                            class='out'
+                                            width='32px'
+                                            height='32px'
+                                            src='/img/icons/itch-io.svg'
+                                            alt='Itch.io'
+                                        />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/devpost' target='_blank'>
+                                        <img
+                                            class='out'
+                                            width='32px'
+                                            height='32px'
+                                            src='/img/icons/devpost.svg'
+                                            alt='Devpost'
+                                        />
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                {{else}}
+                    <nav class='navbar'>
+                        <ul class='flex list'>
+                            <li><a class='underline' href='/'>HOME</a></li>
+                            <li><a class='underline' href='/about'>ABOUT</a></li>
+                            <li><a class='underline' href='/portfolio'>PORTFOLIO</a></li>
+                            <li><a class='underline' href='/resume'>CV</a></li>
+                            <li><a class='underline' href='/contact'>CONTACT</a></li>
+                        </ul>
+                    </nav>
+                {{/if}}
             </div>
 
             <!--Content-->
