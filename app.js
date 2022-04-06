@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 var topThreeProjects = new Array(3);
 Portfolio.portfolio.forEach((elem) => {
     switch (elem.title) {
-        case 'Comet Circle':
+        case 'Time DashKing':
             topThreeProjects[0] = elem;
             break;
         case 'Hole Flounder':
