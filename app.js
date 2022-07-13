@@ -37,13 +37,13 @@ app.use(express.urlencoded({ extended: false }));
 var topThreeProjects = new Array(3);
 Portfolio.portfolio.forEach((elem) => {
     switch (elem.title) {
-        case 'Time DashKing':
+        case 'Tobor Party':
             topThreeProjects[0] = elem;
             break;
         case 'Hole Flounder':
             topThreeProjects[1] = elem;
             break;
-        case 'Astrolothree':
+        case 'Time DashKing':
             topThreeProjects[2] = elem;
             break;
     }

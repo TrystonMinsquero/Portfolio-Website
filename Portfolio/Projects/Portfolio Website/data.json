@@ -3,5 +3,6 @@
     "permalink": "portfolio-website",
     "links": {
         "github": "https://github.com/TrystonMinsquero/Portfolio-Website"
-    }
+    },
+    "order": "-1"
 }

@@ -7,5 +7,6 @@
         "ludumDare": "https://ldjam.com/events/ludum-dare/tryston",
         "steam": "https://store.steampowered.com/search/?publisher=Tryston%20Minsquero",
         "build": "link to site if no download builds"
-    }
+    },
+    "order": "-1"
 }
