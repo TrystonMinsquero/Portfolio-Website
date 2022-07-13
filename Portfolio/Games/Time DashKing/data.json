@@ -5,5 +5,6 @@
         "github": "https://github.com/TrystonMinsquero/Ludum-Dare-50",
         "itch": "https://tryston.itch.io/time-dashking",
         "ludumDare": "https://ldjam.com/events/ludum-dare/50/time-dashking"
-    }
+    },
+    "order": "-1"
 }

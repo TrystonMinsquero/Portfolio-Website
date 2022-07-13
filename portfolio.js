@@ -46,6 +46,7 @@ function getProject(projectFiles, projectPath) {
     projectFiles.forEach((file) => {
         const extension = file.split('.').pop(); //if file is a directory, will be name of directory
         switch (extension) {
+            // append data.json data to newProject
             case 'json':
                 let data = JSON.parse(
                     fs.readFileSync(path.join(projectPath, file))
@@ -54,11 +55,13 @@ function getProject(projectFiles, projectPath) {
                     (key) => (newProject[key] = data[key])
                 );
                 break;
+            // turn the markdown into html and save it to newProject
             case 'md':
                 newProject.body = converter.makeHtml(
                     fs.readFileSync(path.join(projectPath, file)).toString()
                 );
                 break;
+            // find the builds
             case 'builds':
                 newProject.builds = {};
                 const buildsAvail = fs.readdirSync(
@@ -74,6 +77,7 @@ function getProject(projectFiles, projectPath) {
                 );
                 newProject.buildsPath = path.join(projectPath, file);
                 break;
+            // assign images
             case 'img':
                 newProject.images = {};
                 const imagesAvail = fs.readdirSync(
@@ -92,6 +96,7 @@ function getProject(projectFiles, projectPath) {
         }
     });
 
+    // check if it has downloads
     newProject.hasDownloads = false;
     if (newProject.builds) {
         Object.keys(newProject.builds).forEach((build) => {
@@ -108,6 +113,11 @@ function getProject(projectFiles, projectPath) {
 
     return newProject;
 }
+
+// sort lists by order assigned in data
+portfolio.sort((a, b) => b.order - a.order);
+games.sort((a, b) => b.order - a.order);
+projects.sort((a, b) => b.order - a.order);
 
 // get about-content data
 module.exports.aboutContent = converter.makeHtml(
