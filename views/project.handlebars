@@ -125,6 +125,19 @@
                         </a>
                     </li>
                 {{/if}}
+                {{#if project.links.steam}}
+                    <li>
+                        <a href={{project.links.steam}} target='_blank'>
+                            <img
+                                class='out'
+                                width='32px'
+                                height='32px'
+                                src='/img/icons/steam.svg'
+                                alt='Steam'
+                            />
+                        </a>
+                    </li>
+                {{/if}}
                 {{#if project.links.devpost}}
                     <li>
                         <a href={{project.links.devpost}} target='_blank'>

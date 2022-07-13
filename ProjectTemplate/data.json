@@ -1,10 +1,11 @@
 {
-    "title" : "Title",
-    "permalink" : "url-friendly-title",
-    "links" : {
-      "github" : "https://github.com/TrystonMinsquero/",
-      "itch" : "https://tryston.itch.io/",
-      "ludumDare" : "https://ldjam.com/events/ludum-dare/tryston",
-      "build" : "link to site if no download builds"
+    "title": "Title",
+    "permalink": "url-friendly-title",
+    "links": {
+        "github": "https://github.com/TrystonMinsquero/",
+        "itch": "https://tryston.itch.io/",
+        "ludumDare": "https://ldjam.com/events/ludum-dare/tryston",
+        "steam": "https://store.steampowered.com/search/?publisher=Tryston%20Minsquero",
+        "build": "link to site if no download builds"
     }
-  }
+}
