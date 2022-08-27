@@ -119,6 +119,18 @@ portfolio.sort((a, b) => b.order - a.order);
 games.sort((a, b) => b.order - a.order);
 projects.sort((a, b) => b.order - a.order);
 
+function GetProjectsByName(projectNames) {
+    const projects = [];
+    projectNames.forEach((projectName) => {
+        portfolio.forEach((project) => {
+            if (project.title === projectName) {
+                projects.push(project);
+            }
+        });
+    });
+    return projects;
+}
+
 // get about-content data
 module.exports.aboutContent = converter.makeHtml(
     fs.readFileSync(path.join(__dirname, 'about-content.md')).toString()
@@ -129,6 +141,7 @@ module.exports.quickAbout = converter.makeHtml(
     fs.readFileSync(path.join(__dirname, 'quick-about.md')).toString()
 );
 
+module.exports.GetProjectsByName = GetProjectsByName;
 module.exports.portfolio = portfolio;
 module.exports.games = games;
 module.exports.projects = projects;

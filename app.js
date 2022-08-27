@@ -51,54 +51,19 @@ Portfolio.portfolio.forEach((elem) => {
 
 // routing
 
-// home page routing
-app.get('/', (_, res) => {
-    res.render('home', {
-        styles: ['style.css', 'tabletsupport.css'],
-        scripts: [],
-        recentProjects: [
-            topThreeProjects[0],
-            topThreeProjects[1],
-            topThreeProjects[2],
-        ],
-        aboutContent: Portfolio.quickAbout,
-    });
-});
+const staticPages = require('./static-data.js').staticPages;
 
-app.get('/about', (_, res) =>
-    res.render('about', {
-        aboutContent: Portfolio.aboutContent,
-        styles: ['style.css', 'proj.css', 'tabletsupport.css'],
-        scripts: ['project.js'],
-    })
-);
-
-// GET request for portfolio
-app.get('/portfolio', (_, res) =>
-    res.render('portfolio', {
-        portfolio: Portfolio.portfolio,
-        games: Portfolio.games,
-        projects: Portfolio.projects,
-        styles: ['style.css', 'tabletsupport.css'],
-        scripts: ['portfolioDisplay.js'],
-    })
-);
-
-// GET request for resume
-app.get('/resume', (_, res) =>
-    res.render('resume', {
-        styles: ['style.css', 'tabletsupport.css'],
-        scripts: [],
-    })
-);
-
-// GET request for contact
-app.get('/contact', (_, res) =>
-    res.render('contact', {
-        styles: ['style.css', 'form.css', 'tabletsupport.css'],
-        scripts: ['mail.js'],
-    })
-);
+for (const page in staticPages) {
+    if (page === 'home') {
+        app.get('/', (_, res) => {
+            res.render(page, staticPages[page]);
+        });
+    } else {
+        app.get('/' + page, (_, res) => {
+            res.render(page, staticPages[page]);
+        });
+    }
+}
 
 // project routing
 Portfolio.portfolio.forEach((elem) => {
