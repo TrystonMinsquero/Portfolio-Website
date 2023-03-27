@@ -3,6 +3,7 @@ const path = require('path');
 const Portfolio = require('./portfolio');
 const fs = require('fs');
 const Handlebars = require('handlebars');
+
 const staticPages = require('./static-data.js').staticPages;
 const staticPath = path.join(__dirname, 'dist');
 
@@ -34,7 +35,7 @@ function buildStaticSite() {
 
     // build static pages
     for (const page in staticPages) {
-        const fileName = page === 'home' ? 'index.html' : page + '.html';
+        const fileName = page === 'home' ? 'index.html' : page + '.aa';
         buildHTML(page, path.join(staticPath, fileName), staticPages[page]);
     }
 

@@ -1,0 +1,53 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/linkedin",
+        "destination": "https://www.linkedin.com/in/tryston-minsquero/"
+      },
+      {
+        "source": "/discord",
+        "destination": "https://discordapp.com/users/447240167775010818/"
+      },
+      {
+        "source": "/github",
+        "destination": "https://github.com/TrystonMinsquero"
+      },
+      {
+        "source": "/itch",
+        "destination": "https://tryston.itch.io/"
+      },
+      {
+        "source": "/itch-io",
+        "destination": "https://tryston.itch.io/"
+      },
+      {
+        "source": "/devpost",
+        "destination": "https://devpost.com/TrystonMinsquero"
+      },
+      {
+        "source": "/roll",
+        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      {
+        "source": "/rik",
+        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      {
+        "source": "/destiny",
+        "destination": "https://raid.report/pc/4611686018515553920"
+      },
+      {
+        "source": "/email",
+        "destination": "mailto:trystonminsquero@gmail.com"
+      }
+    ]
+
+  }
+}
