@@ -6,48 +6,115 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "redirects": [
       {
         "source": "/linkedin",
-        "destination": "https://www.linkedin.com/in/tryston-minsquero/"
+        "destination": "https://www.linkedin.com/in/tryston-minsquero",
+        "type": 301
       },
       {
         "source": "/discord",
-        "destination": "https://discordapp.com/users/447240167775010818/"
+        "destination": "https://discordapp.com/users/447240167775010818/",
+        "type": 301
       },
       {
         "source": "/github",
-        "destination": "https://github.com/TrystonMinsquero"
+        "destination": "https://github.com/TrystonMinsquero",
+        "type": 301
       },
       {
         "source": "/itch",
-        "destination": "https://tryston.itch.io/"
+        "destination": "https://tryston.itch.io/",
+        "type": 301
       },
       {
         "source": "/itch-io",
-        "destination": "https://tryston.itch.io/"
+        "destination": "https://tryston.itch.io/",
+        "type": 301
       },
       {
         "source": "/devpost",
-        "destination": "https://devpost.com/TrystonMinsquero"
+        "destination": "https://devpost.com/TrystonMinsquero",
+        "type": 301
       },
       {
         "source": "/roll",
-        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "type": 301
       },
       {
         "source": "/rik",
-        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "type": 301
       },
       {
         "source": "/destiny",
-        "destination": "https://raid.report/pc/4611686018515553920"
+        "destination": "https://raid.report/pc/4611686018515553920",
+        "type": 301
       },
       {
         "source": "/email",
-        "destination": "mailto:trystonminsquero@gmail.com"
+        "destination": "mailto:trystonminsquero@gmail.com",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/404",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/home",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "/portfolio",
+        "destination": "/portfolio.html"
+      },
+      {
+        "source": "/resume",
+        "destination": "/resume.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact.html"
+      },
+      {
+        "source": "/tobor-party",
+        "destination": "/tobor-party.html"
+      },
+      {
+        "source": "/astrolothree",
+        "destination": "/astrolothree.html"
+      },
+      {
+        "source": "/hole-flounder",
+        "destination": "/hole-flounder.html"
+      },
+      {
+        "source": "/kill-switch",
+        "destination": "/kill-switch.html"
+      },
+      {
+        "source": "/time-dashking",
+        "destination": "/time-dashking.html"
+      },
+      {
+        "source": "/wyles-loop",
+        "destination": "/wyles-loop.html"
+      },
+      {
+        "source": "/comet-circle",
+        "destination": "/comet-circle.html"
+      },
+      {
+        "source": "/portfolio-website",
+        "destination": "/portfolio-website.html"
       }
     ]
-
   }
 }

@@ -6,6 +6,7 @@ const Handlebars = require('handlebars');
 
 const staticPages = require('./static-data.js').staticPages;
 const staticPath = path.join(__dirname, 'dist');
+let rewrites = []
 
 const mainTemplate = Handlebars.compile(
     fs.readFileSync(
@@ -35,13 +36,16 @@ function buildStaticSite() {
 
     // build static pages
     for (const page in staticPages) {
-        const fileName = page === 'home' ? 'index.html' : page + '.aa';
+        const fileName = page === 'home' ? 'index.html' : page + '.html';
+        rewrites.push({"source": '/' + page, "destination": '/' + fileName})
         buildHTML(page, path.join(staticPath, fileName), staticPages[page]);
     }
 
     // project routing
     Portfolio.portfolio.forEach((elem) => {
         if (elem.permalink) {
+            
+            rewrites.push({"source": '/' + elem.permalink, "destination": '/' + elem.permalink + '.html'})
             buildHTML(
                 'project',
                 path.join(staticPath, elem.permalink) + '.html',
@@ -120,5 +124,15 @@ function buildHTML(templateName, target, data) {
     fs.writeFileSync(target, html);
 }
 
+function addRewrites(rewrites) {
+    const firebaseConfigPath = path.join(__dirname, 'firebase.json')
+    let data = JSON.parse(fs.readFileSync(firebaseConfigPath))
+    data.hosting.rewrites = data.hosting.rewrites === undefined ? rewrites : data.hosting.rewrites.concat(rewrites)
+    data.hosting.rewrites = Array.from(new Set(data.hosting.rewrites.map(obj => obj.source))).map(source => data.hosting.rewrites.find(obj => obj.source === source));
+    console.log(data)
+    fs.writeFileSync(firebaseConfigPath, JSON.stringify(data, null, 2))
+}
+fs.rmdirSync(staticPath, {recursive: true, force: true})
 buildStaticSite();
+addRewrites(rewrites)
 module.exports.buildStaticSite = buildStaticSite;
