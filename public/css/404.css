@@ -4,6 +4,10 @@
     text-transform: uppercase;
 }
 
+.content-wrap {
+    background: none
+}
+
 .bkgrd-img {
     background: url('../img/404.png') no-repeat top center / cover;
 }

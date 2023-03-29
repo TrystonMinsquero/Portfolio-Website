@@ -114,6 +114,10 @@
       {
         "source": "/portfolio-website",
         "destination": "/portfolio-website.html"
+      },
+      {
+        "source": "/grimhook",
+        "destination": "/grimhook.html"
       }
     ]
   }
