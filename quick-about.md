@@ -1,4 +1,4 @@
-Hi I'm Tryston! This is my personal website where you can find some of the projects I've worked on. I'm a game programmer that's a soon-to-be graduate of UT Dallas for Computer Science. Currently looking for full-time positions for gameplay, tools, or systems programmer. Feel free to read more about me in [my about section](/about).
+Hi I'm Tryston! This is my personal website where you can find some of the projects I've worked on. I'm a game programmer that's a soon-to-be graduate of UT Dallas for Computer Science. Currently looking for full-time positions for gameplay, tools, or systems programmer.
 #   
 
 Since moving to dallas I've been involved in many game dev communities, predominantly I've been an officer of the [Student Game Developer Association (SGDA)](https://utdsgda.club) at UTD, currently sitting as President. I'm also involved with IDGA's Dallas Chapter, Game Dev Drink-ups, and [Society of Play](https://societyofplay.net/), so be sure to say hi if you see me around!

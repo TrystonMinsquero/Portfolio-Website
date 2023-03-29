@@ -5,8 +5,8 @@ module.exports.staticPages = {
         styles: ['style.css', 'tabletsupport.css'],
         scripts: [],
         recentProjects: Portfolio.GetProjectsByName([
+            'Grimhook',
             'Tobor Party',
-            'Hole Flounder',
             'Time DashKing',
         ]),
         aboutContent: Portfolio.quickAbout,
