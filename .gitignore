@@ -2,3 +2,5 @@ node_modules
 .vscode
 ProjectTemplate
 dist
+.firebase
+.firebase-debug.log

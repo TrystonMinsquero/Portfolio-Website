@@ -138,6 +138,24 @@ function GetProjectsByName(projectNames) {
     return projects;
 }
 
+catProjects = Object.values(portfolio.reduce((acc, curr) => {
+    if (!acc[curr.category]) {
+      acc[curr.category] = [];
+    }
+    acc[curr.category].push(curr);
+    return acc;
+  }, {}));
+
+let categories = {}
+
+for(let i = 0; i < catProjects.length; i++) {
+    categories[i] = {
+        projects: catProjects[i],
+        gridVal: catProjects[i].length >= 3 ? 3 : catProjects[i].length,
+        title: (i === 0 ? 'Professional Projects' : (i === 1 ? 'Game Jam Games' : 'Other Projects'))
+    } 
+}
+console.log(categories)
 
 
 // get about-content data
@@ -152,12 +170,6 @@ module.exports.quickAbout = converter.makeHtml(
 
 module.exports.GetProjectsByName = GetProjectsByName;
 module.exports.portfolio = portfolio;
-module.exports.categories = Object.values(portfolio.reduce((acc, curr) => {
-    if (!acc[curr.category]) {
-      acc[curr.category] = [];
-    }
-    acc[curr.category].push(curr);
-    return acc;
-  }, {}));
+module.exports.categories = categories;
 module.exports.games = games;
 module.exports.projects = projects;

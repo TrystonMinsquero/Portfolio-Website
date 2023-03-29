@@ -1,11 +1,10 @@
 /* Assuming this CSS file will be used in conjunction with style.css */
 .page-container {
-    background: url('../img/games-background.webp') 0 0 / cover;
+    background: url('../img/websiteBackground.png') 0 0 / cover;
 }
 
 .content-wrap .container {
     width: 75%;
-    margin: 25px auto;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     position: relative;
     color: white;
@@ -16,7 +15,7 @@
     border: 5px solid white;
     width: 400px;
     min-width: 350px;
-    margin: 10px auto 10px auto;
+    margin: 20px auto 20px auto;
     padding: 20px 10px 20px 10px;
     border-radius: 25px;
 }

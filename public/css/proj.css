@@ -18,15 +18,29 @@
 .content-wrap h1,
 .content-wrap h2,
 .content-wrap h3 {
-    font-family: 'Press Start 2P', cursive;
-    color: whitesmoke;
-    text-shadow: 0 3px black;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 0 3px wheat;
 }
 
 .content-wrap h1 {
-    font-weight: bold;
-    text-shadow: 0 5px black;
-    text-transform: uppercase;
+    text-shadow: 0 0 5px wheat;
+}
+.content-wrap h2 {
+    text-shadow: 0 0 3px wheat;
+}
+.content-wrap h3 {
+    text-shadow: 0 0 2px wheat;
+}
+
+#links .header {
+    text-shadow: 0 0 5px;
+}
+
+#links ul li {
+    filter: invert(.7)
 }
 
 .content-wrap div.showdown-box {
@@ -34,9 +48,9 @@
     text-align: justify;
     width: 100%;
     font-size: large;
-    background-color: #8f8f8f;
+    /* background-color: #8f8f8f;
     box-shadow: 2px -2px 3px black inset;
-    text-shadow: 1px 1.5px black;
+    text-shadow: 1px 1.5px black; */
     color: white;
     border-radius: 25px;
     margin: 10px 0 30px 0;

@@ -175,7 +175,7 @@ img {
 
 #about-content a:hover {
     font-weight: normal;
-    color: var(--navbar-dark);
+    color: #4568dc;
 }
 
 #about-content h2 {
