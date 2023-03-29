@@ -43,6 +43,7 @@ projectTypeFolders.forEach((projectTypeFolder) => {
 function getProject(projectFiles, projectPath) {
     //Parse through each file in project folder
     const newProject = { path: projectPath };
+    let hasHtml = false;
     projectFiles.forEach((file) => {
         const extension = file.split('.').pop(); //if file is a directory, will be name of directory
         switch (extension) {
@@ -55,11 +56,16 @@ function getProject(projectFiles, projectPath) {
                     (key) => (newProject[key] = data[key])
                 );
                 break;
+            case 'html':
+                newProject.body = fs.readFileSync(path.join(projectPath, file)).toString();
+                break;
             // turn the markdown into html and save it to newProject
             case 'md':
-                newProject.body = converter.makeHtml(
-                    fs.readFileSync(path.join(projectPath, file)).toString()
-                );
+                if(!hasHtml) {
+                    newProject.body = converter.makeHtml(
+                        fs.readFileSync(path.join(projectPath, file)).toString()
+                    );
+                }
                 break;
             // find the builds
             case 'builds':
@@ -115,6 +121,7 @@ function getProject(projectFiles, projectPath) {
 }
 
 // sort lists by order assigned in data
+
 portfolio.sort((a, b) => b.order - a.order);
 games.sort((a, b) => b.order - a.order);
 projects.sort((a, b) => b.order - a.order);
@@ -131,6 +138,8 @@ function GetProjectsByName(projectNames) {
     return projects;
 }
 
+
+
 // get about-content data
 module.exports.aboutContent = converter.makeHtml(
     fs.readFileSync(path.join(__dirname, 'about-content.md')).toString()
@@ -143,5 +152,12 @@ module.exports.quickAbout = converter.makeHtml(
 
 module.exports.GetProjectsByName = GetProjectsByName;
 module.exports.portfolio = portfolio;
+module.exports.categories = Object.values(portfolio.reduce((acc, curr) => {
+    if (!acc[curr.category]) {
+      acc[curr.category] = [];
+    }
+    acc[curr.category].push(curr);
+    return acc;
+  }, {}));
 module.exports.games = games;
 module.exports.projects = projects;

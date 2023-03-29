@@ -1,64 +1,102 @@
-<nav class="hotlinks flex">
-    <ul class='list'>
-        <li>
-            <a href='/discord' target='_blank'>
-                <img
-                    class='out'
-                    width='32px'
-                    height='32px'
-                    src='img/icons/discord.svg'
-                    alt='Discord'
-                />
-            </a>
-        </li>
-        <li>
-            <a href='/linkedin' target='_blank'>
-                <img
-                    class='out'
-                    width='32px'
-                    height='32px'
-                    src='img/icons/linkedin.svg'
-                    alt='LinkedIn'
-                />
-            </a>
-        </li>
-        <li>
-            <a href='/github' target='_blank'>
-                <img
-                    class='out'
-                    width='32px'
-                    height='32px'
-                    src='img/icons/github.svg'
-                    alt='Github'
-                />
-            </a>
-        </li>
-        <li>
-            <a href='/itch-io' target='_blank'>
-                <img
-                    class='out'
-                    width='32px'
-                    height='32px'
-                    src='img/icons/itch-io.svg'
-                    alt='Itch.io'
-                />
-            </a>
-        </li>
-        <li>
-            <a href='mailto:trystonminsquero@gmail.com' target='_blank'>
-                <img
-                    class='out'
-                    width='32px'
-                    height='32px'
-                    src='img/icons/mail.svg'
-                    alt='Email'
-                />
-            </a>
-        </li>
-    </ul>
-</nav>
 
-<section class='flex home'>
+
+
+<div class='projects container'>
+        {{!-- <nav class="hotlinks flex">
+        <ul class='list'>
+            <li>
+                <a href='/discord' target='_blank'>
+                    <img
+                        class='out'
+                        width='32px'
+                        height='32px'
+                        src='img/icons/discord.svg'
+                        alt='Discord'
+                    />
+                </a>
+            </li>
+            <li>
+                <a href='/linkedin' target='_blank'>
+                    <img
+                        class='out'
+                        width='32px'
+                        height='32px'
+                        src='img/icons/linkedin.svg'
+                        alt='LinkedIn'
+                    />
+                </a>
+            </li>
+            <li>
+                <a href='/github' target='_blank'>
+                    <img
+                        class='out'
+                        width='32px'
+                        height='32px'
+                        src='img/icons/github.svg'
+                        alt='Github'
+                    />
+                </a>
+            </li>
+            <li>
+                <a href='/itch-io' target='_blank'>
+                    <img
+                        class='out'
+                        width='32px'
+                        height='32px'
+                        src='img/icons/itch-io.svg'
+                        alt='Itch.io'
+                    />
+                </a>
+            </li>
+            <li>
+                <a href='mailto:trystonminsquero@gmail.com' target='_blank'>
+                    <img
+                        class='out'
+                        width='32px'
+                        height='32px'
+                        src='img/icons/mail.svg'
+                        alt='Email'
+                    />
+                </a>
+            </li>
+        </ul>
+    </nav> --}}
+
+    <!--Recent Projects-->
+    <h1 class="header">Recent Projects</h1>
+    <section class='project-list'>
+        <ul class='grid list'>
+            {{#each recentProjects}}
+                <li>
+                    <figure class='hover blue'>
+                        {{#if this.images.[Cover.png]}}
+                            <img
+                                src='{{this.permalink}}/img/Cover.png'
+                                alt='{{this.title}}'
+                                width='300'
+                                height='300'
+                            />
+                        {{else}}
+                            <img
+                                src='img/placeholder.png'
+                                alt='placeholder'
+                                width='300'
+                                height='300'
+                            />
+                        {{/if}}
+                        <figcaption>
+                            <h2>{{this.title}}</h2>
+                        </figcaption>
+                        <a href='/{{this.permalink}}'></a>
+                    </figure>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <h1 class="header">ABOUT ME</h1>
+    <section class='flex home'>
+    
     <!--Left side of Home-->
     <div class='container flex-vert'>
         <!--picture of me-->
@@ -108,37 +146,4 @@
         </p> }}
     </div>
 </section>
-
-<div class='projects container'>
-    <!--Recent Projects-->
-    <h3>Recent Projects</h3>
-    <section class='project-list'>
-        <ul class='grid list'>
-            {{#each recentProjects}}
-                <li>
-                    <figure class='hover blue'>
-                        {{#if this.images.[Cover.png]}}
-                            <img
-                                src='{{this.permalink}}/img/Cover.png'
-                                alt='{{this.title}}'
-                                width='300'
-                                height='300'
-                            />
-                        {{else}}
-                            <img
-                                src='img/placeholder.png'
-                                alt='placeholder'
-                                width='300'
-                                height='300'
-                            />
-                        {{/if}}
-                        <figcaption>
-                            <h2>{{this.title}}</h2>
-                        </figcaption>
-                        <a href='/{{this.permalink}}'></a>
-                    </figure>
-                </li>
-            {{/each}}
-        </ul>
-    </section>
 </div>

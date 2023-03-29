@@ -53,7 +53,7 @@ h2 {
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: all 0.1s ease-in;
 }
 
@@ -89,7 +89,7 @@ img {
 
 .navbar {
     background: linear-gradient(
-            to bottom right,
+            to bottom,
             var(--navbar-dark),
             var(--navbar-light)
         )
@@ -128,7 +128,7 @@ img {
     transition: all 0.2s ease-in;
     width: 400px;
     height: 400px;
-    margin: 50px;
+    margin: 10px;
 }
 
 .list,
@@ -148,13 +148,6 @@ img {
 }
 
 .home {
-    background: linear-gradient(
-            to top,
-            var(--home-light),
-            var(--home-light),
-            var(--cover-light)
-        )
-        no-repeat 0 0;
     align-items: stretch;
     align-content: center;
 }
@@ -356,15 +349,16 @@ figure.hover:hover::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
+    background: url('../img/websiteBackground.png') 0 0 / cover repeat;
+    /* linear-gradient(
             to top right,
             var(--gray-dark),
             var(--gray-light)
         )
-        no-repeat 0 0 / cover;
+        no-repeat 0 0 / cover; */
 }
 
-.projects h3 {
+.projects h1 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-size: xx-large;
     font-weight: bolder;
@@ -376,6 +370,7 @@ figure.hover:hover::before {
 
 .project-list {
     padding-bottom: 35px;
+    justify-items: center;
 }
 
 .active {
@@ -441,9 +436,14 @@ h1.cursor::after {
 
 /* Footer Settings */
 footer {
-    background: linear-gradient(to bottom, var(--gray-light), var(--gray-light))
-        no-repeat 0 0 / cover;
+    background: linear-gradient(
+        to bottom,
+        var(--navbar-light),
+        var(--navbar-dark)
+    )
+    no-repeat 0 0 / cover;
     color: var(--gray-text);
+    
 }
 
 footer h3 {
@@ -474,6 +474,8 @@ footer.grid {
 
 ul.grid {
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
 }
 
 .edge {
@@ -564,19 +566,57 @@ ul.grid {
 }
 
 .bkgrd-img {
-    background: url('../img/games-background.webp') repeat;
+    background: url(../img/websiteBackground.png) 0 0 / cover repeat;
+    /* background: linear-gradient(
+        to top right,
+        var(--gray-dark),
+        var(--gray-light)
+    )
+    no-repeat 0 0 / cover;; */
 }
 
 /* Hotlinks for Home Only */
 .hotlinks {
-    background: linear-gradient(to top, var(--cover-light), var(--apple-blue))
-        no-repeat 0 0 / cover;
+    /* background: linear-gradient(to top, var(--cover-light), var(--apple-blue))
+        no-repeat 0 0 / cover; */
     color: white;
     height: 50px;
+    
+    margin: 20px;
     width: 100%;
     transition: all 0.2s ease-in;
 }
 
 .hotlinks li {
     padding: 11px;
+    filter:invert(1)
+}
+
+.header {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 5px;
+    text-shadow: 0 0 3px wheat;
+    letter-spacing: .13rem;
+    word-spacing: .4rem;
+}
+
+.content-wrap {
+    background: url('../img/websiteBackground.png') 0 0 / cover repeat;
+}
+
+.content-wrap .container {
+    margin: auto;
+    width: 80%;
+    padding: 25px;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        to bottom right,
+        #1A1C20,
+        #1A1C20
+    )
+    no-repeat 0 0 / cover;
 }

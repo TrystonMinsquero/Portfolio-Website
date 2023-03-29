@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .content-wrap {
-    background: url('../img/games-background.webp') 0 0 / cover;
+    background: url('../img/websiteBackground.png') 0 0 / cover;
 }
 
 .content-wrap .container {
@@ -10,8 +10,8 @@
     width: 75%;
     padding: 25px;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    background: linear-gradient(to top right, #4f4f4f, #2f2f2f) no-repeat 0 0 /
-        cover;
+    background: #1A1C20
+    no-repeat 0 0 / cover;
     min-height: 83vh;
 }
 
@@ -83,10 +83,34 @@
     border-radius: 25px;
 }
 
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .video-wrapper iframe {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
 .content-wrap .flex p a {
     color: white;
     font-size: larger;
 }
+
+#showdown-content header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px; /* adjust the height to fit your image */
+    background: none
+  }
+#showdown-content header img {
+max-width: 80%;
+}
+
 
 #TryItOut {
     margin-bottom: 20px;

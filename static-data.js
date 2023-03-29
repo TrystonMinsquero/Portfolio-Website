@@ -18,10 +18,11 @@ module.exports.staticPages = {
     },
     portfolio: {
         portfolio: Portfolio.portfolio,
+        categories: Portfolio.categories,
         games: Portfolio.games,
         projects: Portfolio.projects,
         styles: ['style.css', 'tabletsupport.css'],
-        scripts: ['portfolioDisplay.js'],
+        scripts: [],
     },
     resume: {
         styles: ['style.css', 'tabletsupport.css'],
