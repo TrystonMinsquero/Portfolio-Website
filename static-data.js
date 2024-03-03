@@ -6,8 +6,7 @@ module.exports.staticPages = {
         scripts: [],
         recentProjects: Portfolio.GetProjectsByName([
             'Grimhook',
-            'Tobor Party',
-            'Time DashKing',
+            'Tobor Party'
         ]),
         aboutContent: Portfolio.quickAbout,
     },

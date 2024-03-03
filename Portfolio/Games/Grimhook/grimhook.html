@@ -1,21 +1,25 @@
 
-<div class="video-wrapper">
-    <iframe width="784" height="441" src="https://www.youtube.com/embed/Yb2lrqsoRcU" frameborder="0" allowfullscreen></iframe>
-</div>
+
 <header style="
     padding-top: 40px;
     padding-bottom: 80px;">
-    <img src="grimhook/img/GrimhookTitle.png" alt="Grimhook">
+    <img src="grimhook/img/logo.png" alt="Grimhook">
 </header>
+
+<div class="video-wrapper">
+    <iframe src="https://drive.google.com/file/d/1vagJhVkzY6efmwirYTMnqvB8fDxiZNVr/preview" width="784" height="441" allow="autoplay"></iframe>
+    <!-- <iframe width="784" height="441" src="https://drive.google.com/file/d/1vagJhVkzY6efmwirYTMnqvB8fDxiZNVr/view?usp=sharing" frameborder="0" allowfullscreen></iframe> -->
+</div>
 <div class="showdown-box">
+    <h1>Summary</h1>
     <p>
-        Grimhook was originally for <a href="https://itch.io/jam/spring23-jam">SGDA's Spring 2023 game jam</a>, and as it was the last jam for SGDA I'll do, I knew I wanted to give it my all. This was also the first complete game
-        that I worked in Unreal in and was a great way to get a better grasp of the engine. We had a pretty small team, where everyone was doing a whole department, which I was responsible for all of the programming. After the jam
-        was over, we all wanted to keep working on the game and hope to release it on steam in the coming months. In this page I'll give a
-        deep dive into how I implemented everything. As this project is still in progress, I will have found better ways to do certain things so much of this content is likely going to change.
+        Grimhook was originally for <a href="https://itch.io/jam/spring23-jam">SGDA's Spring 2023 game jam</a>, but after the praise and how much we liked the game we decied we would keep working on it.
+        Nine months later and a lot of work we finally finished a demo that we put on steam and it achieved overwhelming positive reviews <a href=/grimhook/steam>on steam</a>.
+        I was the only programmer during the game jam and in the final product <b>I programmed nearly every feature</b> using a mix of c++ and blueprints.
+        <!-- In this page I will be going more in-depth on my process and approach for some aspects of the project, I will not be able to give full source code as we are hopefully going to keep working on and sell in the future. -->        
     </p>
     <br>
-    <div>
+    <!-- <div>
         <b>Mechanics Implemented:</b>
         <ul style="padding-left: 1.5rem;">
             <li><a href="#CharacterController">Character Controller</a></li>
@@ -24,20 +28,27 @@
                 <li><a href="#Dashing">Dashing</a></li>
                 <li><a href="#Grapplehook">Grapple hook</a></li>
                 <li><a href="#WindowJump">Window Jump</a></li>
+                <li><a href="#Pogo">Attacking</a></li>
+                <li><a href="#Attacking">Attacking</a></li>
+                
             </ul>
             <li><a href="#Enemies">Enemies</a></li>
             <li><a href="#GrappleChain">Chain</a></li>
             <li><a href="#WaveSystem">Wave System</a></li>
         </ul>
-    </div>
-    <h1>Under construction...</h1>
+    </div> -->
+    <p>
+        I plan on doing a full breakdown in the future, but since we are still developing this title and is planned on being sold and I can't show any of the code publicly.
+        If you would like to know more how I implmented any of the mechanics or systems, please feel free to reach out through any means and I'd love to talk about it.
+    </p>
+    <!-- <h1>Under construction...</h1> -->
     <!-- <div id="#CharacterController">
         <h2>Character Controller</h2>
         <p>I started with the first person character controller that comes with Unreal 5 which helped out a lot, so I already had basic walking, collision, gravity, and jumping day one.
-            This let me I had already started prototyping the way the grapple would work to get comfortable with how to approach it.
         </p>
     </div>
-    <h3 id=#WallRunning>Grapple hook</h3>
+    <h3 id=#WallRunning>Wall Running</h3>
+    <p>The designer said "make it feel like Titanfall 2". However, our game isn't Titanfall 2 and gameplay doesn't match up, so I also took inspiration from </p>
     <h3 id=#Dashing>Dashing</h3>
     <h3 id=#Grapplehook>Window Jump</h3>
     <h2 id="#Enemies">Enemies</h2>

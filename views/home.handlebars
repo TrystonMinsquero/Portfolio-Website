@@ -61,8 +61,8 @@
 
     <!--Recent Projects-->
     <h1 class="header">Recent Projects</h1>
-    <section class='project-list'>
-        <ul class='grid list'>
+    <section class='flex project-list'>
+        <ul class='grid list flex' style="grid-template-columns: repeat({{recentProjects.length}}, 1fr);">
             {{#each recentProjects}}
                 <li>
                     <figure class='hover blue'>

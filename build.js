@@ -132,7 +132,10 @@ function addRewrites(rewrites) {
     console.log(data)
     fs.writeFileSync(firebaseConfigPath, JSON.stringify(data, null, 2))
 }
-fs.rmdirSync(staticPath, {recursive: true, force: true})
+
+if(fs.existsSync(staticPath)) {
+    fs.rmdirSync(staticPath, {recursive: true, force: true})
+}
 buildStaticSite();
 addRewrites(rewrites)
 module.exports.buildStaticSite = buildStaticSite;
